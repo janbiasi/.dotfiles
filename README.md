@@ -16,7 +16,7 @@ git clone https://github.com/janbiasi/dotfiles.git && cd dotfiles && source setu
 chmod +x ./brew.sh && ./brew.sh
 ```
 
-### 3. Setup VSCode
+### 3. Setup VSCode
 
 ```sh
 chmod +x ./vscode.sh && ./vscode.sh

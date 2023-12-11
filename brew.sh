@@ -17,9 +17,15 @@ brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 # Standard Applications
+brew install --cask 1password
 brew install --cask rectangle
 brew install --cask arc
 brew install --cask raycast
+brew install --cask spotify
+brew install --cask raindropio
+brew install --cask obsidian
+brew install --cask hiddenbar
+brew install --cask flameshot
 
 # Editors and IDEs
 brew install --cask visual-studio-code
@@ -48,6 +54,10 @@ brew install --cask font-hack-nerd-font
 # IINA video player as replacement for built-ins
 brew tap iina/homebrew-mpv-iina
 brew install mpv-iina
+
+# Enable auto-updates as I usually don't interact with brew that often
+# https://github.com/Homebrew/homebrew-autoupdate
+brew tap homebrew/autoupdate
 
 # Remove outdated versions from the cellar.
 brew cleanup
