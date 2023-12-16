@@ -41,6 +41,10 @@
     # https://git-scm.com/docs/git-update-index#_untracked_cache
     untrackedCache = true
 
+    # Use diff-so-fancy for diffing files
+    # https://github.com/so-fancy/diff-so-fancy#usage
+    pager = diff-so-fancy | less --tabs=4 -RF
+
 [commit]
 
     # https://help.github.com/articles/signing-commits-using-gpg/
@@ -57,6 +61,12 @@
     default = simple
     # Make `git push` push relevant annotated tags when pushing branches out.
     followTags = true
+
+[interactive]
+
+    # Use diff-so-fancy as tool
+    # https://github.com/so-fancy/diff-so-fancy?tab=readme-ov-file#with-git
+	diffFilter = diff-so-fancy --patch
 
 # URL shorthands
 

@@ -22,6 +22,7 @@ sudo nvram SystemAudioVolume=" "
 # Set dock icon size as well as immediate autohide
 defaults write com.apple.dock "tilesize" -int "36"
 defaults write com.apple.dock "autohide" -bool "true"
+defaults write com.apple.dock "autohide-delay" -float 0.0001
 defaults write com.apple.dock "autohide-time-modifier" -float "0"
 
 # Make Dock icons of hidden applications translucent
@@ -31,7 +32,7 @@ defaults write com.apple.dock "showhidden" -bool "true"
 defaults write com.apple.dock "mineffect" -string "suck"
 
 # Configure screenshots default location
-mkdirp -p "${HOME}/Pictures/Screenshots"
+mkdir -p "${HOME}/Pictures/Screenshots"
 defaults write com.apple.screencapture "location" -string "${HOME}/Pictures/Screenshots" && killall SystemUIServer
 
 # Always show scrollbars
@@ -91,10 +92,10 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryCli
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-defaults write NSGlobalDomain AppleLanguages -array "en-CH" "de-CH" "it-CH"
-defaults write NSGlobalDomain AppleLocale -string "en_CH@currency=CHF"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-defaults write NSGlobalDomain AppleMetricUnits -bool true
+# defaults write NSGlobalDomain AppleLanguages -array "en-CH" "de-CH" "it-CH"
+# defaults write NSGlobalDomain AppleLocale -string "en_CH@currency=CHF"
+# defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+# defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Show language menu in the top right corner of the boot screen
 sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
@@ -114,7 +115,7 @@ sudo pmset -a lidwake 1
 sudo pmset -a autorestart 1
 
 # Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
+# sudo systemsetup -setrestartfreeze on - fails on Sonoma
 
 # Sleep the display after 15 minutes
 sudo pmset -a displaysleep 15
@@ -123,6 +124,8 @@ sudo pmset -a displaysleep 15
 sudo pmset -c sleep 0
 
 # Set machine sleep to 5 minutes on battery
+# TODO: Warning: Idle sleep timings for "Battery Power" may not behave as expected.
+#       - Display sleep should have a lower timeout than system sleep.
 sudo pmset -b sleep 5
 
 # Set standby delay to 24 hours (default is 1 hour)
@@ -187,6 +190,7 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Show the ~/Library folder
+# TODO: xattr: /Users/0x6a616e/Library: No such xattr: com.apple.FinderInfo (Sonoma)
 chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
 
 # Show the /Volumes folder

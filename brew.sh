@@ -25,15 +25,23 @@ brew install --cask spotify
 brew install --cask raindropio
 brew install --cask obsidian
 brew install --cask hiddenbar
-brew install --cask flameshot
+brew install --cask latest
+brew install --cask keybase
+# brew install --cask flameshot - not silicon native yet
 
 # Editors and IDEs
 brew install --cask visual-studio-code
 brew install --cask zed
 brew install --cask jetbrains-toolbox
+brew install neovim
+
+# TODO: evaluate switching to vscodium
+# brew install --cask vscodium
+# sudo xattr -r -d com.apple.quarantine /Applications/VSCodium.app
 
 # Developer tools
 brew install --cask bruno
+brew install gpg
 brew install git
 brew install docker
 brew install pnpm
@@ -41,7 +49,11 @@ brew install pnpm
 # Command line stuff
 brew install starship
 brew install zoxide
-brew install neovim
+brew install exa
+brew install bat
+brew install fzf
+brew install diff-so-fancy
+brew install zsh-autosuggestions
 
 # Design and concept applications
 brew install --cask figma
