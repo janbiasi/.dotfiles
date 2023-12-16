@@ -41,19 +41,24 @@
     # https://git-scm.com/docs/git-update-index#_untracked_cache
     untrackedCache = true
 
-    # Use diff-so-fancy for diffing files
-    # https://github.com/so-fancy/diff-so-fancy#usage
-    pager = diff-so-fancy | less --tabs=4 -RF
+    # Integrate diff-so-fancy
+    # https://github.com/so-fancy/diff-so-fancy
+	pager = diff-so-fancy | less --tabs=4 -RF
 
 [commit]
 
     # https://help.github.com/articles/signing-commits-using-gpg/
-    gpgsign = true
+	gpgsign = true
 
 [help]
 
     # Automatically correct and execute mistyped commands
     autocorrect = 1
+
+[init]
+    
+    # Set template directory to .config
+    templateDir = ~/.config/git/template/
 
 [push]
 
@@ -64,32 +69,20 @@
 
 [interactive]
 
-    # Use diff-so-fancy as tool
-    # https://github.com/so-fancy/diff-so-fancy?tab=readme-ov-file#with-git
+    # Integrate diff-so-fancy
+    # https://github.com/so-fancy/diff-so-fancy
 	diffFilter = diff-so-fancy --patch
 
-# URL shorthands
+[gpg]
 
-[url "git@github.com:"]
+    # Use GPG from homebrew installation
+	program = /opt/homebrew/bin/gpg
 
-    insteadOf = "gh:"
-    pushInsteadOf = "github:"
-    pushInsteadOf = "git://github.com/"
+############################################################
+#  MACHINE SPECIFIC SETTINGS CAN BE ADDED BELOW THIS LINE  #
+############################################################
 
-[url "git://github.com/"]
-
-    insteadOf = "github:"
-
-[url "git@gist.github.com:"]
-
-    insteadOf = "gst:"
-    pushInsteadOf = "gist:"
-    pushInsteadOf = "git://gist.github.com/"
-
-[url "git://gist.github.com/"]
-
-    insteadOf = "gist:"
-
-[init]
-
-    templateDir = ~/.config/git/template/
+[user]
+	signingkey = AB83EBB0A719C1AB
+	email = janbiasi@users.noreply.github.com
+	name = Jan Biasi

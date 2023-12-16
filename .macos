@@ -35,8 +35,8 @@ defaults write com.apple.dock "mineffect" -string "suck"
 mkdir -p "${HOME}/Pictures/Screenshots"
 defaults write com.apple.screencapture "location" -string "${HOME}/Pictures/Screenshots" && killall SystemUIServer
 
-# Always show scrollbars
-defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+# Set scrollbars to auto mode, can be set to "WhenScrolling" or "Always"
+defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true

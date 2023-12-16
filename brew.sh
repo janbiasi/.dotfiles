@@ -55,6 +55,11 @@ brew install fzf
 brew install diff-so-fancy
 brew install zsh-autosuggestions
 
+# GPG tools
+brew install gpg
+brew install gpg2
+brew install pinentry-mac
+
 # Design and concept applications
 brew install --cask figma
 brew install --cask miro
