@@ -47,13 +47,18 @@ brew install docker
 brew install pnpm
 
 # Command line stuff
-brew install starship
 brew install zoxide
 brew install exa
 brew install bat
 brew install fzf
 brew install diff-so-fancy
+brew install powerlevel10k
 brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
+
+# Fonts
+brew tap homebrew/cask-fonts
+brew install font-monaspace
 
 # GPG tools
 brew install gpg
