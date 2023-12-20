@@ -59,6 +59,8 @@ brew install zsh-syntax-highlighting
 # Fonts
 brew tap homebrew/cask-fonts
 brew install font-monaspace
+brew install font-hack-nerd-font
+
 
 # GPG tools
 brew install gpg
