@@ -1,0 +1,158 @@
+- name: Configure hush login
+  copy:
+    dest: ~/.hushlogin
+    src: ~/{{ repo.name }}/ansible/roles/macos/files/.hushlogin
+
+- name: Configure curl defaults
+  copy:
+    dest: ~/.curlrc
+    src: ~/{{ repo.name }}/ansible/roles/macos/files/.curlrc
+
+- name: Setup computer hostname
+  run_once: true
+  shell: |
+    sudo scutil --set ComputerName "{{ system.computer_name }}"
+    sudo scutil --set HostName "{{ system.computer_name }}"
+    sudo scutil --set LocalHostName "{{ system.computer_name }}"
+    sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "{{ system.computer_name }}"
+
+- name: Configure dock
+  run_once: true
+  shell: |
+    defaults write com.apple.dock "tilesize" -int "36"
+    defaults write com.apple.dock "autohide" -bool "true"
+    defaults write com.apple.dock "autohide-delay" -float 0.0001
+    defaults write com.apple.dock "autohide-time-modifier" -float "0"
+    defaults write com.apple.dock "showhidden" -bool "true"
+    defaults write com.apple.dock "mineffect" -string "suck"
+    killall Dock
+
+- name: Configure screenshots
+  shell: |
+    mkdir -p "~/Pictures/Screenshots"
+    defaults write com.apple.screencapture "location" -string "~/Pictures/Screenshots"
+    killall SystemUIServer
+
+- name: Configure trackpad
+  shell: |
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+    defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+    defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+
+- name: Configure lockscreen security
+  shell: |
+    defaults write com.apple.screensaver askForPassword -int 1
+    defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+- name: Configure finder
+  shell: |
+    defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+    defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
+    defaults write com.apple.finder "ShowPathbar" -bool "true"
+    defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+
+    # Keep folders always at the top
+    defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
+
+    # Set default search context to current path instead of whole mac
+    defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+
+    # Automatically delete items in the Bin after 30 days
+    defaults write com.apple.finder "FXRemoveOldTrashItems" -bool "true"
+
+    # Do not display warning when changing a file type
+    defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
+
+    # Save files to the local system instead of iCloud by default
+    defaults write NSGlobalDomain "NSDocumentSaveNewDocumentsToCloud" -bool "false"
+
+    # Enable spring loading for directories
+    defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+
+    # Remove the spring loading delay for directories
+    defaults write NSGlobalDomain com.apple.springing.delay -float 0
+
+    # Avoid creating .DS_Store files on network or USB volumes
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+    defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+    # Remove title rollover delay
+    defaults write NSGlobalDomain "NSToolbarTitleViewRolloverDelay" -float "0"
+
+    # Automatically open a new Finder window when a volume is mounted
+    defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+    defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+    defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+
+    # Show the ~/Library folder
+    # TODO: xattr: /Users/0x6a616e/Library: No such xattr: com.apple.FinderInfo (Sonoma)
+    chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+
+    # Show the /Volumes folder
+    sudo chflags nohidden /Volumes
+
+- name: Configure desktop
+  shell: |
+    # Show volumes on desktop
+    defaults write com.apple.finder "ShowHardDrivesOnDesktop" -bool "true"
+
+- name: Configure stock email app
+  ignore_errors: true
+  shell: |
+    # Disable send and reply animations in Mail.app
+    defaults write com.apple.mail DisableReplyAnimations -bool true
+    defaults write com.apple.mail DisableSendAnimations -bool true
+
+    # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
+    defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+    # Display emails in threaded mode, sorted by date (oldest at the top)
+    defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
+    defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
+    defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
+
+    # Disable inline attachments (just show the icons)
+    defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
+
+    # Disable automatic spell checking
+    defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
+
+- name: Configure activity monitor
+  shell: |
+    # Show the main window when launching Activity Monitor
+    defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
+
+    # Visualize CPU usage in the Activity Monitor Dock icon
+    defaults write com.apple.ActivityMonitor IconType -int 5
+
+    # Show all processes in Activity Monitor
+    defaults write com.apple.ActivityMonitor ShowCategory -int 0
+
+    # Sort Activity Monitor results by CPU usage
+    defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+    defaults write com.apple.ActivityMonitor SortDirection -int 0
+
+- name: Configure power settings
+  shell: |
+    # Enable lid wakeup
+    sudo pmset -a lidwake 1
+
+    # Restart automatically on power loss
+    sudo pmset -a autorestart 1
+
+    # Sleep the display after 15 minutes
+    sudo pmset -a displaysleep 15
+
+    # Disable machine sleep while charging
+    sudo pmset -c sleep 0
+
+- name: Create homebrew configuration
+  copy:
+    src: ~/{{ repo.name }}/ansible/roles/macos/files/.brew/
+    dest: ~/.brew/
+
+- name: Install apps via homebrew
+  shell: |
+    cd ~/.brew
+    brew bundle

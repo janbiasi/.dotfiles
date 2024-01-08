@@ -1,0 +1,2 @@
+- name: Configure nevoim
+  shell: echo "Hello"

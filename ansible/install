@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# install ansible community plugins
+[ -d ~/.ansible/collections/ansible_collections/community ] ||
+	ansible-galaxy collection install community.general
+
+# Run Ansible
+ansible-playbook ./macos.yml --ask-become-pass

@@ -1,0 +1,4 @@
+- name: Configure wget defaults
+  copy:
+    dest: ~/.wgetrc
+    src: ~/dotfiles/ansible/roles/ubuntu/files/.wgetrc

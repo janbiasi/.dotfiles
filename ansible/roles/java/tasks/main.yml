@@ -1,0 +1,16 @@
+- name: Install SDKMan
+  tags: java
+  shell: curl -s "https://get.sdkman.io" | bash
+
+- name: Install Java {{ java.version }}
+  tags: java
+  shell: source ~/.zshrc && sdk install java {{ java.version }}
+  args:
+    executable: /bin/zsh
+
+- name: Set default Java version to {{ java.version }}
+  ignore_errors: true
+  shell: source ~/.zshrc && sdk default java {{ java.version }}
+  tags: java
+  args:
+    executable: /bin/zsh

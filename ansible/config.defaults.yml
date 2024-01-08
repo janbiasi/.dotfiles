@@ -1,0 +1,13 @@
+repo:
+  name: dotfiles # TODO: Change to .dotfiles
+
+system:
+  computer_name: "0x6A616E"
+
+node:
+  version: lts/iron
+  nvm:
+    version: v0.39.7
+
+java:
+  version: 17.0.9-amzn

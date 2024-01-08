@@ -1,0 +1,17 @@
+- name: Setup global git config
+  tags: git
+  copy:
+    dest: ~/.gitconfig
+    src: ~/dotfiles/ansible/roles/git/files/.gitconfig
+
+- name: Setup global gitignore
+  tags: git
+  copy:
+    dest: ~/.gitignore
+    src: ~/dotfiles/ansible/roles/git/files/.gitignore
+
+- name: Use keychain for SSH
+  tags: git
+  copy:
+    dest: ~/.ssh/
+    src: ~/{{ repo.name }}/ansible/roles/git/files/.ssh/
