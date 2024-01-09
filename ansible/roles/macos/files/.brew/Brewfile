@@ -13,6 +13,7 @@ brew "pnpm"
 
 # CLI
 brew "bat"
+brew "btop"
 brew "diff-so-fancy"
 brew "exa"
 brew "fzf"
