@@ -17,6 +17,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+# smoother transitioning between vim modes
+# 10ms for key sequences
+KEYTIMEOUT=1
+
 # Use zoxide – A smarter cd command. Supports all major shells.
 # https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
@@ -72,3 +76,7 @@ fi
 # Load NVM (node version manager)
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# Load SDKMan (version manager for java amm.)
+export SDKMAN_DIR="${HOME}/.sdkman"
+[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ] && source "${HOME}/.sdkman/bin/sdkman-init.sh"

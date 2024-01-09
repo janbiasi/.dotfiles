@@ -7,7 +7,7 @@ Personal dotfiles new machines or migrations to have the same settings accross m
 ### 1. Clone repository to ~/.dotfiles
 
 ```sh
-git clone https://github.com/janbiasi/.dotfiles.git
+git clone --recurse-submodules https://github.com/janbiasi/.dotfiles.git
 ```
 
 ### 2. Install ansible
@@ -21,4 +21,7 @@ brew install ansible
 
 ```sh
 ./ansible/install
+# .. or alternatively ...
+ansible-galaxy collection install community.general
+ansible-playbook ./ansible/macos.yml --ask-become-pass
 ```

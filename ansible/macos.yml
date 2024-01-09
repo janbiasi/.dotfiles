@@ -2,8 +2,10 @@
   hosts: local
   vars_files: ["config.defaults.yml"]
   roles:
+    - git
+    - java
     - macos
+    - node
+    - nvim
     - terminal
     - timemachine
-    - node
-    - java
