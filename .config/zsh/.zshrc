@@ -1,3 +1,7 @@
+# Set config directory to ~/.config for other tools like lazygit
+# as we don't want to store any config data in other dirs
+XDG_CONFIG_HOME="$HOME/.config"
+
 # Use custom ZSH location synced by dotfiles
 ZSH_CUSTOM=$HOME/.config/oh-my-zsh/custom
 
