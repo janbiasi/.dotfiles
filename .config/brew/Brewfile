@@ -1,0 +1,94 @@
+tap "homebrew/bundle"       # https://github.com/Homebrew/homebrew-bundle
+tap "homebrew/cask-fonts"   # https://github.com/Homebrew/homebrew-cask-fonts
+tap "homebrew/autoupdate"   # https://github.com/Homebrew/homebrew-autoupdate
+tap "FelixKratz/formulae"   # sketchybar
+
+cask_args appdir: "~/Applications", require_sha: true
+
+brew "coreutils"    # install GNU core utilities (those that come with macOS are outdated).
+brew "mas"          # required to download apps from the Mac App Store
+brew "git"
+brew "gpg"
+brew "neovim"
+brew "pnpm"
+
+# CLI
+brew "bat"
+brew "btop"
+brew "diff-so-fancy"
+brew "exa"
+brew "fzf"
+brew "htop"
+brew "jesseduffield/lazygit/lazygit"
+brew "neofetch"
+brew "powerlevel10k"
+brew "ripgrep"
+brew "tmux"
+brew "zoxide"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+
+# Fonts
+cask "font-lato"
+cask "font-open-sans"
+cask "font-roboto"
+cask "font-geist-mono-nerd-font"
+
+# Sketchybar
+brew "sketchybar"
+brew "jq"
+brew "font-sf-pro"
+cask "sf-symbols"
+
+# Desktop applications
+cask "1password"
+cask "alacritty"
+cask "arc"
+cask "blender"
+cask "bruno"
+cask "docker"
+cask "figma"
+cask "hiddenbar"
+cask "iina"
+cask "jetbrains-toolbox"
+cask "keybase"
+cask "latest"
+cask "microsoft-edge"
+cask "miro"
+cask "obsidian"
+cask "raindropio"
+cask "raycast"
+cask "rectangle"
+cask "scroll-reverser"
+cask "spotify"
+cask "visual-studio-code"
+cask "zed"
+
+# Mac App Store
+mas "Things", id: 904280696
+mas "Usage", id: 1561788435
+
+# VSCode Extensions
+vscode "aaron-bond.better-comments"
+vscode "antfu.file-nesting"
+vscode "BazelBuild.vscode-bazel"
+vscode "bradlc.vscode-tailwindcss"
+vscode "christian-kohler.npm-intellisense"
+vscode "clinyong.vscode-css-modules"
+vscode "dbaeumer.vscode-eslint"
+vscode "donjayamanne.githistory"
+vscode "eamodio.gitlens"
+vscode "EditorConfig.EditorConfig"
+vscode "esbenp.prettier-vscode"
+vscode "github.vscode-github-actions"
+vscode "GitHub.vscode-pull-request-github"
+vscode "golang.go"
+vscode "GraphQL.vscode-graphql-syntax"
+vscode "JanBiasi.gotthard-theme"
+vscode "mikestead.dotenv"
+vscode "ms-vsliveshare.vsliveshare"
+vscode "PKief.material-icon-theme"
+vscode "usernamehw.errorlens"
+vscode "vscjava.vscode-java-pack"
+vscode "vscode-icons-team.vscode-icons"
+vscode "wix.vscode-import-cost"
