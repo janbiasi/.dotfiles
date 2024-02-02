@@ -2,16 +2,16 @@
   tags: git
   copy:
     dest: ~/.gitconfig
-    src: ~/dotfiles/ansible/roles/git/files/.gitconfig
+    src: ~/{{ repo.name }}/.config/git/.gitconfig
 
 - name: Setup global gitignore
   tags: git
   copy:
     dest: ~/.gitignore
-    src: ~/dotfiles/ansible/roles/git/files/.gitignore
+    src: ~/{{ repo.name }}/.config/git/.gitignore
 
 - name: Use keychain for SSH
   tags: git
   copy:
     dest: ~/.ssh/
-    src: ~/{{ repo.name }}/ansible/roles/git/files/.ssh/
+    src: ~/{{ repo.name }}/.config/git/ssh/

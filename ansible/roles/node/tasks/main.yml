@@ -1,7 +1,7 @@
 - name: Setup global NPM configuration
   copy:
     dest: ~/.npmrc
-    src: ~/{{ repo.name }}/ansible/roles/node/files/.npmrc
+    src: ~/{{ repo.name }}/.config/node/.npmrc
 
 - name: Installing node version manager {{ node.nvm.version }} (NVM)
   shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/{{ node.nvm.version }}/install.sh | bash
@@ -10,7 +10,7 @@
 - name: Setup global NVM configuration
   copy:
     dest: ~/.nvmrc
-    src: ~/{{ repo.name }}/ansible/roles/node/files/.nvmrc
+    src: ~/{{ repo.name }}/.config/node/.nvmrc
 
 - name: Installing node version {{ node.version }}
   shell: source ~/.nvm/nvm.sh && nvm install {{ node.version }}

@@ -1,0 +1,7 @@
+- name: Install pkgx
+  tags: pkgx
+  ansible.builtin.shell: curl -Ssf https://pkgx.sh | sh
+
+- name: Install mash
+  tags: pkgx
+  ansible.builtin.shell: pkgx install mash

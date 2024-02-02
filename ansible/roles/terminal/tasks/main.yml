@@ -1,14 +1,14 @@
 - name: Configure charset for all terminals
   tags: iterm
   when: ansible_distribution == 'MacOSX'
-  command: defaults write com.apple.terminal StringEncodings -array 4
+  ansible.builtin.shell: defaults write com.apple.terminal StringEncodings -array 4
 
 # Enable Secure Keyboard Entry in Terminal.app
 # See: https://security.stackexchange.com/a/47786/8918
 - name: Configure secure keyboard entry
   tags: iterm
   when: ansible_distribution == 'MacOSX'
-  command: defaults write com.apple.terminal SecureKeyboardEntry -bool true
+  ansible.builtin.shell: defaults write com.apple.terminal SecureKeyboardEntry -bool true
 
 # By default iTerm2 will only resize in increments of character widths, fix this.
 - name: Fix iterm resize increments
@@ -24,39 +24,39 @@
   tags: shell
   copy:
     dest: ~/.aliases
-    src: ~/{{ repo.name }}/ansible/roles/terminal/files/.aliases
+    src: ~/{{ repo.name }}/.config/zsh/.aliases
 
 - name: Set Bash configuration
   tags: bash
   copy:
     dest: ~/.bash_profile
-    src: ~/{{ repo.name }}/ansible/roles/terminal/files/.bash_profile
+    src: ~/{{ repo.name }}/.config/bash/.bash_profile
 
 - name: Set ZSH configuration
   tags: zsh
   copy:
     dest: ~/.zshrc
-    src: ~/{{ repo.name }}/ansible/roles/terminal/files/.zshrc
+    src: ~/{{ repo.name }}/.config/zsh/.zshrc
 
 - name: Set catppuccin theme for alacritty
   tags: alacritty
   copy:
-    dest: ~/.config/alacritty/catppuccin-mocha.toml
-    src: ~/{{ repo.name }}/ansible/roles/terminal/files/catppuccin-mocha.toml
+    dest: ~/.config/alacritty/themes/catppuccin-mocha.toml
+    src: ~/{{ repo.name }}/.config/alacritty/themes/catppuccin-mocha.toml
 
 - name: Set Alacritty configuration
   tags: alacritty
   copy:
     dest: ~/.config/alacritty/alacritty.toml
-    src: ~/{{ repo.name }}/ansible/roles/terminal/files/alacritty.toml
+    src: ~/{{ repo.name }}/.config/alacritty/alacritty.toml
 
 - name: Install tmux plugin manager
   tags: tmux
   ignore_errors: true
-  command: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  command: git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 
 - name: Set tmux configuration
   tags: tmux
   copy:
     dest: ~/.tmux.conf
-    src: ~/{{ repo.name }}/ansible/roles/terminal/files/.tmux.conf
+    src: ~/{{ repo.name }}/.config/tmux/tmux.conf

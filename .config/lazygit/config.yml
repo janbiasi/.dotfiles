@@ -1,3 +1,4 @@
+# - merged with ./themes/catppuccin-mocha-mauve.yml
 gui:
   theme:
     activeBorderColor:

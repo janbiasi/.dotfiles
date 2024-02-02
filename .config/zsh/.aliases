@@ -10,6 +10,9 @@ alias ll='ls -la'
 # Convenience alias for lazygit
 alias lg='lazygit'
 
+# Convenience alias for neovim
+alias vim='nvim'
+
 # Useful parent cd aliases
 alias ..='cd ..'
 alias ...='cd ../../'

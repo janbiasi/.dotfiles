@@ -16,7 +16,7 @@ brew "pnpm"
 brew "bat"
 brew "btop"
 brew "diff-so-fancy"
-brew "exa"
+brew "eza"
 brew "fzf"
 brew "htop"
 brew "jesseduffield/lazygit/lazygit"
@@ -40,6 +40,10 @@ brew "jq"
 brew "font-sf-pro"
 cask "sf-symbols"
 
+# Go
+brew "golang"
+brew "golangci-lint"
+
 # Desktop applications
 cask "1password"
 cask "alacritty"
@@ -62,6 +66,7 @@ cask "rectangle"
 cask "scroll-reverser"
 cask "spotify"
 cask "visual-studio-code"
+cask "wezterm"
 cask "zed"
 
 # Mac App Store

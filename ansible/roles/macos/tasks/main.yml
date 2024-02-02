@@ -1,12 +1,8 @@
 - name: Configure hush login
+  run_once: true
   copy:
     dest: ~/.hushlogin
-    src: ~/{{ repo.name }}/ansible/roles/macos/files/.hushlogin
-
-- name: Configure curl defaults
-  copy:
-    dest: ~/.curlrc
-    src: ~/{{ repo.name }}/ansible/roles/macos/files/.curlrc
+    src: ~/{{ repo.name }}/.config/macos/.hushlogin
 
 - name: Setup computer hostname
   run_once: true
@@ -28,12 +24,14 @@
     killall Dock
 
 - name: Configure screenshots
+  run_once: true
   shell: |
     mkdir -p "~/Pictures/Screenshots"
     defaults write com.apple.screencapture "location" -string "~/Pictures/Screenshots"
     killall SystemUIServer
 
 - name: Configure trackpad
+  run_once: true
   shell: |
     defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
     defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
@@ -41,11 +39,13 @@
     defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 - name: Configure lockscreen security
+  run_once: true
   shell: |
     defaults write com.apple.screensaver askForPassword -int 1
     defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 - name: Configure finder
+  run_once: true
   shell: |
     defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
     defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
@@ -93,11 +93,13 @@
     sudo chflags nohidden /Volumes
 
 - name: Configure desktop
+  run_once: true
   shell: |
-    # Show volumes on desktop
-    defaults write com.apple.finder "ShowHardDrivesOnDesktop" -bool "true"
+    # Hide volumes on desktop
+    defaults write com.apple.finder "ShowHardDrivesOnDesktop" -bool "false"
 
 - name: Configure stock email app
+  run_once: true
   ignore_errors: true
   shell: |
     # Disable send and reply animations in Mail.app
@@ -134,6 +136,7 @@
     defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 - name: Configure power settings
+  run_once: true
   shell: |
     # Enable lid wakeup
     sudo pmset -a lidwake 1
@@ -147,12 +150,20 @@
     # Disable machine sleep while charging
     sudo pmset -c sleep 0
 
+- name: Configure key repeat rates
+  shell: |
+    # normal minimum is 15 (225 ms)
+    defaults write -g InitialKeyRepeat -int 150
+
+    # normal minimum is 2 (30 ms)
+    defaults write -g KeyRepeat -int 40
+
 - name: Create homebrew configuration
   copy:
-    src: ~/{{ repo.name }}/ansible/roles/macos/files/.brew/
-    dest: ~/.brew/
+    dest: ~/.config/brew/
+    src: ~/{{ repo.name }}/.config/brew/
 
 - name: Install apps via homebrew
   shell: |
-    cd ~/.brew
+    cd ~/.config/brew
     brew bundle
