@@ -1,27 +1,50 @@
 # Dotfiles
 
-Personal dotfiles new machines or migrations to have the same settings accross multiple machines, powered by [ansible](https://www.ansible.com/).
+This directory contains the dotfles for my system
+
+## Requirements
+
+- [Git](https://git-scm.com/)
+- [Stow](https://www.gnu.org/software/stow/)
 
 ## Installation
 
-### 1. Clone repository to ~/.dotfiles
+### 1. Install required software
+
+```sh
+xcode-select --install
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install stow
+```
+
+### 2. Clone Repository
 
 ```sh
 git clone --recurse-submodules https://github.com/janbiasi/.dotfiles.git
 ```
 
-### 2. Install ansible
+### 3. Apply macOS configuration
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install ansible
+./dotfiles/.macos # bash script
 ```
 
-### 3. Run installer
+### 4. Apply setup configuration
 
 ```sh
-./ansible/install
-# .. or alternatively ...
-ansible-galaxy collection install community.general
-ansible-playbook ./ansible/macos.yml --ask-become-pass
+cd .dotfiles
+stow -v .
+# incremental via:
+# stow --adopt . -v
+
+```
+
+## Maintenance
+
+### Updating
+
+To link the latest nvim configuration you need to update the contained submodule
+
+```sh
+git pull --recurse-submodules
 ```

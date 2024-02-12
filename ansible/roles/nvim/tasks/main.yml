@@ -1,2 +1,0 @@
-- name: Fetch personal nevoim configuration
-  shell: git clone git@github.com:janbiasi/nvim.config.git ~/.config/nvim
