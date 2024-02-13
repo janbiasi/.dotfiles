@@ -1,11 +1,12 @@
 # Dotfiles
 
-This directory contains the dotfles for my system
+This directory contains the dotfles for my development environment
 
 ## Requirements
 
 - [Git](https://git-scm.com/)
 - [Stow](https://www.gnu.org/software/stow/)
+- [Make](https://www.gnu.org/software/make/)
 
 ## Installation
 
@@ -14,37 +15,26 @@ This directory contains the dotfles for my system
 ```sh
 xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install stow
+brew install stow make
 ```
 
 ### 2. Clone Repository
 
 ```sh
-git clone --recurse-submodules https://github.com/janbiasi/.dotfiles.git
+git clone git@github.com:janbiasi/.dotfiles.git
+cd .dotfiles
 ```
 
 ### 3. Apply macOS configuration
 
 ```sh
-./dotfiles/.macos # bash script
+make macos
 ```
 
-### 4. Apply setup configuration
+### 4. Apply or update setup configuration
 
 ```sh
-cd .dotfiles
-stow -v .
-# incremental via:
-# stow --adopt . -v
-
-```
-
-## Maintenance
-
-### Updating
-
-To link the latest nvim configuration you need to update the contained submodule
-
-```sh
-git pull --recurse-submodules
+make install
+# ... or incremental update via:
+make update
 ```

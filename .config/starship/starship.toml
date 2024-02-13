@@ -1,16 +1,130 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-[package]
-disabled = true
+# format = """
+# [░▒▓](surface1)\
+# [  ](bg:surface2 fg:text)\
+# [](bg:maroon fg:text)\
+# $directory\
+# [](fg:surface1 bg:#394260)\
+# $git_branch\
+# $git_status\
+# [](fg:#394260 bg:#212736)\
+# $nodejs\
+# $rust\
+# $golang\
+# $php\
+# [](fg:#212736 bg:#1d2230)\
+# $time\
+# [ ](fg:#1d2230)\
+# \n$character"""
 
-[java]
-format = 'via [☕ $version](bold bright-red) '
+# Use catpuccin theme
+palette = "catppuccin_mocha"
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# --------------------------------------
+# ------ Statusline configuration ------
+# --------------------------------------
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = "[➜](bold red)"
+
+
+[package]
+disabled = false
+
+[os]
+disabled = false
+
+[os.symbols]
+Macos = " 󰀵 "
+
+# [username]
+# show_always = true
+# format = '[ $user ]($style)'
+
+# [time]
+# disabled = false
+# time_format = "%R"                            # Hour:Minute Format
+# style = "bg:peach"
+# format = '[[  $time ](fg:surface1)]($style)'
 
 [directory]
-style = "purple"
+format = "[ $path ]($style)"
+truncation_symbol = "…/"
+truncation_length = 8
 
-[git_branch]
-style = "cyan"
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"node_modules" = ""
+".github" = ""
 
-[git_state]
-style = "yellow"
+# -----------------------------------
+# ------ Language integrations ------
+# -----------------------------------
+
+[nodejs]
+symbol = ""
+style = "bg:green fg:text"
+format = '[[ $symbol ($version) ](fg:green)]($style)'
+
+[golang]
+symbol = ""
+format = '[[ $symbol ($version) ](fg:sky)]($style)'
+
+[java]
+symbol = ""
+format = 'via [[ $symbol ($version) ](bold bright-red)]($style)'
+
+[bun]
+symbol = ""
+
+[kotlin]
+symbol = ""
+
+[scala]
+symbol = ""
+
+[rust]
+symbol = ""
+
+[gradle]
+symbol = ""
+
+# ----------------------------
+# ------ Color Palettes ------
+# ----------------------------
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
