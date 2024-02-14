@@ -1,0 +1,20 @@
+# Better ls command
+alias ls='eza --git --icons --color=always --group-directories-first'
+
+# DNS cache flushing utility
+alias flush-dns-cache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+# Alias ll to a better variant
+alias ll='ls -la'
+
+# Convenience for lazygit
+alias lg='lazygit'
+
+# Convenience for zellij
+alias zj='zellij attach --create default'
+
+# Useful parent cd aliases
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../../'
