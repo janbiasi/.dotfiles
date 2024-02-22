@@ -10,6 +10,9 @@ alias ll='ls -la'
 # Convenience for lazygit
 alias lg='lazygit'
 
+# Just always use the better one :)
+alias vim='nvim'
+
 # Convenience for zellij
 alias zj='zellij attach --create default'
 

@@ -1,5 +1,94 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# https://starship.rs/config/#prompt
+format = """$shell$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$direnv\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$status\
+$container\
+$character"""
+
+# Put time on the right side
+# https://starship.rs/config/#prompt
+right_format = '''$time$battery'''
+
 # format = """
 # [░▒▓](surface1)\
 # [  ](bg:surface2 fg:text)\
@@ -37,29 +126,38 @@ vimcmd_replace_symbol = "[](bold fg:purple)"
 vimcmd_visual_symbol = "[](bold fg:lavender)"
 
 [os]
-disabled = true
+disabled = false
 
 [os.symbols]
 Macos = " 󰀵 "
 
 [shell]
-fish_indicator = "󰈺 "
-zsh_indicator = '\$'
-disabled = true
+format = '[$indicator]($style)'
+style = "surface1"
+disabled = false
+
+[[battery.display]]
+threshold = 10
+style = 'red'
+
+[[battery.display]]
+threshold = 30
+style = 'yellow'
+
 
 # [username]
 # show_always = true
 # format = '[ $user ]($style)'
 
-# [time]
-# disabled = false
-# time_format = "%R"                            # Hour:Minute Format
-# style = "bg:peach"
-# format = '[[  $time ](fg:surface1)]($style)'
+[time]
+disabled = false
+time_format = "%R"                            # Hour:Minute Format
+style = "fg:yellow"
+format = '[[  $time ](fg:surface1)]($style)'
 
 [directory]
 format = "[ $path ]($style)"
-style = "bold blue"
+style = "bold mauve"
 truncation_symbol = "…/"
 truncation_length = 3
 
