@@ -7,13 +7,10 @@ NVIM_CONFIG_REPO=git@github.com:janbiasi/nvim.config.git
 install:
 	stow -v --restow --target="$(HOME)" --dir="$(DOTFILES)" .
 
-update: update-submodules update-dotfiles update-nvim
+update: update-dotfiles update-nvim
 
 update-nvim:
 	cd ${NVIM_CONFIG_DIR} && git pull -f
-
-update-submodules:
-	git pull --recurse-submodules
 
 update-dotfiles:
 	stow -v --restow --adopt .
