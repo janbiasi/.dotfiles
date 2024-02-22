@@ -8,7 +8,7 @@ copy_command "pbcopy"
 on_force_close "detach"
 
 // enable once i got the keybinds
-// default_layout "compact"
+default_layout "compact"
 
 keybinds {
     normal {

@@ -28,19 +28,24 @@ add_newline = true
 # ------ Statusline configuration ------
 # --------------------------------------
 
-[character] # The name of the module we are configuring is 'character'
-success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-error_symbol = "[➜](bold red)"
-
-
-[package]
-disabled = false
+[character]
+success_symbol = "[➜](bold fg:green)"
+error_symbol = "[✖](bold fg:red)"
+vimcmd_symbol = "[](bold fg:creen)"
+vimcmd_replace_one_symbol = "[](bold fg:purple)"
+vimcmd_replace_symbol = "[](bold fg:purple)"
+vimcmd_visual_symbol = "[](bold fg:lavender)"
 
 [os]
-disabled = false
+disabled = true
 
 [os.symbols]
 Macos = " 󰀵 "
+
+[shell]
+fish_indicator = "󰈺 "
+zsh_indicator = '\$'
+disabled = true
 
 # [username]
 # show_always = true
@@ -54,8 +59,9 @@ Macos = " 󰀵 "
 
 [directory]
 format = "[ $path ]($style)"
+style = "bold blue"
 truncation_symbol = "…/"
-truncation_length = 8
+truncation_length = 3
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -65,22 +71,37 @@ truncation_length = 8
 "node_modules" = ""
 ".github" = ""
 
+[git_branch]
+symbol = ""
+#truncation_length = 24
+format = "$symbol[[ $branch(:$remote_branch)](fg:sky)]($style) "
+
+[git_status]
+deleted = "✖"
+# format = "[($all_status$ahead_behind )]($style)"
+
+[cmd_duration]
+format = "[$duration]($style)"
+
 # -----------------------------------
 # ------ Language integrations ------
 # -----------------------------------
 
+[package]
+format = '[$version](fg:white) '
+
 [nodejs]
 symbol = ""
 style = "bg:green fg:text"
-format = '[[ $symbol ($version) ](fg:green)]($style)'
+format = '[[$symbol ($version)](fg:green)]($style) '
 
 [golang]
 symbol = ""
-format = '[[ $symbol ($version) ](fg:sky)]($style)'
+format = '[[$symbol ($version)](fg:sky)]($style) '
 
 [java]
 symbol = ""
-format = 'via [[ $symbol ($version) ](bold bright-red)]($style)'
+format = '[[$symbol ($version)](bold bright-red)]($style) '
 
 [bun]
 symbol = ""
@@ -96,6 +117,10 @@ symbol = ""
 
 [gradle]
 symbol = ""
+format = '[[$symbol ($version) ](fg:yellow)]($style)'
+
+[docker_context]
+disabled = true
 
 # ----------------------------
 # ------ Color Palettes ------
