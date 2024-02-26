@@ -38,3 +38,12 @@ make install
 # ... or incremental update via:
 make update
 ```
+
+### 5. Setup Git environment
+
+> [!IMPORTANT]
+> The git configuration is **not** automatically synced as it requires additional (sensitive) information. Please follow the next three steps.
+
+- Copy the `.gitconfig` file from the repository manually
+- Add the missing signing key under the `[gpg "ssh"]`
+- Save the file to the home directory

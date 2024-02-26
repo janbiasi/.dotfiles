@@ -12,6 +12,8 @@ alias lg='lazygit'
 
 # Just always use the better one :)
 alias vim='nvim'
+alias vi='nvim'
+alias v='nvim'
 
 # Convenience for zellij
 alias zj='zellij attach --create default'
