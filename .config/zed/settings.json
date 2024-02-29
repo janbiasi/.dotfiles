@@ -1,13 +1,117 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
-  "theme": "One Dark",
-  "ui_font_size": 15,
-  "buffer_font_size": 15
+    // ---------------------------------------------------------------
+    // Core Configuration
+    // ---------------------------------------------------------------
+    "auto_update": true,
+    "base_keymap": "VSCode",
+    "autosave": "off",
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false
+    },
+    "assistant": {
+        "button": false
+    },
+    "features": {
+        "copilot": false
+    },
+    "chat_panel": {
+        "button": false
+    },
+    "collaboration_panel": {
+        "button": false
+    },
+    "show_copilot_suggestions": false,
+    // ---------------------------------------------------------------
+    // Terminal Configuration
+    // ---------------------------------------------------------------
+    "terminal": {
+        "font_family": "GeistMono Nerd Font",
+        "font_size": 13,
+        "env": {
+            "WITHIN_IDE": "true"
+        },
+        "dock": "bottom"
+    },
+    "inlay_hints": {
+        "enabled": true
+    },
+    // ---------------------------------------------------------------
+    // UI Configuration
+    // ---------------------------------------------------------------
+    "theme": "Catppuccin Mocha",
+    "ui_font_size": 15,
+    "ui_font_family": "GeistMono Nerd Font",
+    "ui_font_features": {
+        "calt": true, // Contextual Alternates
+        "frac": true, // Diagonal Fractions
+        "liga": true, // Common ligatures
+        "onum": true, // Oldstyle Figures	(digits and math)
+        "ss01": true,
+        "ss02": true,
+        "ss03": true,
+        "ss04": true,
+        "ss05": true,
+        "ss06": true,
+        "ss07": true,
+        "ss08": true,
+        "ss09": true,
+        "ss10": true,
+        "ss11": true
+    },
+    "project_panel": {
+        "indent_size": 15,
+        "default_width": 300,
+        "dock": "right"
+    },
+    "notification_panel": {
+        "dock": "right"
+    },
+    // ---------------------------------------------------------------
+    // Buffer Configuration
+    // ---------------------------------------------------------------
+    "tab_size": 4,
+    "buffer_line_height": "comfortable",
+    "format_on_save": "on",
+    "show_wrap_guides": true,
+    "wrap_guides": [120],
+    "soft_wrap": "none",
+    "show_whitespaces": "all",
+    "buffer_font_size": 14,
+    "buffer_font_family": "GeistMono Nerd Font",
+    "redact_private_values": true,
+    "private_files": ["**/*.env*"],
+    // https://en.wikipedia.org/wiki/List_of_typographic_features
+    "buffer_font_features": {
+        "calt": true, // Contextual Alternates
+        "frac": true, // Diagonal Fractions
+        "liga": true // Common ligatures
+    },
+    // ---------------------------------------------------------------
+    // Vim Configuration
+    // ---------------------------------------------------------------
+    "vim_mode": true,
+    "use_autoclose": false,
+    // "format_on_save": "language_server",
+    "cursor_blink": false,
+    "relative_line_numbers": true,
+    "scrollbar": {
+        "show": "never"
+    },
+    "vertical_scroll_margin": 0,
+    // ---------------------------------------------------------------
+    // LSP Configuration and Overrides
+    // ---------------------------------------------------------------
+    "language_overrides": {
+        // This can be removed once 0.124.0 is stable
+        // see https://zed.dev/releases/preview/0.124.0
+        "Go": {
+            "format_on_save": {
+                "external": {
+                    "command": "gofmt",
+                    "arguments": []
+                }
+            }
+        }
+    }
 }
