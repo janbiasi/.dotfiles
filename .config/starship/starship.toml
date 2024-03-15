@@ -221,6 +221,13 @@ format = '| [[$symbol ($version)](fg:yellow)]($style) '
 disabled = true
 
 # ----------------------------
+# ------ CLI Helpers ---------
+# ----------------------------
+
+[gcloud]
+disabled = true
+
+# ----------------------------
 # ------ Color Palettes ------
 # ----------------------------
 
