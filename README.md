@@ -21,7 +21,7 @@ brew install stow make
 ### 2. Clone Repository
 
 ```sh
-git clone git@github.com:janbiasi/.dotfiles.git
+git clone https://github.com/janbiasi/.dotfiles.git
 cd .dotfiles
 ```
 
