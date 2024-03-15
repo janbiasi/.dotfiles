@@ -40,7 +40,7 @@
     // UI Configuration
     // ---------------------------------------------------------------
     "theme": "Catppuccin Mocha",
-    "ui_font_size": 15,
+    "ui_font_size": 15.5,
     "ui_font_family": "GeistMono Nerd Font",
     "ui_font_features": {
         "calt": true, // Contextual Alternates
@@ -62,7 +62,10 @@
     "project_panel": {
         "indent_size": 15,
         "default_width": 300,
-        "dock": "right"
+        "dock": "right",
+        "auto_reveal_entries": true,
+        "folder_icons": true,
+        "file_icons": true
     },
     "notification_panel": {
         "dock": "right"
@@ -73,11 +76,11 @@
     "tab_size": 4,
     "buffer_line_height": "comfortable",
     "format_on_save": "on",
-    "show_wrap_guides": true,
-    "wrap_guides": [120],
     "soft_wrap": "none",
+    "wrap_guides": [120],
+    "show_wrap_guides": true,
     "show_whitespaces": "all",
-    "buffer_font_size": 14,
+    "buffer_font_size": 13,
     "buffer_font_family": "GeistMono Nerd Font",
     "redact_private_values": true,
     "private_files": ["**/*.env*"],
@@ -99,6 +102,13 @@
         "show": "never"
     },
     "vertical_scroll_margin": 0,
+    // ---------------------------------------------------------------
+    // Code Actions
+    // ---------------------------------------------------------------
+    "code_actions_on_format": {
+        // "source.organizeImports": true,
+        "source.fixAll.eslint": true
+    },
     // ---------------------------------------------------------------
     // LSP Configuration and Overrides
     // ---------------------------------------------------------------
