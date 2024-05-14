@@ -93,10 +93,10 @@
     // ---------------------------------------------------------------
     // Vim Configuration
     // ---------------------------------------------------------------
-    "vim_mode": true,
+    "vim_mode": false,
     "use_autoclose": false,
     // "format_on_save": "language_server",
-    "cursor_blink": false,
+    "cursor_blink": true,
     "relative_line_numbers": true,
     "scrollbar": {
         "show": "never"

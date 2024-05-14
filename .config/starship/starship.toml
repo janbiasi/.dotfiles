@@ -198,7 +198,7 @@ format = '| [[$symbol ($version)](fg:sky)]($style) '
 
 [java]
 symbol = ""
-format = '| [[$symbol ($version)](bold bright-red)]($style) '
+format = '| [[$symbol ($version)](fg:peach)]($style) '
 
 [bun]
 symbol = ""
