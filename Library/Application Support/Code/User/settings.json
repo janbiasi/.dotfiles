@@ -7,6 +7,8 @@
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.commandPalette.history": 5,
+  "workbench.activityBar.location": "top",
+  "workbench.editor.highlightModifiedTabs": true,
 
   // Catppuccin theme settings
   "catppuccin.italicKeywords": false,
@@ -65,7 +67,19 @@
   // GitHub Integration
   "githubPullRequests.terminalLinksHandler": "github",
   "githubPullRequests.notifications": "pullRequests",
+  "githubPullRequests.pullBranch": "never",
   "github-actions.workflows.pinned.refresh.interval": 60,
+  "git.autofetch": false,
+
+  // Prettier settings
+  "prettier.requireConfig": true,
+
+  // AWS config
+  "aws.telemetry": false,
+
+  // Import cost configuration
+  "importCost.mediumPackageSize": 250,
+  "importCost.smallPackageSize": 60,
 
   // Search settings
   "search.collapseResults": "alwaysCollapse",
@@ -85,7 +99,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 5/15/2024, 8:16:45 AM",
+    "//": "Last update at 5/21/2024, 9:24:01 PM",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
@@ -235,8 +249,4 @@
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  "workbench.activityBar.location": "top",
-  "git.autofetch": true,
-  "githubPullRequests.pullBranch": "never",
-  "prettier.requireConfig": true
 }
