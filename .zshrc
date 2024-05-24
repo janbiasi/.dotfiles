@@ -1,9 +1,15 @@
-# Set config directories to ~/.config
-export XDG_CONFIG_HOME="$HOME/.config"
-
-# smoother transitioning between vim modes
-# 10ms for key sequences
-export KEYTIMEOUT=1
+# History configuration
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # Use zoxide – A smarter cd command. Supports all major shells.
 # https://github.com/ajeetdsouza/zoxide
@@ -13,19 +19,35 @@ eval "$(zoxide init zsh)"
 # https://github.com/nvbn/thefuck
 eval "$(thefuck --alias fuck)"
 
+# Tmux session templates
+# https://github.com/jimeh/tmuxifier
+eval "$(tmuxifier init -)"
+
+# Fuzzyfinder
+# https://github.com/junegunn/fzf
+eval "$(fzf --zsh)"
+
 # Initialize ZSH syntax highlighting
 # https://github.com/zsh-users/zsh-syntax-highlighting?tab=readme-ov-file
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+# Initialize ZSH autocompletions like fish
+# https://github.com/zsh-users/zsh-autosuggestions?tab=readme-ov-file
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Compilation flags
-# export ARCHFLAGS="-arch arm64"
+# Run compinit
+autoload -U +X bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+
+# terraform autocompletions
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# Load ZSH completions from homebrew installed packages
+ if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi
 
 # Load shared aliases for shells
 [[ -f ~/.aliases ]] && source ~/.aliases
@@ -39,20 +61,11 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export SDKMAN_DIR="${HOME}/.sdkman"
 [ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
 
-# Add Cargo to path
-export PATH="$HOME/.cargo/env:$PATH"
-
-# Use ruby installed via brew instead of system version
-export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
-export GEM_HOME="$HOME/.gem"
-export PATH="$GEM_HOME/bin:$PATH"
-
 # Google Cloud SDK
 if [ -f "$HOME/.google/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.google/google-cloud-sdk/path.zsh.inc"; fi
 if [ -f "$HOME/.google/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.google/google-cloud-sdk/completion.zsh.inc"; fi
 
 # Initialize starship - https://starship.rs/
-export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
 # pnpm
