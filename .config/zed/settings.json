@@ -10,6 +10,7 @@
         "metrics": false
     },
     "assistant": {
+        "version": "1",
         "button": false
     },
     "features": {
@@ -27,7 +28,7 @@
     // ---------------------------------------------------------------
     "terminal": {
         "font_family": "GeistMono Nerd Font",
-        "font_size": 13,
+        "font_size": 12.5,
         "env": {
             "WITHIN_IDE": "true"
         },

@@ -8,6 +8,7 @@ tap "homebrew/services"
 tap "iina/mpv-iina"
 tap "jesseduffield/lazygit"
 tap "hashicorp/tap"
+tap "sst/tap"
 
 brew "ansible"
 brew "ansible-lint"
@@ -36,6 +37,7 @@ brew "pnpm"
 brew "powerlevel10k"
 brew "ripgrep"
 brew "ruby"
+brew "sst"
 brew "starship"
 brew "stow"
 brew "stylua"
@@ -87,6 +89,7 @@ cask "zed"
 mas "1Password for Safari", id: 1569813296
 mas "ArmorLock", id: 1528614234
 mas "Developer", id: 640199958
+mas "Goodnotes 6", id: 1444383602
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "MeetingBar", id: 1532419400
