@@ -1,0 +1,6 @@
+[manager]
+linemode = "mtime"
+show_hidden = true
+
+[preview]
+tab_size = 2
