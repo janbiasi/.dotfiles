@@ -35,19 +35,19 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # https://github.com/zsh-users/zsh-autosuggestions?tab=readme-ov-file
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Run compinit
+# Load completions
 autoload -U +X bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-
-# terraform autocompletions
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
-
-# Load ZSH completions from homebrew installed packages
  if type brew &>/dev/null; then
+  # source from brew
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
   autoload -Uz compinit
   compinit
+  # terraform autocompletions
+  complete -o nospace -C /opt/homebrew/bin/terraform terraform
 fi
+
+# Load 1Password plugins
+source "$XDG_CONFIG_HOME/op/plugins.sh"
 
 # Load shared aliases for shells
 [[ -f ~/.aliases ]] && source ~/.aliases
