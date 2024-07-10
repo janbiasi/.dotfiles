@@ -62,6 +62,9 @@
   # Show the diff between the latest commit and the current state
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
+  # Easier undo
+  undo = reset --soft HEAD^
+
   # Show verbose output about tags, branches or remotes
   tags = tag -l
   branches = branch -a

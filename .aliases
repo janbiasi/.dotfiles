@@ -28,3 +28,6 @@ alias .....='cd ../../../../../'
 
 # Convenience alias for Spring projects
 alias spring-dev="./gradlew bootRun --args='--spring.profiles.active=dev'"
+
+# Convenience alias for networking stuff
+alias flush-dns-cache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
