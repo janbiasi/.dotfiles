@@ -1,0 +1,9 @@
+# SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ssh-add -l
+[[ssh-keys]]
+item = "ifyradjt2fqx5z6ddliuh72d6a"
+
+[[ssh-keys]]
+item = "btymnb7vzgpipcu4r4r3zu43ti"
+
+[[ssh-keys]]
+item = "ixusvnyek2ychgnqr2kt4o6ndq"
