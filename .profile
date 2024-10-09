@@ -12,6 +12,9 @@ else
   export EDITOR='nvim'
 fi
 
+# Main obsidian vault
+export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/"
+
 # smoother transitioning between vim modes
 # 10ms for key sequences
 export KEYTIMEOUT=1
@@ -28,9 +31,15 @@ export PATH="$PATH:$HOME/.docker/bin"
 # Go
 export PATH="$PATH:$HOME/go/bin"
 
+# Other binaries
+export PATH="$PATH:$HOME/bin"
+
 # tmuxifier
 export PATH="$PATH:$XDG_CONFIG_HOME/tmux/plugins/tmuxifier/bin"
 export TMUXIFIER_LAYOUT_PATH="$XDG_CONFIG_HOME/tmux/layouts"
+
+# Spin - https://serversideup.net/open-source/spin/docs/installation/install-macos#download-and-install-spin
+export PATH="$HOME/.spin/bin:$PATH"
 
 # Add Cargo to path
 export PATH="$HOME/.cargo/env:$PATH"
@@ -39,6 +48,9 @@ export PATH="$HOME/.cargo/env:$PATH"
 # Use Ruby installed via brew instead of system version
 export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
 export PATH="$PATH:$HOME/.gem/bin"
+
+# Add Postgres to path
+export PATH="$(brew --prefix)/opt/postgresql@16/bin:$PATH"
 
 # Catppuccin theme for FZF
 export FZF_DEFAULT_OPTS=" \
