@@ -4,9 +4,9 @@ This directory contains the dotfles for my development environment
 
 ## Requirements
 
--   [Git](https://git-scm.com/)
--   [Stow](https://www.gnu.org/software/stow/)
--   [Make](https://www.gnu.org/software/make/)
+- [Git](https://git-scm.com/)
+- [Stow](https://www.gnu.org/software/stow/)
+- [Make](https://www.gnu.org/software/make/)
 
 ## Installation
 
@@ -37,4 +37,11 @@ make macos
 make install
 # ... or incremental update via:
 make update
+```
+
+### 5. Set default shell to `fish`
+
+```sh
+echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
 ```

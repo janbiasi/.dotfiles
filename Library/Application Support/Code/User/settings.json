@@ -1,94 +1,39 @@
 {
-  // Vim integration disabled for now as vim mode is enabled in Zed for now
-  "vim.disableExtension": true,
-  // Window settings
   "window.commandCenter": false,
-  "window.titleBarStyle": "native",
-  // Base editor theming
-  "workbench.layoutControl.enabled": false,
-  "workbench.productIconTheme": "icons-carbon",
-  "workbench.commandPalette.history": 5,
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.colorTheme": "Catppuccin Mocha",
-  "workbench.iconTheme": "catppuccin-mocha",
-  // Catppuccin theme settings
-  "catppuccin.accentColor": "blue",
-  "catppuccin.italicKeywords": false,
-  "catppuccin.boldKeywords": true,
-  "catppuccin.extraBordersEnabled": true,
-  "catppuccin.bracketMode": "dimmed",
-  "workbench.colorCustomizations": {
-    "[Catppuccin Mocha]": {
-      "editorInlayHint.foreground": "#565970",
-      "editorInlayHint.background": "#31324450",
-      "editorInlayHint.typeForeground": "#565970",
-      "editorInlayHint.typeBackground": "#31324450",
-      "editorInlayHint.parameterForeground": "#565970",
-      "editorInlayHint.parameterBackground": "#31324450"
-    }
-  },
-  "catppuccin.customUIColors": {
-    "all": {
-      "activityBar.background": "crust",
-      "breadcrumb.background": "mantle",
-      "breadcrumb.foreground": "subtext0",
-      "terminal.background": "mantle",
-      "panel.background": "mantle",
-      "panel.border": "surface0"
-    }
-  },
+  "window.systemColorTheme": "dark",
+  "window.nativeFullScreen": true,
 
-  // Font configuration
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "readme",
+  "workbench.activityBar.iconClickBehavior": "focus",
+
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "catppuccin.bracketMode": "neovim",
+  "catppuccin.italicKeywords": false,
+  "catppuccin-icons.hidesExplorerArrows": false,
+  "catppuccin.italicComments": true,
+
+  "workbench.editor.enablePreview": false,
+
+  "editor.fontSize": 12,
   "editor.fontFamily": "GeistMono Nerd Font",
   "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
-  // Editor base configuration
-  "breadcrumbs.enabled": false,
-  "editor.rulers": [
-    {
-      "column": 120,
-      "color": "#ffffff08"
-    }
-  ],
-  "editor.bracketPairColorization.enabled": false,
-  "editor.minimap.enabled": false,
-  "editor.minimap.maxColumn": 80,
-  "editor.formatOnSave": true,
-  "editor.inlineSuggest.suppressSuggestions": true,
+
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.expandMode": "singleClick",
+  "workbench.tree.enableStickyScroll": true,
+  "workbench.tree.stickyScrollMaxItemCount": 6,
+
+  "files.associations": {
+    ".env*": "dotenv"
+  },
+
   "editor.accessibilitySupport": "off",
   "editor.renderWhitespace": "all",
-  "editor.tokenColorCustomizations": {
-    "textMateRules": []
-  },
-  // Editor UI overrides
-  "apc.stylesheet": {
-    "*": "font-family: GeistMono Nerd Font;",
-    ".editor .title": "background: transparent !important;",
-    ".scrollbar": "width: 10px !important",
-    ".scrollbar .slider": "border-radius: 6px; width: calc(100% - 4px) !important;"
-  },
-  "apc.electron": {
-    "titleBarStyle": "hiddenInset",
-    "frame": false,
-    "vibrancy": "dark",
-    "transparent": true,
-    "visualEffectState": "active",
-    "backgroundColor": "rgba(0,0,0,0)"
-  },
-  "apc.sidebar.titlebar": {
-    "height": 40,
-    "fontSize": 12
-  },
-  "apc.statusBar": {
-    "fontSize": 12,
-    "height": 30,
-    "position": "editor-bottom"
-  },
-  "apc.activityBar": {
-    "position": "bottom",
-    "itemSize": 28,
-    "itemMargin": 8,
-    "size": 30
-  },
+  "editor.formatOnSave": true,
+  "editor.guides.indentation": true,
+
   // Terminal configuration
   "terminal.external.osxExec": "WezTerm.app",
   "terminal.integrated.autoReplies": {
@@ -112,37 +57,12 @@
   "terminal.integrated.tabs.showActions": "always",
   "terminal.integrated.tabs.hideCondition": "never",
   "terminal.integrated.tabs.location": "right",
-  // GitHub Integration
-  "githubPullRequests.terminalLinksHandler": "github",
-  "githubPullRequests.notifications": "pullRequests",
-  "githubPullRequests.pullBranch": "never",
-  "github-actions.workflows.pinned.refresh.interval": 60,
-  "git.autofetch": false,
-  // Prettier settings
-  "prettier.requireConfig": true,
-  // AWS config
-  "aws.telemetry": false,
-  // Import cost configuration
-  "importCost.mediumPackageSize": 250,
-  "importCost.smallPackageSize": 60,
-  // Search settings
-  "search.collapseResults": "alwaysCollapse",
-  "search.defaultViewMode": "tree",
-  "search.maxResults": 5000,
-  "search.exclude": {
-    "**/package-lock.json": true,
-    "**/pnpm-lock.yaml": true,
-    "**/node_modules": true,
-    "**/vendor": true,
-    "**/bin": true,
-    "**/tmp": true
-  },
-  // Explorer and file nesting settings
-  "explorer.confirmDragAndDrop": false,
+
+  // File nesting configuration
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 10/6/2024, 11:31:13 AM",
+    "//": "Last update at 10/14/2024, 3:46:03 PM",
     ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
     ".env": "*.env, .env.*, .envrc, env.d.ts",
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
@@ -231,124 +151,46 @@
     "*.w": "$(capture).*.w, I$(capture).w",
     "*.xaml": "$(capture).xaml.cs"
   },
-  // Neovim Integration
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  // Import Cost configuration
-  "importCost.largePackageLightColor": "#F38BA8",
-  "importCost.largePackageDarkColor": "#F38BA8",
-  "importCost.fontStyle": "italic",
-  "importCost.mediumPackageLightColor": "#FAB387",
-  "importCost.smallPackageLightColor": "#43465A",
-  "importCost.smallPackageDarkColor": "#43465A",
-  "importCost.mediumPackageDarkColor": "#FAB387",
-  // SVG previewer
-  "svgPreview.style": {
-    "img": {
-      "padding": "40px"
+
+  // MSSQL extension
+  "mssql.objectExplorer.groupBySchema": false,
+  "mssql.connections": [
+    {
+      "connectionString": "Microsoft.SqlTools|itemtype:Profile|server:127.0.0.1,14330|user:SA|isConnectionString:true",
+      "profileName": "SGKB",
+      "encrypt": "Mandatory",
+      "trustServerCertificate": true,
+      "server": "127.0.0.1,14330",
+      "database": "",
+      "user": "SA",
+      "password": "",
+      "connectTimeout": 15,
+      "commandTimeout": 30,
+      "applicationName": "vscode-mssql",
+      "authenticationType": "SqlLogin",
+      "savePassword": true
     }
+  ],
+
+  // GitHub extension
+  "githubPullRequests.pullBranch": "never",
+
+  // Import cost extension
+  "importCost.fontStyle": "normal",
+  "importCost.largePackageDarkColor": "#E64553",
+  "importCost.largePackageLightColor": "#E64553",
+  "importCost.mediumPackageSize": 85,
+  "importCost.mediumPackageDarkColor": "#F9E2AF",
+  "importCost.mediumPackageLightColor": "#DF8E1D",
+  "importCost.smallPackageSize": 40,
+  "importCost.smallPackageDarkColor": "#565970",
+  "importCost.smallPackageLightColor": "#ACB0BE",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": []
   },
-  // JavaScript configuraiton
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.parameterNames.enabled": "literals",
-  // TypeScript configuration
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "typescript.tsserver.log": "off",
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  // JSON configuration
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // SQL configuration
-  "[sql]": {
-    "editor.formatOnSave": false
-  },
-  // Go configuration
-  "go.formatTool": "gofmt",
-  "gopls": {
-    "ui.semanticTokens": true
-  },
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
-  },
-  // Rust configuration
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
-  // CSS color preview injector
-  "pigments.enabledExtensions": "tmpl,css,scss,sass,js,ts,tsx,jsx,go,toml,yml,yaml",
-  // Disable annoying GitLens icons
-  "gitlens.worktrees.promptForLocation": false,
-  "gitlens.menus": {
-    "editor": {
-      "blame": true,
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "editorGroup": {
-      "blame": true,
-      "compare": true
-    },
-    "editorGutter": {
-      "compare": true,
-      "remote": true,
-      "share": true
-    },
-    "editorTab": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "explorer": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "ghpr": {
-      "worktree": true
-    },
-    "scm": false,
-    "scmRepositoryInline": false,
-    "scmRepository": false,
-    "scmGroupInline": false,
-    "scmGroup": false,
-    "scmItemInline": false,
-    "scmItem": false
-  },
-  "gitlens.views.worktrees.showBranchComparison": false,
-  "gitlens.views.worktrees.pullRequests.enabled": false,
-  "gitlens.views.worktrees.files.compact": false,
-  "gitlens.views.worktrees.avatars": false,
-  "files.associations": {
-    ".env*": "dotenv"
-  },
-  "dotenv.cloakIcon": "*",
-  "dotenv.cloakColor": "#696D86",
+  "workbench.productIconTheme": "icons-carbon",
   "dotenv.enableAutocloaking": false,
-  "prettier.prettierPath": "./node_modules/prettier",
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.tsdk": "./node_modules/typescript/lib",
-  "workbench.activityBar.location": "bottom",
-  "window.customTitleBarVisibility": "windowed"
+  "githubPullRequests.terminalLinksHandler": "github",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.defaultProfile.osx": "fish"
 }
