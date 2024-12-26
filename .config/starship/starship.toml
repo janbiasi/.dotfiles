@@ -1,235 +1,114 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# https://starship.rs/config/#prompt
-format = """$shell$username\
-$hostname\
-$localip\
-$shlvl\
-$singularity\
-$kubernetes\
-$directory\
-$vcsh\
-$fossil_branch\
-$fossil_metrics\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
-$hg_branch\
-$pijul_channel\
-$docker_context\
-$package\
-$c\
-$cmake\
-$cobol\
-$daml\
-$dart\
-$deno\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$fennel\
-$golang\
-$guix_shell\
-$haskell\
-$haxe\
-$helm\
-$java\
-$julia\
-$kotlin\
-$gradle\
-$lua\
-$nim\
-$nodejs\
-$ocaml\
-$opa\
-$perl\
-$php\
-$pulumi\
-$purescript\
-$python\
-$raku\
-$rlang\
-$red\
-$ruby\
-$rust\
-$scala\
-$solidity\
-$swift\
-$terraform\
-$typst\
-$vlang\
-$vagrant\
-$zig\
-$buf\
-$nix_shell\
-$conda\
-$meson\
-$spack\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$azure\
-$direnv\
-$env_var\
-$crystal\
-$custom\
-$sudo\
-$cmd_duration\
-$line_break\
-$jobs\
-$status\
-$container\
-$character"""
-
-# Put time on the right side
-# https://starship.rs/config/#prompt
-right_format = '''$time$battery'''
-
-# format = """
-# [░▒▓](surface1)\
-# [  ](bg:surface2 fg:text)\
-# [](bg:maroon fg:text)\
-# $directory\
-# [](fg:surface1 bg:#394260)\
-# $git_branch\
-# $git_status\
-# [](fg:#394260 bg:#212736)\
-# $nodejs\
-# $rust\
-# $golang\
-# $php\
-# [](fg:#212736 bg:#1d2230)\
-# $time\
-# [ ](fg:#1d2230)\
-# \n$character"""
-
-# Use catpuccin theme
+# Sets user-defined palette
 palette = "catppuccin_mocha"
 
-# Inserts a blank line between shell prompts
-add_newline = true
-
-# --------------------------------------
-# ------ Statusline configuration ------
-# --------------------------------------
-
+# Starship modules
 [character]
-success_symbol = "[](bold fg:green)"
-error_symbol = "[](bold fg:red)"
-vimcmd_symbol = "[](bold fg:creen)"
-vimcmd_replace_one_symbol = "[](bold fg:purple)"
-vimcmd_replace_symbol = "[](bold fg:purple)"
-vimcmd_visual_symbol = "[](bold fg:lavender)"
-
-[os]
-disabled = false
-
-[os.symbols]
-Macos = " 󰀵 "
+success_symbol = "[❯](peach)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](subtext1)" # For use with zsh-vi-mode
 
 [shell]
-format = '[$indicator]($style)'
-style = "surface1"
+fish_indicator = ' '
+powershell_indicator = ' '
+zsh_indicator = ' '
+bash_indicator = ' '
+unknown_indicator = '$ '
+style = 'yellow bold'
 disabled = false
-
-[[battery.display]]
-threshold = 10
-style = 'red'
-
-[[battery.display]]
-threshold = 30
-style = 'yellow'
-
-
-# [username]
-# show_always = true
-# format = '[ $user ]($style)'
-
-[time]
-disabled = false
-time_format = "%R"                            # Hour:Minute Format
-style = "fg:yellow"
-format = '[[  $time ](fg:surface1)]($style)'
-
-[directory]
-format = "[ $path ]($style)"
-style = "bold mauve"
-truncation_symbol = "…/"
-truncation_length = 3
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-"node_modules" = ""
-".github" = ""
 
 [git_branch]
-symbol = ""
-#truncation_length = 24
-format = "$symbol[[ $branch(:$remote_branch)](fg:sky)]($style) "
+style = "bold mauve"
 
-[git_status]
-deleted = "✖"
-# format = "[($all_status$ahead_behind )]($style)"
+[directory]
+truncation_length = 4
+style = "bold lavender"
 
-[cmd_duration]
-format = "[$duration]($style)"
+# Palette definitions
+[palettes.catppuccin_latte]
+rosewater = "#dc8a78"
+flamingo = "#dd7878"
+pink = "#ea76cb"
+mauve = "#8839ef"
+red = "#d20f39"
+maroon = "#e64553"
+peach = "#fe640b"
+yellow = "#df8e1d"
+green = "#40a02b"
+teal = "#179299"
+sky = "#04a5e5"
+sapphire = "#209fb5"
+blue = "#1e66f5"
+lavender = "#7287fd"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
 
-# -----------------------------------
-# ------ Language integrations ------
-# -----------------------------------
+[palettes.catppuccin_frappe]
+rosewater = "#f2d5cf"
+flamingo = "#eebebe"
+pink = "#f4b8e4"
+mauve = "#ca9ee6"
+red = "#e78284"
+maroon = "#ea999c"
+peach = "#ef9f76"
+yellow = "#e5c890"
+green = "#a6d189"
+teal = "#81c8be"
+sky = "#99d1db"
+sapphire = "#85c1dc"
+blue = "#8caaee"
+lavender = "#babbf1"
+text = "#c6d0f5"
+subtext1 = "#b5bfe2"
+subtext0 = "#a5adce"
+overlay2 = "#949cbb"
+overlay1 = "#838ba7"
+overlay0 = "#737994"
+surface2 = "#626880"
+surface1 = "#51576d"
+surface0 = "#414559"
+base = "#303446"
+mantle = "#292c3c"
+crust = "#232634"
 
-[package]
-format = '[$version](fg:white) '
-
-[nodejs]
-symbol = ""
-format = '| [[$symbol ($version)](fg:green)]($style) '
-
-[golang]
-symbol = ""
-format = '| [[$symbol ($version)](fg:sky)]($style) '
-
-[java]
-symbol = ""
-format = '| [[$symbol ($version)](fg:peach)]($style) '
-
-[bun]
-symbol = ""
-
-[kotlin]
-symbol = ""
-
-[scala]
-symbol = ""
-
-[rust]
-symbol = ""
-format = '| [[$symbol ($version)](fg:red)]($style) '
-
-[gradle]
-symbol = ""
-format = '| [[$symbol ($version)](fg:yellow)]($style) '
-
-[docker_context]
-disabled = true
-
-# ----------------------------
-# ------ CLI Helpers ---------
-# ----------------------------
-
-[gcloud]
-disabled = true
-
-# ----------------------------
-# ------ Color Palettes ------
-# ----------------------------
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

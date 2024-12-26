@@ -1,5 +1,11 @@
 # cask_args appdir: '/Applications'
 
+
+# fnm go rust 
+# fzf eza jq ripgrep
+# zoxide
+# cask orbstack
+
 tap "felixkratz/formulae"
 tap "homebrew/autoupdate"
 tap "homebrew/bundle"

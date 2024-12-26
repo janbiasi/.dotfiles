@@ -1,4 +1,4 @@
-DOTFILES=${HOME}/dotfiles
+DOTFILES=${HOME}/.dotfiles
 NVIM_CONFIG_DIR=${HOME}/.config/nvim
 NVIM_CONFIG_REPO=git@github.com:janbiasi/nvim.config.git
 # TMUX_SHARE=${HOME}/.local/share/tmux

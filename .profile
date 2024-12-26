@@ -34,10 +34,6 @@ export PATH="$PATH:$HOME/go/bin"
 # Other binaries
 export PATH="$PATH:$HOME/bin"
 
-# tmuxifier
-export PATH="$PATH:$XDG_CONFIG_HOME/tmux/plugins/tmuxifier/bin"
-export TMUXIFIER_LAYOUT_PATH="$XDG_CONFIG_HOME/tmux/layouts"
-
 # Spin - https://serversideup.net/open-source/spin/docs/installation/install-macos#download-and-install-spin
 export PATH="$HOME/.spin/bin:$PATH"
 
@@ -48,9 +44,6 @@ export PATH="$HOME/.cargo/env:$PATH"
 # Use Ruby installed via brew instead of system version
 export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
 export PATH="$PATH:$HOME/.gem/bin"
-
-# Add Postgres to path
-export PATH="$(brew --prefix)/opt/postgresql@16/bin:$PATH"
 
 # Catppuccin theme for FZF
 export FZF_DEFAULT_OPTS=" \
@@ -69,9 +62,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# sst
-export PATH="$HOME/.sst/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

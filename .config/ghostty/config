@@ -1,0 +1,12 @@
+# basic ui configuration
+theme = light:catppuccin-latte,dark:catppuccin-mocha
+font-family = "GeistMono Nerd Font"
+cursor-style = block
+window-padding-y = 10,10
+window-padding-x = 10,10
+
+# macos specific configuration
+macos-titlebar-style = hidden
+macos-titlebar-proxy-icon = hidden
+background-blur-radius = 90
+background-opacity = 0.9

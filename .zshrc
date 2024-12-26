@@ -15,14 +15,6 @@ setopt hist_find_no_dups
 # https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
 
-# Corrects errors in previous console commands.
-# https://github.com/nvbn/thefuck
-eval "$(thefuck --alias fuck)"
-
-# Tmux session templates
-# https://github.com/jimeh/tmuxifier
-eval "$(tmuxifier init -)"
-
 # Fuzzyfinder
 # https://github.com/junegunn/fzf
 eval "$(fzf --zsh)"
@@ -55,10 +47,8 @@ source "$XDG_CONFIG_HOME/op/plugins.sh"
 # Load credentials
 [[ -f ~/.credentials ]] && source ~/.credentials
 
-# Load NVM (node version manager)
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# Load FNM (node version manager)
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Load SDKMan (version manager for java amm.)
 export SDKMAN_DIR="${HOME}/.sdkman"
