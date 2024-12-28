@@ -4,6 +4,9 @@
 # fnm go rust 
 # fzf eza jq ripgrep
 # zoxide
+# zsh-syntax-highlighting zsh-autosuggestions
+# ripgrep diff-so-fancy
+# docker
 # cask orbstack
 
 tap "felixkratz/formulae"
@@ -58,24 +61,24 @@ brew "felixkratz/formulae/sketchybar"
 brew "jesseduffield/lazygit/lazygit"
 
 cask "1password"
+cask "font-geist-mono-nerd-font"
 cask "alacritty"
-cask "arc"
-cask "bitwarden"
-cask "blender"
 cask "bruno"
+cask "figma"
+cask "bitwarden"
+
+cask "arc"
+cask "blender"
 cask "cyberduck"
 # cask "dbeaver-community"
 cask "discord"
 cask "docker"
-cask "figma"
-cask "font-geist-mono-nerd-font"
 cask "font-sf-pro"
 cask "hiddenbar"
 cask "iina"
 cask "jetbrains-toolbox"
 cask "keepassxc"
 cask "keybase"
-cask "latest"
 cask "microsoft-auto-update"
 cask "microsoft-edge"
 cask "microsoft-office"

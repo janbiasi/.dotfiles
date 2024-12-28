@@ -1,9 +1,15 @@
 # basic ui configuration
 theme = light:catppuccin-latte,dark:catppuccin-mocha
-font-family = "GeistMono Nerd Font"
 cursor-style = block
-window-padding-y = 10,10
+font-family = "GeistMono Nerd Font"
+font-feature = -liga
+window-padding-color = background
 window-padding-x = 10,10
+window-padding-y = 10,10
+
+# keybindings
+keybind = alt+left=esc:B
+keybind = alt+right=esc:F
 
 # macos specific configuration
 macos-titlebar-style = hidden

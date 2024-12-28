@@ -11,7 +11,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 40
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -27,9 +27,9 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-on-focus-changed = "move-mouse window-lazy-center"
+on-focus-changed = 'move-mouse window-lazy-center'
 
-# You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
+# You can effectively turn off macOS 'Hide application' (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodness#disable-hide-app
 automatically-unhide-macos-hidden-apps = false
@@ -42,17 +42,17 @@ preset = 'qwerty'
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
 # - Constant:     gaps.outer.top = 8
-# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
+# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor.'some-pattern' = 32 }, 24]
 #                 In this example, 24 is a default value when there is no match.
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
 inner.horizontal = 10
 inner.vertical = 10
-outer.left = 10
-outer.bottom = 10
-outer.top = 10
-outer.right = 10
+outer.left = 5
+outer.bottom = 5
+outer.top = 5
+outer.right = 5
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -78,7 +78,7 @@ outer.right = 10
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
 # alt-enter = '''exec-and-forget osascript -e '
-# tell application "Terminal"
+# tell application 'Terminal'
 #     do script
 #     activate
 # end tell'
@@ -101,15 +101,14 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+alt-shift-1 = 'resize smart +50'
+alt-shift-2 = 'resize smart -50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-b = 'workspace B' # Browsing
 alt-c = 'workspace C' # Code
 alt-d = 'workspace D' # Design
 alt-f = 'workspace F' # Finder
-alt-e = 'workspace E' # Editor
 alt-s = 'workspace S' # System
 alt-t = 'workspace T' # Terminal
 alt-v = 'workspace V' # Virtuals
@@ -119,7 +118,6 @@ alt-m = 'workspace M' # Messaging
 alt-shift-b = 'move-node-to-workspace B'
 alt-shift-c = 'move-node-to-workspace C'
 alt-shift-d = 'move-node-to-workspace D'
-alt-shift-e = 'move-node-to-workspace E'
 alt-shift-f = 'move-node-to-workspace F'
 alt-shift-s = 'move-node-to-workspace S'
 alt-shift-t = 'move-node-to-workspace T'
@@ -160,71 +158,87 @@ alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
-run = "move-node-to-workspace T"
+run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Terminal'
-run = "move-node-to-workspace T"
+run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
-run = "move-node-to-workspace B"
+run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
-run = "move-node-to-workspace B"
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if.app-id = 'com.sigmaos.sigmaos.macos'
+run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
-run = "move-node-to-workspace F"
+run = 'move-node-to-workspace F'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = "move-node-to-workspace E"
+run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
 if.app-id = 'dev.zed.Zed'
-run = "move-node-to-workspace E"
+run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
 if.app-id = 'com.seriflabs.affinitydesigner2'
-run = "move-node-to-workspace D"
+run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
 if.app-id = 'com.seriflabs.affinityphoto2'
-run = "move-node-to-workspace D"
+run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
-run = "move-node-to-workspace D"
+run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.preview'
-run = "move-node-to-workspace D"
+if.app-id = 'org.blenderfoundation.blender '
+run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
 if.app-id = 'org.keepassxc.keepassxc'
-run = "move-node-to-workspace S"
+run = 'move-node-to-workspace S'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.preview'
+run = 'move-node-to-workspace S'
+
+[[on-window-detected]]
+if.app-id = 'at.obdev.littlesnitch.networkmonitor'
+run = 'move-node-to-workspace S'
 
 [[on-window-detected]]
 if.app-id = 'dev.kdrag0n.MacVirt' # = OrbStack
-run = "move-node-to-workspace V"
+run = 'move-node-to-workspace V'
 
 [[on-window-detected]]
 if.app-id = 'com.sequel-ace.sequel-ace'
-run = "move-node-to-workspace V"
+run = 'move-node-to-workspace V'
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
-run = "move-node-to-workspace M"
+run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
-run = "move-node-to-workspace M"
+run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
-run = "move-node-to-workspace M"
+run = 'move-node-to-workspace M'
 
 # TODO: try this with external monitor
 # [workspace-to-monitor-force-assignment]
@@ -232,8 +246,8 @@ run = "move-node-to-workspace M"
 # Floating windows
 [[on-window-detected]]
 if.app-id = 'com.1password.1password'
-run = ["layout floating", "move-node-to-workspace S"]
+run = ['layout floating', 'move-node-to-workspace S']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
-run = ["layout floating", "move-node-to-workspace S"]
+run = ['layout floating', 'move-node-to-workspace S']

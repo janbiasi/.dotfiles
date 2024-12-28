@@ -38,8 +38,6 @@ autoload -U +X bashcompinit && bashcompinit
   complete -o nospace -C /opt/homebrew/bin/terraform terraform
 fi
 
-# Load 1Password plugins
-source "$XDG_CONFIG_HOME/op/plugins.sh"
 
 # Load shared aliases for shells
 [[ -f ~/.aliases ]] && source ~/.aliases
