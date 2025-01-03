@@ -30,3 +30,4 @@ _darcs
 
 /extra       # additional installation files not needed to copy
 /Makefile    # utility tool
+/docs        # only for documentation purposes

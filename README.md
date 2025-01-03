@@ -2,7 +2,7 @@
     <img width="500" src="./docs/screenshot.png" />
 </p>
 <p align="center">
-    <a href="#requirements">Requirements</a> · <a href="#included-configurations">Included Configurations</a> · <a href="#installation">Installation</a>
+    <a href="#requirements">Requirements</a> · <a href="#included-configurations">Included Configurations</a> · <a href="#installation">Installation</a> · <a href="#available-tasks">Tasks</a>
 </p>
 
 ## Dotfiles
@@ -51,20 +51,38 @@ cd .dotfiles
 #### 3. Apply macOS configuration
 
 ```sh
-make macos
+make configure-macos
 ```
 
-#### 4. Apply or update setup configuration
+#### 4. Install dependencies
+
+##### macOS
 
 ```sh
-make install # initially
-make nvim # clones neovim config (requires install / SSH key via 1password)
+make install-brew
+```
+
+##### linux
+
+_not available yet_
+
+#### 5. Apply or update setup configuration
+
+```sh
+make install-configs # initially
+make install-nvim # clones neovim config (requires install / SSH key via 1password)
 make update # apply incremental updates
 ```
 
-#### 5. Set default shell to `fish` _(optional)_
+### Available tasks
 
-```sh
-echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
-chsh -s /opt/homebrew/bin/fish
-```
+| Task                           | Description                                                                                                |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `install-configs`              | Sync configuration files to the local file system via [stow](https://www.gnu.org/software/stow/)           |
+| `update`                       | Convenience method; calls `update-dotfiles` and `update-nvim`                                              |
+| `update-nvim`                  | Pull latest changes from nvim.config repository                                                            |
+| `update-dotfiles`              | Re-stows all configuration files                                                                           |
+| `install-nvim`                 | Installs the nvim configuration from the [nvim.config](https://github.com/janbiasi/nvim.config) repository |
+| `install-brew`                 | Installs all required software packages via [homebrew](https://brew.sh/)                                   |
+| `configure-macos`              | Applies various macOS configurations, see [.macos](./extra/.macos)                                         |
+| `configure-macos-fish-default` | Sets the default shell to fish on macOS                                                                    |
