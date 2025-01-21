@@ -19,6 +19,7 @@ This directory contains the dotfles for my development environment
 
 - [1password](https://1password.com) :apple: :penguin:
 - [aerospace](https://nikitabobko.github.io/AeroSpace/guide) :apple:
+- [atuin](https://atuin.sh/) :apple: :penguin:
 - [btop](https://github.com/aristocratos/btop) :apple: :penguin:
 - [ghostty](https://ghostty.org/) :apple: :penguin:
 - [lazygit](https://github.com/jesseduffield/lazygit) :apple: :penguin:
