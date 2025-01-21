@@ -83,3 +83,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# initialize atuin history
+. "$HOME/.atuin/bin/env"

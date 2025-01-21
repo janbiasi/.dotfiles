@@ -24,6 +24,7 @@
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.stickyScrollMaxItemCount": 6,
+  "workbench.activityBar.location": "bottom",
 
   "files.associations": {
     ".env*": "dotenv"
@@ -50,6 +51,7 @@
     "nano",
     "tmux",
     "nvim",
+    "neovim",
     "zellij",
     "zj"
   ],
@@ -57,6 +59,9 @@
   "terminal.integrated.tabs.showActions": "always",
   "terminal.integrated.tabs.hideCondition": "never",
   "terminal.integrated.tabs.location": "right",
+
+  // Explorer configuration
+  "explorer.autoReveal": "focusNoScroll",
 
   // File nesting configuration
   "explorer.fileNesting.enabled": true,
@@ -222,33 +227,52 @@
       "icon": "issue-closed"
     }
   },
+
+  // ToDo Tree extension settings
   "todo-tree.tree.showCountsInTree": true,
   "todo-tree.general.showActivityBarBadge": true,
   "todo-tree.general.statusBar": "total",
   "todo-tree.filtering.ignoreGitSubmodules": true,
   "todo-tree.filtering.includeHiddenFiles": true,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "explorer.autoReveal": "focusNoScroll",
   "todo-tree.filtering.useBuiltInExcludes": "file excludes",
   "todo-tree.tree.expanded": true,
   "todo-tree.regex.enableMultiLine": true,
   "todo-tree.ripgrep.ripgrep": "/opt/homebrew/bin/rg",
   "todo-tree.regex.regex": "((\\*|//|#|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
+
+  // JSON settings
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  // TypeScript settings
+  "typescript.tsserver.log": "verbose",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Golang settings
+  "go.lintOnSave": "package",
+  "go.vetOnSave": "package",
+  "go.toolsManagement.autoUpdate": true,
+  "go.languageServerExperimentalFeatures": {
+    "format": true,
+    "autoComplete": true
+  },
+  "[go]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+  },
+
+  // Misc
   "preview.previewTheme": "Dark",
   "security.promptForLocalFileProtocolHandling": false,
   "makefile.configureOnOpen": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.activityBar.location": "bottom",
-  "typescript.tsserver.log": "verbose",
-  "go.toolsManagement.autoUpdate": true,
   "git.openRepositoryInParentFolders": "never"
 }

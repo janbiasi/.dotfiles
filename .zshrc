@@ -69,3 +69,6 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+# initialize atuin history
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"

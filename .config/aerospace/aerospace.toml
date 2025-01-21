@@ -2,7 +2,7 @@
 start-at-login = true
 
 after-login-command = []
-after-startup-command = ['exec-and-forget open -a Alacritty & open -a Arc']
+after-startup-command = ['exec-and-forget open -a Ghostty']
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -157,7 +157,7 @@ alt-shift-l = ['join-with right', 'mode main']
 # App mappings
 
 [[on-window-detected]]
-if.app-id = 'org.alacritty'
+if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace C'
 
 [[on-window-detected]]

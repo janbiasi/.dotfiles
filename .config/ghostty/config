@@ -14,5 +14,11 @@ keybind = alt+right=esc:F
 # macos specific configuration
 macos-titlebar-style = hidden
 macos-titlebar-proxy-icon = hidden
-background-blur-radius = 90
+macos-window-shadow = false
+mouse-hide-while-typing = true
+background-blur-radius = 80
 background-opacity = 0.9
+
+# Set the title to empty, since it only shows "t" when in 
+# a tmux session and not what is actually going on
+title = " "
