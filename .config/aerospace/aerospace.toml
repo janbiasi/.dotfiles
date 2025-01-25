@@ -2,7 +2,11 @@
 start-at-login = true
 
 after-login-command = []
-after-startup-command = ['exec-and-forget open -a Ghostty']
+after-startup-command = [
+  'layout tiles',
+  'exec-and-forget borders',
+  'exec-and-forget open -a Ghostty',
+]
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -141,8 +145,8 @@ alt-shift-semicolon = 'mode service'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = [
-    'layout floating tiling',
-    'mode main',
+  'layout floating tiling',
+  'mode main',
 ] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
@@ -177,11 +181,15 @@ if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
-if.app-id = 'com.sigmaos.sigmaos.macos'
+if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
+run = 'move-node-to-workspace F'
+
+[[on-window-detected]]
+if.app-id = 'net.freemacsoft.AppCleaner'
 run = 'move-node-to-workspace F'
 
 [[on-window-detected]]

@@ -22,6 +22,7 @@ This directory contains the dotfles for my development environment
 - [atuin](https://atuin.sh/) :apple: :penguin:
 - [btop](https://github.com/aristocratos/btop) :apple: :penguin:
 - [ghostty](https://ghostty.org/) :apple: :penguin:
+- [jankyborders](https://github.com/FelixKratz/JankyBorders) :apple:
 - [lazygit](https://github.com/jesseduffield/lazygit) :apple: :penguin:
 - [neofetch](https://github.com/dylanaraps/neofetch) :apple: :penguin:
 - [nix](https://nixos.org) :apple: :penguin:
