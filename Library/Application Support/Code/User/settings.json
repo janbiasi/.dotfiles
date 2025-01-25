@@ -26,14 +26,13 @@
   "workbench.tree.stickyScrollMaxItemCount": 6,
   "workbench.activityBar.location": "bottom",
 
-  "files.associations": {
-    ".env*": "dotenv"
-  },
-
   "editor.accessibilitySupport": "off",
   "editor.renderWhitespace": "all",
   "editor.formatOnSave": true,
   "editor.guides.indentation": true,
+
+  // Git configuration
+  "git.openRepositoryInParentFolders": "never",
 
   // Terminal configuration
   "terminal.external.osxExec": "WezTerm.app",
@@ -158,6 +157,17 @@
     "*.xaml": "$(capture).xaml.cs"
   },
 
+  // Configure file association
+  "files.associations": {
+    "configs/app.env": "dotenv",
+    ".env*": "dotenv"
+  },
+
+  // Overide editor textmate tokens
+  "editor.tokenColorCustomizations": {
+    "textMateRules": []
+  },
+
   // MSSQL extension
   "mssql.objectExplorer.groupBySchema": false,
   "mssql.connections": [
@@ -180,6 +190,7 @@
 
   // GitHub extension
   "githubPullRequests.pullBranch": "never",
+  "githubPullRequests.terminalLinksHandler": "github",
 
   // Import cost extension
   "importCost.fontStyle": "normal",
@@ -191,14 +202,24 @@
   "importCost.smallPackageSize": 40,
   "importCost.smallPackageDarkColor": "#565970",
   "importCost.smallPackageLightColor": "#ACB0BE",
-  "editor.tokenColorCustomizations": {
-    "textMateRules": []
-  },
-  // "workbench.productIconTheme": "icons-carbon",
+
+  // Dotenv extension settings
+  "dotenv.enableSecretpeeking": true,
   "dotenv.enableAutocloaking": false,
-  "githubPullRequests.terminalLinksHandler": "github",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  // "terminal.integrated.defaultProfile.osx": "fish",
+  "dotenv.cloakColor": "#f38ba8",
+  "dotenv.cloakIcon": "*",
+
+  // ToDo Tree extension settings
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.general.showActivityBarBadge": true,
+  "todo-tree.general.statusBar": "total",
+  "todo-tree.filtering.ignoreGitSubmodules": true,
+  "todo-tree.filtering.includeHiddenFiles": true,
+  "todo-tree.filtering.useBuiltInExcludes": "file excludes",
+  "todo-tree.tree.expanded": true,
+  "todo-tree.regex.enableMultiLine": true,
+  "todo-tree.ripgrep.ripgrep": "/opt/homebrew/bin/rg",
+  "todo-tree.regex.regex": "((\\*|//|#|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
   "todo-tree.highlights.defaultHighlight": {
     "borderRadius": "2px",
     "gutterIcon": true,
@@ -228,25 +249,14 @@
     }
   },
 
-  // ToDo Tree extension settings
-  "todo-tree.tree.showCountsInTree": true,
-  "todo-tree.general.showActivityBarBadge": true,
-  "todo-tree.general.statusBar": "total",
-  "todo-tree.filtering.ignoreGitSubmodules": true,
-  "todo-tree.filtering.includeHiddenFiles": true,
-  "todo-tree.filtering.useBuiltInExcludes": "file excludes",
-  "todo-tree.tree.expanded": true,
-  "todo-tree.regex.enableMultiLine": true,
-  "todo-tree.ripgrep.ripgrep": "/opt/homebrew/bin/rg",
-  "todo-tree.regex.regex": "((\\*|//|#|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
-
   // JSON settings
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   // TypeScript settings
-  "typescript.tsserver.log": "verbose",
+  "typescript.tsserver.log": "off",
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -254,6 +264,12 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  // JavaScript settings
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
 
   // Golang settings
   "go.lintOnSave": "package",
@@ -265,14 +281,12 @@
   },
   "[go]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    },
+      "source.organizeImports": "explicit"
+    }
   },
 
-  // Misc
-  "preview.previewTheme": "Dark",
-  "security.promptForLocalFileProtocolHandling": false,
+  // Makefile settings
   "makefile.configureOnOpen": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "git.openRepositoryInParentFolders": "never"
+  "makefile.phonyOnlyTargets": false,
+  "typescript.enablePromptUseWorkspaceTsdk": true,
 }

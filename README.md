@@ -32,6 +32,7 @@ This directory contains the dotfles for my development environment
 - [tmux](https://github.com/tmux/tmux) :apple: :penguin:
 - [yazi](https://github.com/sxyazi/yazi) :apple: :penguin:
 - [zed](https://zed.dev) :apple: :penguin:
+- [zen browser](https://zen-browser.app/) :apple:
 
 ### Installation
 
