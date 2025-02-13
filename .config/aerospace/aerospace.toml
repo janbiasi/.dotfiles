@@ -185,10 +185,6 @@ if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = 'move-node-to-workspace F'
-
-[[on-window-detected]]
 if.app-id = 'net.freemacsoft.AppCleaner'
 run = 'move-node-to-workspace F'
 
@@ -248,6 +244,10 @@ run = 'move-node-to-workspace M'
 if.app-id = 'com.microsoft.teams2'
 run = 'move-node-to-workspace M'
 
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = 'move-node-to-workspace M'
+
 # TODO: try this with external monitor
 # [workspace-to-monitor-force-assignment]
 
@@ -259,3 +259,11 @@ run = ['layout floating', 'move-node-to-workspace S']
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
 run = ['layout floating', 'move-node-to-workspace S']
+
+[[on-window-detected]]
+if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
+run = ['layout floating', 'move-node-to-workspace S']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['layout floating', 'move-node-to-workspace F']
