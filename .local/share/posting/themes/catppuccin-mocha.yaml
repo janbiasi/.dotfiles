@@ -1,0 +1,37 @@
+name: catppuccin-mocha
+primary: "#89b4fa"
+secondary: "#9399b2"
+accent: "#9399b2"
+background: "#181825"
+surface: "#1e1e2e"
+error: "#f38ba8"
+success: "#a6e3a1"
+warning: "#fab387"
+
+method:
+  get: "#89b4fa"
+  put: "#fab387"
+  post: "#fab387"
+  delete: "#f38ba8"
+
+text_area:
+  cursor: "reverse" # style the block cursor
+  cursor_line: "underline" # style the line the cursor is on
+  gutter: "#a6adc8"
+  matched_bracket: "#181825 on #f5c2e7" # style the matched bracket
+
+url:
+  base: "#cdd6f4"
+  protocol: "#cdd6f4"
+
+syntax:
+  json_key: "#89b4fa"
+  json_number: "#fab387"
+  json_string: "#a6e3a1"
+  json_boolean: "#fab387"
+  json_null: "#f38ba8"
+
+# Optional metadata
+author: Jan Biasi
+description: A catppuccin port for posting
+homepage: https://github.com/janbiasi/.dotfiles

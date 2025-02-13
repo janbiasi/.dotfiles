@@ -1,0 +1,9 @@
+theme: catppuccin-mocha
+layout: horizontal
+editor: nvim
+pager_json: jq
+
+keymap:
+  send-request: ctrl+enter
+  save-request: ctrl+j
+  focus-method: ctrl+m
