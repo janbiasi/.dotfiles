@@ -160,11 +160,32 @@
   // Configure file association
   "files.associations": {
     "configs/app.env": "dotenv",
-    ".env*": "dotenv"
+    ".env*": "dotenv",
+    ".tmTheme": "xml"
   },
 
   // Overide editor textmate tokens
   "editor.tokenColorCustomizations": {
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
     "textMateRules": []
   },
 
@@ -253,11 +274,15 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
   // TypeScript settings
   "typescript.tsserver.log": "off",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.enablePromptUseWorkspaceTsdk": true,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -275,18 +300,90 @@
   "go.lintOnSave": "package",
   "go.vetOnSave": "package",
   "go.toolsManagement.autoUpdate": true,
-  "go.languageServerExperimentalFeatures": {
-    "format": true,
-    "autoComplete": true
-  },
-  "[go]": {
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
-    }
-  },
 
   // Makefile settings
   "makefile.configureOnOpen": false,
   "makefile.phonyOnlyTargets": false,
-  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  // Gitlens
+  "gitlens.launchpad.indicator.polling.interval": 0,
+  "gitlens.launchpad.indicator.polling.enabled": false,
+  "gitlens.menus": {
+    "editor": {
+      "blame": true,
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "editorGroup": {
+      "blame": true,
+      "compare": true
+    },
+    "editorGutter": {
+      "compare": true,
+      "remote": true,
+      "share": true
+    },
+    "editorTab": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "explorer": {
+      "clipboard": false,
+      "compare": false,
+      "history": false,
+      "remote": false
+    },
+    "ghpr": {
+      "worktree": false
+    },
+    "scm": {
+      "graph": false
+    },
+    "scmRepositoryInline": {
+      "graph": false,
+      "stash": false
+    },
+    "scmRepository": {
+      "authors": false,
+      "generateCommitMessage": false,
+      "patch": false,
+      "graph": false
+    },
+    "scmGroupInline": {
+      "stash": false
+    },
+    "scmGroup": {
+      "compare": false,
+      "openClose": false,
+      "patch": false,
+      "stash": false
+    },
+    "scmItemInline": {
+      "stash": false
+    },
+    "scmItem": {
+      "clipboard": false,
+      "compare": false,
+      "history": false,
+      "patch": false,
+      "remote": false,
+      "share": false,
+      "stash": false
+    }
+  },
+  "git.autofetchPeriod": 6000,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gemini-2.0-flash",
+
+  // Copilot Extension
+  "github.copilot.advanced": {
+    "authProvider": "github"
+  },
+
+  // AI settings
+  "editor.inlineSuggest.enabled": false
 }
