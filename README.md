@@ -17,6 +17,8 @@ This directory contains the dotfles for my development environment
 
 ### Included Configurations
 
+All tools are themed with [Catppuccin](https://catppuccin.com/) in Mocha flavor.
+
 - [1password](https://1password.com)
 - [aerospace](https://nikitabobko.github.io/AeroSpace/guide) :apple:
 - [atuin](https://atuin.sh/)
