@@ -110,6 +110,10 @@ style = "red"
 symbol = " "
 style = "pink"
 
+[nix_shell]
+symbol = "❄️ "
+style = "blue"
+
 # Palette definitions
 
 [palettes.catppuccin_latte]
