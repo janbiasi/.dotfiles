@@ -86,3 +86,5 @@ unset __conda_setup
 
 # initialize atuin history
 . "$HOME/.atuin/bin/env"
+
+. "$HOME/.local/bin/env"

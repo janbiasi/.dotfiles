@@ -1,5 +1,7 @@
 # Files to be ignored by gnu 'stow'
+
 # Comments and blank lines are allowed.
+
 # See 'info stow' section "4 Ignore Lists" for more information
 
 RCS
@@ -7,11 +9,11 @@ RCS
 .DS_Store
 
 CVS
-\.\#.+       # CVS conflict files / emacs lock files
+\.\#.+ # CVS conflict files / emacs lock files
 \.cvsignore
 
 \.svn
-_darcs
+\_darcs
 \.hg
 \.macos
 
@@ -19,15 +21,16 @@ _darcs
 \.gitignore
 \.gitmodules
 
-.+~          # emacs backup files
-\#.*\#       # emacs autosave files
+.+~ # emacs backup files
+\#.\*\# # emacs autosave files
 
-^/README.*
-^/LICENSE.*
+^/README._
+^/LICENSE._
 ^/COPYING
 ^/.editorconfig
 ^/.gitconfig
 
-/extra       # additional installation files not needed to copy
-/Makefile    # utility tool
-/docs        # only for documentation purposes
+/extra # additional installation files not needed to copy
+/Makefile # utility tool
+/docs # only for documentation purposes
+\*.rayconfig # raycast config backup files
