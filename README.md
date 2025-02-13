@@ -17,21 +17,23 @@ This directory contains the dotfles for my development environment
 
 ### Included Configurations
 
-- [1password](https://1password.com) :apple: :penguin:
+- [1password](https://1password.com)
 - [aerospace](https://nikitabobko.github.io/AeroSpace/guide) :apple:
-- [atuin](https://atuin.sh/) :apple: :penguin:
-- [btop](https://github.com/aristocratos/btop) :apple: :penguin:
-- [ghostty](https://ghostty.org/) :apple: :penguin:
+- [atuin](https://atuin.sh/)
+- [btop](https://github.com/aristocratos/btop)
+- [ghostty](https://ghostty.org/)
 - [jankyborders](https://github.com/FelixKratz/JankyBorders) :apple:
-- [lazygit](https://github.com/jesseduffield/lazygit) :apple: :penguin:
-- [neofetch](https://github.com/dylanaraps/neofetch) :apple: :penguin:
-- [nix](https://nixos.org) :apple: :penguin:
-- [ripgrep](https://github.com/BurntSushi/ripgrep) :apple: :penguin:
-- [sketchybar](https://github.com/FelixKratz/SketchyBar) :apple:
-- [starship](https://starship.rs) :apple: :penguin:
-- [tmux](https://github.com/tmux/tmux) :apple: :penguin:
-- [yazi](https://github.com/sxyazi/yazi) :apple: :penguin:
-- [zed](https://zed.dev) :apple: :penguin:
+- [karabiner elements](https://karabiner-elements.pqrs.org/) :apple:
+- [lazygit](https://github.com/jesseduffield/lazygit)
+- [neofetch](https://github.com/dylanaraps/neofetch)
+- [nix](https://nixos.org)
+- [posting](https://posting.sh/)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [sketchybar](https://github.com/FelixKratz/SketchyBar) :apple: _(currently unused)_
+- [starship](https://starship.rs)
+- [tmux](https://github.com/tmux/tmux)
+- [yazi](https://github.com/sxyazi/yazi)
+- [zed](https://zed.dev)
 - [zen browser](https://zen-browser.app/) :apple:
 
 ### Installation
