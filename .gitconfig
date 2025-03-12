@@ -1,3 +1,6 @@
+[include]
+  path = ~/.config/delta/themes/catppuccin.gitconfig
+
 [core]
 
   # Use custom `.gitignore` and `.gitattributes`
@@ -16,14 +19,18 @@
   # https://git-scm.com/docs/git-update-index#_untracked_cache
   untrackedCache = true
 
-  # Integrate diff-so-fancy
-  # https://github.com/so-fancy/diff-so-fancy
-	pager = diff-so-fancy | less --tabs=4 -RF
+  # Integrate delta
+  # https://github.com/dandavison/delta
+	pager = delta
 
 [commit]
 
     # https://help.github.com/articles/signing-commits-using-gpg/
   gpgsign = true
+
+[merge]
+
+  conflictStyle = zdiff3
 
 [help]
 
@@ -47,14 +54,14 @@
 
 [interactive]
 
-  # Integrate diff-so-fancy
-  # https://github.com/so-fancy/diff-so-fancy
-  diffFilter = diff-so-fancy --patch
+  # Integrate delta
+  # https://github.com/dandavison/delta
+  diffFilter = delta --color-only
 
 [alias]
 
-  # View abbreviated SHA, description, and history graph of the latest 20 commits
-  l = log --pretty=oneline -n 20 --graph --abbrev-commit
+  # View abbreviated SHA, description, and history graph of the latest commits
+  l = git log --all --decorate --oneline --graph
 
   # View the current working tree status using the short format
   s = status -s
@@ -101,3 +108,11 @@
   email = janbiasi@users.noreply.github.com
   name = Jan Biasi
 
+[delta]
+  features = catppuccin-mocha
+  true-color = always
+  navigate = true
+  hyperlinks = true
+  dark = true
+  side-by-side = true
+  hyperlinks-file-link-format = "vscode://file/{path}:{line}"
