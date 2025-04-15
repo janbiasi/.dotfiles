@@ -15,8 +15,8 @@ alias vi='nvim'
 # Terraform alias
 alias tf='terraform'
 
-# Killing ports on a daily basis
-alias killport='function _killp(){ lsof -nti:$1 | xargs kill -9 };_killp'
+# Quick sesh
+alias qs='sesh connect $(sesh list | fzf)'
 
 # VSCode alias without using the UI to install it persistently
 alias code='function _code(){ VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;};_code'

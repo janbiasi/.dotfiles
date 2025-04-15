@@ -24,8 +24,8 @@ CVS
 .+~ # emacs backup files
 \#.\*\# # emacs autosave files
 
-^/README._
-^/LICENSE._
+^/README.md
+^/LICENSE.md
 ^/COPYING
 ^/.editorconfig
 ^/.gitconfig

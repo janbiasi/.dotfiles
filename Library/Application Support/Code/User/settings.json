@@ -6,6 +6,7 @@
   "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "readme",
   "workbench.activityBar.iconClickBehavior": "focus",
+  "workbench.sideBar.location": "right",
 
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.colorTheme": "Catppuccin Mocha",
@@ -13,8 +14,6 @@
   "catppuccin.italicKeywords": false,
   "catppuccin-icons.hidesExplorerArrows": false,
   "catppuccin.italicComments": true,
-
-  "workbench.editor.enablePreview": false,
 
   "editor.fontSize": 12,
   "editor.fontFamily": "GeistMono Nerd Font",
@@ -32,7 +31,10 @@
   "editor.guides.indentation": true,
 
   // Git configuration
+  "git.autofetchPeriod": 6000,
   "git.openRepositoryInParentFolders": "never",
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.editorDecoration.template": "${authorName}, ${authorDateAgo} · ${subject}",
 
   // Terminal configuration
   "terminal.external.osxExec": "WezTerm.app",
@@ -44,16 +46,7 @@
   "terminal.integrated.hideOnStartup": "never",
   "terminal.integrated.persistentSessionScrollback": 300,
   "terminal.integrated.ignoreProcessNames": ["starship", "bash", "zsh", "fish"],
-  "terminal.integrated.localEchoExcludePrograms": [
-    "vim",
-    "vi",
-    "nano",
-    "tmux",
-    "nvim",
-    "neovim",
-    "zellij",
-    "zj"
-  ],
+  "terminal.integrated.localEchoExcludePrograms": ["vim", "vi", "nano", "tmux", "nvim", "neovim", "zellij", "zj"],
   "terminal.integrated.tabs.showActiveTerminal": "always",
   "terminal.integrated.tabs.showActions": "always",
   "terminal.integrated.tabs.hideCondition": "never",
@@ -291,6 +284,11 @@
   },
 
   // JavaScript settings
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+  "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.inlayHints.enumMemberValues.enabled": true,
   "javascript.inlayHints.parameterTypes.enabled": true,
@@ -305,85 +303,16 @@
   "makefile.configureOnOpen": false,
   "makefile.phonyOnlyTargets": false,
 
-  // Gitlens
-  "gitlens.launchpad.indicator.polling.interval": 0,
-  "gitlens.launchpad.indicator.polling.enabled": false,
-  "gitlens.menus": {
-    "editor": {
-      "blame": true,
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "editorGroup": {
-      "blame": true,
-      "compare": true
-    },
-    "editorGutter": {
-      "compare": true,
-      "remote": true,
-      "share": true
-    },
-    "editorTab": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "explorer": {
-      "clipboard": false,
-      "compare": false,
-      "history": false,
-      "remote": false
-    },
-    "ghpr": {
-      "worktree": false
-    },
-    "scm": {
-      "graph": false
-    },
-    "scmRepositoryInline": {
-      "graph": false,
-      "stash": false
-    },
-    "scmRepository": {
-      "authors": false,
-      "generateCommitMessage": false,
-      "patch": false,
-      "graph": false
-    },
-    "scmGroupInline": {
-      "stash": false
-    },
-    "scmGroup": {
-      "compare": false,
-      "openClose": false,
-      "patch": false,
-      "stash": false
-    },
-    "scmItemInline": {
-      "stash": false
-    },
-    "scmItem": {
-      "clipboard": false,
-      "compare": false,
-      "history": false,
-      "patch": false,
-      "remote": false,
-      "share": false,
-      "stash": false
-    }
-  },
-  "git.autofetchPeriod": 6000,
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gemini-2.0-flash",
-
   // Copilot Extension
+  "editor.inlineSuggest.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "chat.experimental.statusIndicator.enabled": true,
   "github.copilot.advanced": {
     "authProvider": "github"
   },
 
-  // AI settings
-  "editor.inlineSuggest.enabled": false
+  // Prettier Extension
+  "prettier.printWidth": 120,
+  "search.defaultViewMode": "tree",
+  "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app"
 }

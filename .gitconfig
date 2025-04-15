@@ -63,9 +63,6 @@
   # View abbreviated SHA, description, and history graph of the latest commits
   l = git log --all --decorate --oneline --graph
 
-  # View the current working tree status using the short format
-  s = status -s
-
   # Show the diff between the latest commit and the current state
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
@@ -86,8 +83,17 @@
   # Show the user email for the current repository.
   whoami = config user.email
 
+  # View the current working tree status using the short format
+  s = status -s
+
+  # Push convenience alias
+  p = push
+
+  # Push force convenience alias
+  pf = push --f
+
   # Pull rebase convenience alias
-  pullre = pull --rebase
+  pr = pull --rebase
 
 [gpg]
 

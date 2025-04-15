@@ -2,11 +2,7 @@
 start-at-login = true
 
 after-login-command = []
-after-startup-command = [
-  'layout tiles',
-  'exec-and-forget borders',
-  'exec-and-forget open -a Ghostty',
-]
+after-startup-command = ['layout tiles', 'exec-and-forget open -a Ghostty']
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -185,6 +181,10 @@ if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
 if.app-id = 'net.freemacsoft.AppCleaner'
 run = 'move-node-to-workspace F'
 
@@ -266,4 +266,12 @@ run = ['layout floating', 'move-node-to-workspace S']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
+run = ['layout floating', 'move-node-to-workspace F']
+
+[[on-window-detected]]
+if.app-id = 'com.ableton.live'
+run = ['layout floating', 'move-node-to-workspace F']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.logic10'
 run = ['layout floating', 'move-node-to-workspace F']

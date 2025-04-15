@@ -2,6 +2,9 @@
     // ---------------------------------------------------------------
     // Core Configuration
     // ---------------------------------------------------------------
+    "auto_update_extensions": {
+        "catppuccin": false
+    },
     "auto_update": true,
     "base_keymap": "VSCode",
     "autosave": "off",
@@ -69,6 +72,24 @@
         "file_icons": true
     },
     "notification_panel": {
+        "dock": "right"
+    },
+    // ---------------------------------------------------------------
+    // Git Configuration
+    // ---------------------------------------------------------------
+    "git": {
+        "git_gutter": "tracked_files",
+        "gutter_debounce": 2000,
+        "inline_blame": {
+            "delay_ms": 500,
+            "enabled": true,
+            "show_commit_summary": true
+        }
+    },
+    "git_panel": {
+        "status_style": "label_color",
+        "button": true,
+        "default_width": 380,
         "dock": "right"
     },
     // ---------------------------------------------------------------
