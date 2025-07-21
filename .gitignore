@@ -28,3 +28,4 @@ Temporary Items
 
 # Dotfiles related
 .credentials
+.env

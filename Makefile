@@ -30,6 +30,12 @@ install-nvim:
 install-brew:
 	brew bundle --file="$(DOTFILES)/extra/homebrew/Brewfile"
 
+.PHONE: configure-env
+configure-env:
+	@echo Loading environment secrets from 1Password ...
+	op inject -i $(DOTFILES)/.env.tpl -o $(HOME)/.env
+	@echo Created $(HOME)/.env successfully
+
 .PHONY: configure-macos
 configure-macos:
 	# Run macOS configuration bash script

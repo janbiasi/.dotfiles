@@ -34,14 +34,15 @@ autoload -U +X bashcompinit && bashcompinit
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
   autoload -Uz compinit
   compinit
-  # terraform autocompletions
-  complete -o nospace -C /opt/homebrew/bin/terraform terraform
 fi
+
+# Load environment secrets if avialable
+[[ -f ~/.env ]] && set -a; source ~/.env; set +a
 
 # Load shared aliases for shells
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-# Load credentials
+# Load additional credentials if available
 [[ -f ~/.credentials ]] && source ~/.credentials
 
 # Load FNM (node version manager)
@@ -72,4 +73,6 @@ function yy() {
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
+# initialize local env
 . "$HOME/.local/bin/env"
+

@@ -30,6 +30,16 @@
   "editor.formatOnSave": true,
   "editor.guides.indentation": true,
 
+  "search.defaultViewMode": "tree",
+  "search.exclude": {
+    "**/.nx": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true
+  },
+
+  "diffEditor.codeLens": true,
+
   // Git configuration
   "git.autofetchPeriod": 6000,
   "git.openRepositoryInParentFolders": "never",
@@ -46,7 +56,16 @@
   "terminal.integrated.hideOnStartup": "never",
   "terminal.integrated.persistentSessionScrollback": 300,
   "terminal.integrated.ignoreProcessNames": ["starship", "bash", "zsh", "fish"],
-  "terminal.integrated.localEchoExcludePrograms": ["vim", "vi", "nano", "tmux", "nvim", "neovim", "zellij", "zj"],
+  "terminal.integrated.localEchoExcludePrograms": [
+    "vim",
+    "vi",
+    "nano",
+    "tmux",
+    "nvim",
+    "neovim",
+    "zellij",
+    "zj"
+  ],
   "terminal.integrated.tabs.showActiveTerminal": "always",
   "terminal.integrated.tabs.showActions": "always",
   "terminal.integrated.tabs.hideCondition": "never",
@@ -313,6 +332,14 @@
 
   // Prettier Extension
   "prettier.printWidth": 120,
-  "search.defaultViewMode": "tree",
-  "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app"
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Docker Settings
+  "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app",
+  "docker.extension.enableComposeLanguageServer": false
 }

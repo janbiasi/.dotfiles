@@ -91,5 +91,6 @@ make update # apply incremental updates
 | `update-dotfiles`              | Re-stows all configuration files                                                                           |
 | `install-nvim`                 | Installs the nvim configuration from the [nvim.config](https://github.com/janbiasi/nvim.config) repository |
 | `install-brew`                 | Installs all required software packages via [homebrew](https://brew.sh/)                                   |
+| `configure-env`                | Expands environment secrets from 1Password, see [.env.tpl](./.env.tpl)                                     |
 | `configure-macos`              | Applies various macOS configurations, see [.macos](./extra/.macos)                                         |
 | `configure-macos-fish-default` | Sets the default shell to fish on macOS                                                                    |
