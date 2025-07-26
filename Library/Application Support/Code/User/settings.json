@@ -45,7 +45,7 @@
   "git.blame.editorDecoration.template": "${authorName}, ${authorDateAgo} · ${subject}",
 
   // Terminal configuration
-  "terminal.external.osxExec": "WezTerm.app",
+  "terminal.external.osxExec": "Ghostty.app",
   "terminal.integrated.autoReplies": {
     "Terminate batch job (Y/N)": "Y\r"
   },
@@ -59,6 +59,26 @@
   "terminal.integrated.tabs.showActions": "always",
   "terminal.integrated.tabs.hideCondition": "never",
   "terminal.integrated.tabs.location": "right",
+
+  // Terminal tmux profile on macOS
+  "terminal.integrated.defaultProfile.osx": "tmux",
+  "terminal.integrated.profiles.osx": {
+    "tmux": {
+      "path": "bash",
+      "args": ["-c", "tmux new -As ${PWD##*/}"],
+      "icon": "terminal-tmux"
+    }
+  },
+
+  // Terminal tmux profile on Linux
+  "terminal.integrated.defaultProfile.linux": "tmux",
+  "terminal.integrated.profiles.linux": {
+    "tmux": {
+      "path": "bash",
+      "args": ["-c", "tmux new -As ${PWD##*/}"],
+      "icon": "terminal-tmux"
+    }
+  },
 
   // Explorer configuration
   "explorer.autoReveal": "focusNoScroll",
