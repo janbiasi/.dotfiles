@@ -1,4 +1,6 @@
 {
+  "workbench.colorTheme": "GitHub Dark Default",
+
   "window.commandCenter": false,
   "window.systemColorTheme": "dark",
   "window.nativeFullScreen": true,
@@ -7,7 +9,9 @@
   "workbench.startupEditor": "readme",
   "workbench.activityBar.iconClickBehavior": "focus",
   "workbench.sideBar.location": "right",
+  "workbench.activityBar.location": "bottom",
 
+  "workbench.productIconTheme": "icons-carbon",
   "workbench.iconTheme": "material-icon-theme",
   "catppuccin.bracketMode": "neovim",
   "catppuccin.italicKeywords": false,
@@ -54,7 +58,16 @@
   "terminal.integrated.hideOnStartup": "never",
   "terminal.integrated.persistentSessionScrollback": 300,
   "terminal.integrated.ignoreProcessNames": ["starship", "bash", "zsh", "fish"],
-  "terminal.integrated.localEchoExcludePrograms": ["vim", "vi", "nano", "tmux", "nvim", "neovim", "zellij", "zj"],
+  "terminal.integrated.localEchoExcludePrograms": [
+    "vim",
+    "vi",
+    "nano",
+    "tmux",
+    "nvim",
+    "neovim",
+    "zellij",
+    "zj"
+  ],
   "terminal.integrated.tabs.showActiveTerminal": "always",
   "terminal.integrated.tabs.showActions": "always",
   "terminal.integrated.tabs.hideCondition": "never",
@@ -358,8 +371,5 @@
   "vitest.nodeEnv": {
     "NODE_ENV": "TEST"
   },
-  "vitest.maximumConfigs": 10,
-  "workbench.activityBar.location": "bottom",
-  "workbench.colorTheme": "GitHub Dark Default",
-  "workbench.productIconTheme": "icons-carbon"
+  "vitest.maximumConfigs": 10
 }
