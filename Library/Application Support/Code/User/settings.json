@@ -8,8 +8,7 @@
   "workbench.activityBar.iconClickBehavior": "focus",
   "workbench.sideBar.location": "right",
 
-  "workbench.iconTheme": "catppuccin-mocha",
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "material-icon-theme",
   "catppuccin.bracketMode": "neovim",
   "catppuccin.italicKeywords": false,
   "catppuccin-icons.hidesExplorerArrows": false,
@@ -23,7 +22,6 @@
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.stickyScrollMaxItemCount": 6,
-  "workbench.activityBar.location": "bottom",
 
   "editor.accessibilitySupport": "off",
   "editor.renderWhitespace": "all",
@@ -56,16 +54,7 @@
   "terminal.integrated.hideOnStartup": "never",
   "terminal.integrated.persistentSessionScrollback": 300,
   "terminal.integrated.ignoreProcessNames": ["starship", "bash", "zsh", "fish"],
-  "terminal.integrated.localEchoExcludePrograms": [
-    "vim",
-    "vi",
-    "nano",
-    "tmux",
-    "nvim",
-    "neovim",
-    "zellij",
-    "zj"
-  ],
+  "terminal.integrated.localEchoExcludePrograms": ["vim", "vi", "nano", "tmux", "nvim", "neovim", "zellij", "zj"],
   "terminal.integrated.tabs.showActiveTerminal": "always",
   "terminal.integrated.tabs.showActions": "always",
   "terminal.integrated.tabs.hideCondition": "never",
@@ -341,5 +330,16 @@
 
   // Docker Settings
   "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app",
-  "docker.extension.enableComposeLanguageServer": false
+  "docker.extension.enableComposeLanguageServer": false,
+
+  // Vitest settings
+  "vitest.configSearchPatternExclude": "{**/node_modules/**,**/.*/**,**/*.d.ts}",
+  "vitest.disableWorkspaceWarning": true,
+  "vitest.nodeEnv": {
+    "NODE_ENV": "TEST"
+  },
+  "vitest.maximumConfigs": 10,
+  "workbench.activityBar.location": "bottom",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.productIconTheme": "icons-carbon"
 }

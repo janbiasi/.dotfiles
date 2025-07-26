@@ -114,11 +114,21 @@
   email = janbiasi@users.noreply.github.com
   name = Jan Biasi
 
+# URL aliases
+[url "git@github.com:"]
+    insteadOf = gh:
+[url "git@github.com:stgallerkb/"]
+    insteadOf = stgallerkb:
+[url "git@github.com:seekme-io/"]
+    insteadOf = seekme-io:
+
+# Delta pager settings
 [delta]
-  features = catppuccin-mocha
+  features = OneHalfDark
   true-color = always
   navigate = true
   hyperlinks = true
   dark = true
   side-by-side = true
+  colorMoved = default
   hyperlinks-file-link-format = "vscode://file/{path}:{line}"

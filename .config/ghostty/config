@@ -1,8 +1,10 @@
 # basic ui configuration
-theme = light:catppuccin-latte,dark:catppuccin-mocha
+theme = light:GitHub-Light-Default,dark:GitHub-Dark-Default
 cursor-style = block
-font-family = "GeistMono Nerd Font"
-font-feature = -liga
+cursor-color = #777777
+cursor-opacity = 0.9
+cursor-text = #FFFFFF
+font-family = "GeistMono Nerd Font Mono"
 window-padding-color = background
 window-padding-x = 10,10
 window-padding-y = 10,10

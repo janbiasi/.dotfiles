@@ -1,4 +1,16 @@
-blacklist = ["scratch", "temp"]
+blacklist = ["scratch", "temp", ".nix-profile", ".ssh", "Library"]
+
+sort_order = [
+  "tmuxinator", # show first
+  "config",
+  "tmux",
+  "zoxide",     # show last
+]
+
+[path_substitutions]
+[[find_and_replace]]
+find = "~/.local/share/git"
+replace = "git:"
 
 [default_session]
 # startup_command = "nvim -c ':Telescope find_files'"

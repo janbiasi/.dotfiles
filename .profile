@@ -8,7 +8,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_BIN_HOME="$HOME/.local/bin"
 # export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 
-# export TERM=xterm-256color
+export TERM=xterm-256color
 
 # Set starship configuration
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"

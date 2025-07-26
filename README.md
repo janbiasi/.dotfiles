@@ -17,8 +17,6 @@ This directory contains the dotfles for my development environment
 
 ### Included Configurations
 
-All tools are themed with [Catppuccin](https://catppuccin.com/) in Mocha flavor.
-
 - [1password](https://1password.com)
 - [aerospace](https://nikitabobko.github.io/AeroSpace/guide) :apple:
 - [atuin](https://atuin.sh/)
@@ -36,7 +34,7 @@ All tools are themed with [Catppuccin](https://catppuccin.com/) in Mocha flavor.
 - [tmux](https://github.com/tmux/tmux)
 - [yazi](https://github.com/sxyazi/yazi)
 - [zed](https://zed.dev)
-- [zen browser](https://zen-browser.app/) :apple:
+- [zen browser](https://zen-browser.app/) :apple: _(currently unused)_
 
 ### Installation
 
