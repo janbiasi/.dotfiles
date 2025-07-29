@@ -1,149 +1,126 @@
 {
-    // ---------------------------------------------------------------
-    // Core Configuration
-    // ---------------------------------------------------------------
-    "auto_update_extensions": {
-        "catppuccin": false
+  // ---------------------------------------------------------------
+  // Core Configuration
+  // ---------------------------------------------------------------
+  "auto_update": false,
+  "base_keymap": "VSCode",
+  "autosave": "off",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "agent": {
+    "button": false
+  },
+  "chat_panel": {
+    "button": "never"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  // ---------------------------------------------------------------
+  // Terminal Configuration
+  // ---------------------------------------------------------------
+  "terminal": {
+    "font_family": "GeistMono Nerd Font",
+    "font_size": 12.5,
+    "env": {
+      "WITHIN_IDE": "true"
     },
-    "auto_update": true,
-    "base_keymap": "VSCode",
-    "autosave": "off",
-    "telemetry": {
-        "diagnostics": false,
-        "metrics": false
-    },
-    "assistant": {
-        "version": "2",
-        "button": false
-    },
-    "features": {
-        "copilot": false
-    },
-    "chat_panel": {
-        "button": false
-    },
-    "collaboration_panel": {
-        "button": false
-    },
-    "show_copilot_suggestions": false,
-    // ---------------------------------------------------------------
-    // Terminal Configuration
-    // ---------------------------------------------------------------
-    "terminal": {
-        "font_family": "GeistMono Nerd Font",
-        "font_size": 12.5,
-        "env": {
-            "WITHIN_IDE": "true"
-        },
-        "dock": "bottom"
-    },
-    "inlay_hints": {
-        "enabled": true
-    },
-    // ---------------------------------------------------------------
-    // UI Configuration
-    // ---------------------------------------------------------------
-    "theme": "Catppuccin Mocha",
-    "ui_font_size": 15.5,
-    "ui_font_family": "GeistMono Nerd Font",
-    "ui_font_features": {
-        "calt": true, // Contextual Alternates
-        "frac": true, // Diagonal Fractions
-        "liga": true, // Common ligatures
-        "onum": true, // Oldstyle Figures	(digits and math)
-        "ss01": true,
-        "ss02": true,
-        "ss03": true,
-        "ss04": true,
-        "ss05": true,
-        "ss06": true,
-        "ss07": true,
-        "ss08": true,
-        "ss09": true,
-        "ss10": true,
-        "ss11": true
-    },
-    "project_panel": {
-        "indent_size": 15,
-        "default_width": 300,
-        "dock": "right",
-        "auto_reveal_entries": true,
-        "folder_icons": true,
-        "file_icons": true
-    },
-    "notification_panel": {
-        "dock": "right"
-    },
-    // ---------------------------------------------------------------
-    // Git Configuration
-    // ---------------------------------------------------------------
-    "git": {
-        "git_gutter": "tracked_files",
-        "gutter_debounce": 2000,
-        "inline_blame": {
-            "delay_ms": 500,
-            "enabled": true,
-            "show_commit_summary": true
-        }
-    },
-    "git_panel": {
-        "status_style": "label_color",
-        "button": true,
-        "default_width": 380,
-        "dock": "right"
-    },
-    // ---------------------------------------------------------------
-    // Buffer Configuration
-    // ---------------------------------------------------------------
-    "tab_size": 4,
-    "buffer_line_height": "comfortable",
-    "format_on_save": "on",
-    "soft_wrap": "none",
-    "wrap_guides": [120],
-    "show_wrap_guides": true,
-    "show_whitespaces": "all",
-    "buffer_font_size": 13,
-    "buffer_font_family": "GeistMono Nerd Font",
-    "redact_private_values": true,
-    "private_files": ["**/*.env*"],
-    // https://en.wikipedia.org/wiki/List_of_typographic_features
-    "buffer_font_features": {
-        "calt": true, // Contextual Alternates
-        "frac": true, // Diagonal Fractions
-        "liga": true // Common ligatures
-    },
-    // ---------------------------------------------------------------
-    // Vim Configuration
-    // ---------------------------------------------------------------
-    "vim_mode": false,
-    "use_autoclose": false,
-    // "format_on_save": "language_server",
-    "cursor_blink": true,
-    "relative_line_numbers": true,
-    "scrollbar": {
-        "show": "never"
-    },
-    "vertical_scroll_margin": 0,
-    // ---------------------------------------------------------------
-    // Code Actions
-    // ---------------------------------------------------------------
-    "code_actions_on_format": {
-        // "source.organizeImports": true,
-        "source.fixAll.eslint": true
-    },
-    // ---------------------------------------------------------------
-    // LSP Configuration and Overrides
-    // ---------------------------------------------------------------
-    "language_overrides": {
-        // This can be removed once 0.124.0 is stable
-        // see https://zed.dev/releases/preview/0.124.0
-        "Go": {
-            "format_on_save": {
-                "external": {
-                    "command": "gofmt",
-                    "arguments": []
-                }
-            }
-        }
+    "dock": "bottom"
+  },
+  "inlay_hints": {
+    "enabled": true
+  },
+  // ---------------------------------------------------------------
+  // UI Configuration
+  // ---------------------------------------------------------------
+  "theme": "Github Dark",
+  "ui_font_size": 15.5,
+  "ui_font_family": "GeistMono Nerd Font",
+  "ui_font_features": {
+    "calt": true, // Contextual Alternates
+    "frac": true, // Diagonal Fractions
+    "liga": true, // Common ligatures
+    "onum": true, // Oldstyle Figures	(digits and math)
+    "ss01": true,
+    "ss02": true,
+    "ss03": true,
+    "ss04": true,
+    "ss05": true,
+    "ss06": true,
+    "ss07": true,
+    "ss08": true,
+    "ss09": true,
+    "ss10": true,
+    "ss11": true
+  },
+  "project_panel": {
+    "indent_size": 15,
+    "default_width": 300,
+    "dock": "right",
+    "auto_reveal_entries": true,
+    "folder_icons": true,
+    "file_icons": true
+  },
+  "notification_panel": {
+    "dock": "right"
+  },
+  // ---------------------------------------------------------------
+  // Git Configuration
+  // ---------------------------------------------------------------
+  "git": {
+    "git_gutter": "tracked_files",
+    "gutter_debounce": 2000,
+    "inline_blame": {
+      "delay_ms": 500,
+      "enabled": true,
+      "show_commit_summary": true
     }
+  },
+  "git_panel": {
+    "status_style": "label_color",
+    "button": true,
+    "default_width": 380,
+    "dock": "right"
+  },
+  // ---------------------------------------------------------------
+  // Buffer Configuration
+  // ---------------------------------------------------------------
+  "tab_size": 4,
+  "buffer_line_height": "comfortable",
+  "format_on_save": "on",
+  "soft_wrap": "none",
+  "wrap_guides": [120],
+  "show_wrap_guides": true,
+  "show_whitespaces": "all",
+  "buffer_font_size": 13,
+  "buffer_font_family": "GeistMono Nerd Font",
+  "redact_private_values": true,
+  "private_files": ["**/*.env*"],
+  // https://en.wikipedia.org/wiki/List_of_typographic_features
+  "buffer_font_features": {
+    "calt": true, // Contextual Alternates
+    "frac": true, // Diagonal Fractions
+    "liga": true // Common ligatures
+  },
+  // ---------------------------------------------------------------
+  // Vim Configuration
+  // ---------------------------------------------------------------
+  "vim_mode": false,
+  "use_autoclose": false,
+  // "format_on_save": "language_server",
+  "cursor_blink": true,
+  "relative_line_numbers": true,
+  "scrollbar": {
+    "show": "never"
+  },
+  "vertical_scroll_margin": 0,
+  // ---------------------------------------------------------------
+  // Code Actions
+  // ---------------------------------------------------------------
+  "code_actions_on_format": {
+    // "source.organizeImports": true,
+    "source.fixAll.eslint": true
+  }
 }
