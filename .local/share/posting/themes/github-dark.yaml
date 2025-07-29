@@ -1,0 +1,37 @@
+name: github-dark
+primary: "#58a6ff"      # palette 4 - blue
+secondary: "#39c5cf"    # palette 6 - cyan
+accent: "#6e7681"       # palette 8 - gray
+background: "#0d1117"   # background
+surface: "#484f58"      # palette 0 - darker gray
+error: "#ff7b72"        # palette 1 - red
+success: "#3fb950"      # palette 2 - green
+warning: "#d29922"      # palette 3 - yellow
+
+method:
+  get: "#58a6ff"        # palette 4 - blue
+  put: "#d29922"        # palette 3 - yellow
+  post: "#3fb950"       # palette 2 - green
+  delete: "#ff7b72"     # palette 1 - red
+
+text_area:
+  cursor: "reverse" # style the block cursor
+  cursor_line: "underline" # style the line the cursor is on
+  gutter: "#6e7681"     # palette 8 - gray
+  matched_bracket: "#484f58 on #79c0ff" # palette 0 on palette 12
+
+url:
+  base: "#e6edf3"       # foreground
+  protocol: "#6e7681"   # palette 8 - gray
+
+syntax:
+  json_key: "#58a6ff"   # palette 4 - blue
+  json_number: "#d29922" # palette 3 - yellow
+  json_string: "#3fb950" # palette 2 - green
+  json_boolean: "#d29922" # palette 3 - yellow
+  json_null: "#ff7b72"  # palette 1 - red
+
+# Optional metadata
+author: Jan Biasi
+description: GitHub Dark theme for posting
+homepage: https://github.com/janbiasi/.dotfiles
