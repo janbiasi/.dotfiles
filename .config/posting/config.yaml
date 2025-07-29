@@ -1,4 +1,4 @@
-theme: catppuccin-mocha
+theme: github-dark
 layout: horizontal
 editor: nvim
 pager_json: jq

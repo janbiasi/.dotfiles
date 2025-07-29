@@ -1,34 +1,36 @@
 style:
-  name: "Catppuccin Mocha"
+  name: 'GitHub Dark Default'
   body:
-    fgColor: "#cdd6f4"
-    bgColor: "#1e1e2e"
-    secondaryTextColor: "#cba6f7"
-    tertiaryTextColor: "#cba6f7"
-    borderColor: "#9399b2"
+    fgColor: '#b1bac4'
+    bgColor: transparent
+    secondaryTextColor: '#6e7681'
+    tertiaryTextColor: '#56d364'
+    borderColor: '#6e7681'
   stat_table:
-    keyFgColor: "#cba6f7"
-    valueFgColor: "#cdd6f4"
-    logoColor: "#cba6f7"
+    keyFgColor: '#56d4dd'
+    valueFgColor: white
+    logoColor: '#ffa198'
   proc_table:
-    fgColor: "#cdd6f4"
-    fgWarning: "#fab387"
-    fgPending: "#9399b2"
-    fgCompleted: "#a6e3a1"
-    fgError: "#f38ba8"
-    headerFgColor: "#cba6f7"
+    fgColor: '#79c0ff'
+    fgWarning: yellow
+    fgPending: '#6e7681'
+    fgCompleted: '#56d364'
+    fgError: '#ffa198'
+    headerFgColor: '#e3b341'
   help:
-    fgColor: "#cdd6f4"
-    keyColor: "#cba6f7"
-    hlColor: "#45475a"
-    categoryFgColor: "#f5c2e7"
+    fgColor: '#e6edf3'
+    keyColor: '#e6edf3'
+    hlColor: '#6e7681'
+    categoryFgColor: '#bc8cff'
   dialog:
-    fgColor: "#f5c2e7"
-    bgColor: "#cba6f7"
-    buttonFgColor: "#11111b"
-    buttonBgColor: "#cba6f7"
-    buttonFocusFgColor: "#11111b"
-    buttonFocusBgColor: "#cba6f7"
-    labelFgColor: "#f5e0dc"
-    fieldFgColor: "#cdd6f4"
-    fieldBgColor: "#585b70"
+    fgColor: black
+    bgColor: '#101216'
+    contrastBgColor: black
+    attentionBgColor: '#ffa198'
+    buttonFgColor: white
+    buttonBgColor: '#79c0ff'
+    buttonFocusFgColor: white
+    buttonFocusBgColor: '#e3b341'
+    labelFgColor: '#d29922'
+    fieldFgColor: white
+    fieldBgColor: '#6e7681'

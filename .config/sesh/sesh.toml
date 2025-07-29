@@ -12,6 +12,17 @@ sort_order = [
 find = "~/.local/share/git"
 replace = "git:"
 
+[[window]]
+name = "git"
+startup_script = "git pull"
+
+[[window]]
+name = "neovim"
+startup_script = "nvim ."
+
+[[window]]
+name = "shell"
+
 [default_session]
 # startup_command = "nvim -c ':Telescope find_files'"
 preview_command = "eza --all --git --icons --color=always {}"
@@ -44,3 +55,14 @@ name = "hosts"
 path = "/etc/hosts"
 startup_command = "nvim /etc/hosts"
 preview_command = "bat --color=always /etc/hosts"
+
+[[session]]
+name = "dotfiles"
+path = "~/.dotfiles"
+preview_command = "bat --color=always README.md"
+windows = ["neovim"]
+
+[[session]]
+name = "seekme"
+path = "~/.local/share/git/seekmeio/"
+windows = ["api", "platform", "website"]
