@@ -76,3 +76,10 @@ eval "$(atuin init zsh)"
 # initialize local env
 . "$HOME/.local/bin/env"
 
+# direnv hook - see https://direnv.net/docs/hook.html
+eval "$(direnv hook zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/janbiasi/.lmstudio/bin"
+# End of LM Studio CLI section
+

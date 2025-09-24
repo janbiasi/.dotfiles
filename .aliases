@@ -15,6 +15,10 @@ alias vi='nvim'
 # Terraform alias
 alias tf='terraform'
 
+# Devbox alias
+alias d='devbox'
+alias d-up='devbox services up'
+
 # Quick sesh
 alias qs='sesh connect $(sesh list | fzf)'
 
