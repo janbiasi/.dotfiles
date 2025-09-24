@@ -1,5 +1,5 @@
 # basic ui configuration
-theme = light:GitHub-Light-Default,dark:GitHub-Dark-Default
+theme = GitHub Dark Default
 cursor-style = block
 cursor-color = #777777
 cursor-opacity = 0.9
@@ -18,8 +18,8 @@ macos-titlebar-style = hidden
 macos-titlebar-proxy-icon = hidden
 macos-window-shadow = false
 mouse-hide-while-typing = true
-background-blur-radius = 80
-background-opacity = 0.9
+background-blur-radius = 70
+background-opacity = 0.92
 
 # Set the title to empty, since it only shows "t" when in 
 # a tmux session and not what is actually going on
