@@ -113,6 +113,7 @@ alt-s = 'workspace S' # System
 alt-t = 'workspace T' # Terminal
 alt-v = 'workspace V' # Virtuals
 alt-m = 'workspace M' # Messaging
+alt-o = 'workspace O' # Obsidian
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-b = 'move-node-to-workspace B'
@@ -123,6 +124,7 @@ alt-shift-s = 'move-node-to-workspace S'
 alt-shift-t = 'move-node-to-workspace T'
 alt-shift-v = 'move-node-to-workspace V'
 alt-shift-m = 'move-node-to-workspace M'
+alt-shift-o = 'move-node-to-workspace O'
 
 # Custom bindings
 alt-shift-enter = 'fullscreen'
@@ -234,6 +236,10 @@ if.app-id = 'dev.kdrag0n.MacVirt' # = OrbStack
 run = 'move-node-to-workspace V'
 
 [[on-window-detected]]
+if.app-id = 'com.citrix.receiver.icaviewer.mac' # = Citrix
+run = 'move-node-to-workspace V'
+
+[[on-window-detected]]
 if.app-id = 'com.sequel-ace.sequel-ace'
 run = 'move-node-to-workspace V'
 
@@ -253,6 +259,10 @@ run = 'move-node-to-workspace M'
 if.app-id = 'com.apple.MobileSMS'
 run = 'move-node-to-workspace M'
 
+[[on-window-detected]]
+if.app-id = ' md.obsidian'
+run = 'move-node-to-workspace O'
+
 # TODO: try this with external monitor
 # [workspace-to-monitor-force-assignment]
 
@@ -260,19 +270,19 @@ run = 'move-node-to-workspace M'
 [[on-window-detected]]
 if.app-id = 'com.1password.1password'
 if.window-title-regex-substring = "^[^—]+ — 1Password$"
-run = ['layout floating', 'move-node-to-workspace S']
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
-run = ['layout floating', 'move-node-to-workspace S']
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'org.pqrs.Karabiner-Elements.Settings'
-run = ['layout floating', 'move-node-to-workspace S']
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
-run = ['layout floating', 'move-node-to-workspace F']
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.ableton.live'
@@ -281,3 +291,11 @@ run = ['layout floating', 'move-node-to-workspace F']
 [[on-window-detected]]
 if.app-id = 'com.apple.logic10'
 run = ['layout floating', 'move-node-to-workspace F']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'org.localsend.localsendApp'
+run = ['layout floating']
