@@ -32,11 +32,12 @@ export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documen
 export KEYTIMEOUT=1
 
 export PATH="$PATH:/opt/homebrew/bin"
-export PATH="$PATH:/.atuin/bin"
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 export PATH="$PATH:$HOME/.docker/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.local/share/pnpm"
+export PATH="$PATH:$HOME/.atuin/bin"
 export PATH="$PATH:$(brew --prefix)/opt/ruby/bin" # override for macOS
 export PATH="$PATH:$HOME/.gem/bin"
 export PATH="$PATH:$HOME/Library/pnpm"

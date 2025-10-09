@@ -1,85 +1,14 @@
-# History configuration
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-
-# Use zoxide – A smarter cd command. Supports all major shells.
-# https://github.com/ajeetdsouza/zoxide
-eval "$(zoxide init zsh)"
-
-# Fuzzyfinder
-# https://github.com/junegunn/fzf
-eval "$(fzf --zsh)"
-
-# Initialize ZSH syntax highlighting
-# https://github.com/zsh-users/zsh-syntax-highlighting?tab=readme-ov-file
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Initialize ZSH autocompletions like fish
-# https://github.com/zsh-users/zsh-autosuggestions?tab=readme-ov-file
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Load completions
-autoload -U +X bashcompinit && bashcompinit
- if type brew &>/dev/null; then
-  # source from brew
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-  autoload -Uz compinit
-  compinit
+# Load aliases
+if [ -f $XDG_CONFIG_HOME/zsh/.aliases ]; then
+  source $XDG_CONFIG_HOME/zsh/.aliases
 fi
 
-# Load environment secrets if avialable
-[[ -f ~/.env ]] && set -a; source ~/.env; set +a
-
-# Load shared aliases for shells
-[[ -f ~/.aliases ]] && source ~/.aliases
-
-# Load additional credentials if available
-[[ -f ~/.credentials ]] && source ~/.credentials
-
-# Load FNM (node version manager)
-eval "$(fnm env --use-on-cd --shell zsh)"
-
-# Load SDKMan (version manager for java amm.)
-export SDKMAN_DIR="${HOME}/.sdkman"
-[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
-
-# Google Cloud SDK
-if [ -f "$HOME/.google/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.google/google-cloud-sdk/path.zsh.inc"; fi
-if [ -f "$HOME/.google/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.google/google-cloud-sdk/completion.zsh.inc"; fi
-
-# Initialize starship - https://starship.rs/
-eval "$(starship init zsh)"
-
-# Yazi wrapper - https://yazi-rs.github.io/docs/quick-start#shell-wrapper
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
-# initialize atuin history
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh)"
-
-# initialize local env
-. "$HOME/.local/bin/env"
-
-# direnv hook - see https://direnv.net/docs/hook.html
-eval "$(direnv hook zsh)"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/janbiasi/.lmstudio/bin"
-# End of LM Studio CLI section
+# Load all config files
+for conf in "$XDG_CONFIG_HOME/zsh/config.d/"*.sh; do
+  if [ -n "${DEBUG_ZSH_AUTOLOAD+1}" ]; then
+    echo "Loading configuration ${conf} ..."
+  fi
+  source "${conf}"
+done
+unset conf
 
