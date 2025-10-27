@@ -34,3 +34,5 @@ CVS
 /Makefile # utility tool
 /docs # only for documentation purposes
 \*.rayconfig # raycast config backup files
+
+\*.tpl # template files
