@@ -1,0 +1,46 @@
+{
+  "$schema": "https://charm.land/crush.json",
+  "tools": {
+    "ls": {
+      "max_depth": 0,
+      "max_items": 500
+    }
+  },
+  "lsp": {
+    "go": {
+      "command": "gopls",
+      "env": {
+        "GOTOOLCHAIN": "go1.24.5"
+      }
+    },
+    "typescript": {
+      "command": "typescript-language-server",
+      "args": ["--stdio"]
+    },
+    "nix": {
+      "command": "nil"
+    }
+  },
+  "mcp": {
+    "serena": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--enable-web-dashboard",
+        "False"
+      ]
+    }
+  },
+  "options": {
+    "disable_metrics": true,
+    "disabled_tools": [],
+    "attribution": {
+      "co_authored_by": true,
+      "generated_with": false
+    }
+  }
+}
