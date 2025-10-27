@@ -12,7 +12,7 @@
   "workbench.activityBar.location": "bottom",
 
   "workbench.productIconTheme": "icons-carbon",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "catppuccin-mocha",
   "catppuccin.bracketMode": "neovim",
   "catppuccin.italicKeywords": false,
   "catppuccin-icons.hidesExplorerArrows": false,
@@ -195,7 +195,8 @@
   "files.associations": {
     "configs/app.env": "dotenv",
     ".env*": "dotenv",
-    ".tmTheme": "xml"
+    ".tmTheme": "xml",
+    "*.css": "tailwindcss"
   },
 
   // Overide editor textmate tokens
@@ -246,6 +247,9 @@
   // GitHub extension
   "githubPullRequests.pullBranch": "never",
   "githubPullRequests.terminalLinksHandler": "github",
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
   // Import cost extension
   "importCost.fontStyle": "normal",
@@ -360,10 +364,24 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
   // Docker Settings
   "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app",
   "docker.extension.enableComposeLanguageServer": false,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
 
   // Vitest settings
   "vitest.configSearchPatternExclude": "{**/node_modules/**,**/.*/**,**/*.d.ts}",
