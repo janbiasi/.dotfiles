@@ -30,6 +30,10 @@ install-nvim:
 install-brew:
 	brew bundle --file="$(DOTFILES)/extra/homebrew/Brewfile"
 
+.PHONY: dump-brew
+dump-brew:
+	brew bundle dump --force --file="./extra/homebrew/Brewfile"
+
 .PHONE: configure-credentials
 configure-credentials:
 	@echo Loading environment secrets from 1Password ...
