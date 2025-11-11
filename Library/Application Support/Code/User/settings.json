@@ -32,6 +32,15 @@
   "editor.formatOnSave": true,
   "editor.guides.indentation": true,
 
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.crush": true
+  },
+
   "search.defaultViewMode": "tree",
   "search.exclude": {
     "**/.nx": true,
@@ -58,16 +67,7 @@
   "terminal.integrated.hideOnStartup": "never",
   "terminal.integrated.persistentSessionScrollback": 300,
   "terminal.integrated.ignoreProcessNames": ["starship", "bash", "zsh", "fish"],
-  "terminal.integrated.localEchoExcludePrograms": [
-    "vim",
-    "vi",
-    "nano",
-    "tmux",
-    "nvim",
-    "neovim",
-    "zellij",
-    "zj"
-  ],
+  "terminal.integrated.localEchoExcludePrograms": ["vim", "vi", "nano", "tmux", "nvim", "neovim", "zellij", "zj"],
   "terminal.integrated.tabs.showActiveTerminal": "always",
   "terminal.integrated.tabs.showActions": "always",
   "terminal.integrated.tabs.hideCondition": "never",
