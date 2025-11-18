@@ -9,6 +9,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_BIN_HOME="$HOME/.local/bin"
 export TERM=xterm-256color
 
+# https://consoledonottrack.com/
+export DO_NOT_TRACK=1
+
 # Load additional credentials if available
 if [ -f ~/.credentials ]; then 
   source ~/.credentials
