@@ -1,5 +1,8 @@
 {
   "$schema": "https://charm.land/crush.json",
+  "permissions": {
+    "allowed_tools": ["view", "ls", "grep", "lsp_references", "lsp_diagnostics", "read_mcp_resource"]
+  },
   "tools": {
     "ls": {
       "max_depth": 0,
@@ -9,12 +12,20 @@
   "lsp": {
     "go": {
       "command": "gopls",
-      "env": {
-        "GOTOOLCHAIN": "go1.24.5"
-      }
+      "filetypes": ["go", "mod"]
     },
     "typescript": {
       "command": "typescript-language-server",
+      "filetypes": ["js", "ts"],
+      "args": ["--stdio"]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "filetypes": ["sh"],
+      "args": ["start"]
+    },
+    "json": {
+      "command": "vscode-json-language-server",
       "args": ["--stdio"]
     },
     "nix": {
@@ -35,13 +46,19 @@
         "--enable-web-dashboard",
         "False"
       ]
+    },
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
     }
   },
   "options": {
+    "initialize_as": "AGENTS.md",
     "disable_metrics": true,
     "disabled_tools": [],
     "attribution": {
-      "co_authored_by": true,
+      "trailer_style": "co-authored-by",
       "generated_with": false
     }
   }
