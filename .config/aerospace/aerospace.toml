@@ -195,6 +195,10 @@ if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace C'
 
 [[on-window-detected]]
+if.app-id = 'com.google.antigravity'
+run = 'move-node-to-workspace C'
+
+[[on-window-detected]]
 if.app-id = 'dev.zed.Zed'
 run = 'move-node-to-workspace C'
 
@@ -254,6 +258,9 @@ run = 'move-node-to-workspace M'
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
 run = 'move-node-to-workspace M'
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.cifhbcnohmdccbgoicgdjpfamggdegmo' # Teams PWA
+run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.MobileSMS'
@@ -282,6 +289,14 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apphousekitchen.aldente-pro'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.jordanbaird.Ice'
 run = ['layout floating']
 
 [[on-window-detected]]
