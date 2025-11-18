@@ -11,4 +11,3 @@ for conf in "$XDG_CONFIG_HOME/zsh/config.d/"*.sh; do
   source "${conf}"
 done
 unset conf
-
