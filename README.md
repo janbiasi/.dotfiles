@@ -20,13 +20,18 @@ This directory contains the dotfles for my development environment
 - [1password](https://1password.com)
 - [aerospace](https://nikitabobko.github.io/AeroSpace/guide) :apple:
 - [atuin](https://atuin.sh/)
+- [bat](https://github.com/sharkdp/bat)
 - [btop](https://github.com/aristocratos/btop)
+- [crush](https://github.com/charmbracelet/crush) 🧠
+- [devbox](https://www.jetify.com/devbox)
 - [ghostty](https://ghostty.org/)
+- [freeze](https://github.com/charmbracelet/freeze)
 - [jankyborders](https://github.com/FelixKratz/JankyBorders) :apple:
 - [karabiner elements](https://karabiner-elements.pqrs.org/) :apple:
 - [lazygit](https://github.com/jesseduffield/lazygit)
 - [neofetch](https://github.com/dylanaraps/neofetch)
 - [nix](https://nixos.org)
+- [opencode](https://opencode.ai/) 🧠
 - [posting](https://posting.sh/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [sketchybar](https://github.com/FelixKratz/SketchyBar) :apple: _(currently unused)_
@@ -35,6 +40,7 @@ This directory contains the dotfles for my development environment
 - [yazi](https://github.com/sxyazi/yazi)
 - [zed](https://zed.dev)
 - [zen browser](https://zen-browser.app/) :apple: _(currently unused)_
+- [zsh](https://www.zsh.org/)
 
 ### Installation
 
