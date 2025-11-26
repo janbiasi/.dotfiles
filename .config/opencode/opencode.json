@@ -4,9 +4,11 @@
   "model": "z.ai/glm-4.6",
   "autoupdate": true,
   "permission": {
-    "edit": "allow",
+    "edit": "ask",
     "bash": "ask",
-    "webfetch": "ask"
+    "webfetch": "allow",
+    "doom_loop": "ask",
+    "external_directory": "ask"
   },
   "mcp": {
     "serena": {
@@ -21,6 +23,15 @@
         "--context",
         "agent"
       ]
+    },
+    "context7": {
+      "type": "local",
+      "enabled": true,
+      "command": ["npx", "-y", "@upstash/context7-mcp"]
+    },
+    "chrome": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
     }
   }
 }
