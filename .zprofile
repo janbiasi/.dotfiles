@@ -13,7 +13,7 @@ export TERM=xterm-256color
 export DO_NOT_TRACK=1
 
 # Load additional credentials if available
-if [ -f ~/.credentials ]; then 
+if [ -f ~/.credentials ]; then
   source ~/.credentials
 fi
 
@@ -67,3 +67,7 @@ export LC_ALL=en_US.UTF-8
 
 # python uv settings
 export UV_PYTHON_PREFERENCE=only-managed
+
+# gemini cli doesn't follow xdg
+export GEMINI_CLI_SYSTEM_DEFAULTS_PATH="$XDG_CONFIG_HOME/gemini/system"
+export GEMINI_CLI_SYSTEM_SETTINGS_PATH="$XDG_CONFIG_HOME/gemini/system"

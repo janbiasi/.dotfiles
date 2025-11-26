@@ -39,6 +39,7 @@ configure-credentials:
 	@echo Loading environment secrets from 1Password ...
 	op inject -i $(DOTFILES)/.credentials.tpl -o $(HOME)/.credentials
 	@echo Created $(HOME)/.credentials successfully
+	source ~/.zprofile
 
 .PHONY: configure-macos
 configure-macos:
