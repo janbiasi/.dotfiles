@@ -12,11 +12,6 @@ export TERM=xterm-256color
 # https://consoledonottrack.com/
 export DO_NOT_TRACK=1
 
-# Load additional credentials if available
-if [ -f ~/.credentials ]; then
-  source ~/.credentials
-fi
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -49,7 +44,6 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.antigravity/antigravity/bin"
 
-
 # GitHub Dark theme for FZF (used by sesh amm.)
 # https://vitormv.github.io/fzf-themes#eyJib3JkZXJTdHlsZSI6InJvdW5kZWQiLCJib3JkZXJMYWJlbCI6IiIsImJvcmRlckxhYmVsUG9zaXRpb24iOjAsInByZXZpZXdCb3JkZXJTdHlsZSI6InJvdW5kZWQiLCJwYWRkaW5nIjoiMCIsIm1hcmdpbiI6IjAiLCJwcm9tcHQiOiI+ICIsIm1hcmtlciI6Ij4iLCJwb2ludGVyIjoi4peGIiwic2VwYXJhdG9yIjoi4pSAIiwic2Nyb2xsYmFyIjoi4pSCIiwibGF5b3V0IjoiZGVmYXVsdCIsImluZm8iOiJyaWdodCIsImNvbG9ycyI6ImZnKzojYzZjZGQ1LGJnKzojMTYxYjIyLGhsOiM3N2JkZmIsaGwrOiNhMmQyZmIsaW5mbzojYWZhZjg3LG1hcmtlcjojN2NlMzhiLHByb21wdDojY2VhNWZiLHNwaW5uZXI6I2M2Y2RkNSxwb2ludGVyOiNmYWEzNTYsaGVhZGVyOiM4N2FmYWYsYm9yZGVyOiM4OTkyOWIsc2VwYXJhdG9yOiM4OTkyOWIsbGFiZWw6I2FlYWVhZSxxdWVyeTojZDlkOWQ5In0=
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
@@ -68,6 +62,6 @@ export LC_ALL=en_US.UTF-8
 # python uv settings
 export UV_PYTHON_PREFERENCE=only-managed
 
-# gemini cli doesn't follow xdg
+# gemini cli doesn't follow xdg - https://github.com/google-gemini/gemini-cli/issues/1825
 export GEMINI_CLI_SYSTEM_DEFAULTS_PATH="$XDG_CONFIG_HOME/gemini/system"
 export GEMINI_CLI_SYSTEM_SETTINGS_PATH="$XDG_CONFIG_HOME/gemini/system"

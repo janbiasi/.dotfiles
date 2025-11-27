@@ -37,8 +37,8 @@ dump-brew:
 .PHONE: configure-credentials
 configure-credentials:
 	@echo Loading environment secrets from 1Password ...
-	op inject -i $(DOTFILES)/.credentials.tpl -o $(HOME)/.credentials
-	@echo Created $(HOME)/.credentials successfully
+	op inject -i $(DOTFILES)/.envrc.tpl -o $(HOME)/.envrc
+	@echo Created direnv $(HOME)/.envrc successfully
 	source ~/.zprofile
 
 .PHONY: configure-macos
