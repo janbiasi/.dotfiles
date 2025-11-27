@@ -59,6 +59,7 @@
 
   // Terminal configuration
   "terminal.external.osxExec": "Ghostty.app",
+  "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.autoReplies": {
     "Terminate batch job (Y/N)": "Y\r"
   },
