@@ -22,6 +22,7 @@ This directory contains the dotfles for my development environment
 - [atuin](https://atuin.sh/)
 - [bat](https://github.com/sharkdp/bat)
 - [btop](https://github.com/aristocratos/btop)
+- [claude](https://www.claude.com/product/claude-code) 🧠
 - [crush](https://github.com/charmbracelet/crush) 🧠
 - [devbox](https://www.jetify.com/devbox)
 - [ghostty](https://ghostty.org/)
@@ -37,6 +38,7 @@ This directory contains the dotfles for my development environment
 - [sketchybar](https://github.com/FelixKratz/SketchyBar) :apple: _(currently unused)_
 - [starship](https://starship.rs)
 - [tmux](https://github.com/tmux/tmux)
+- [vhs](https://github.com/charmbracelet/vhs)
 - [yazi](https://github.com/sxyazi/yazi)
 - [zed](https://zed.dev)
 - [zen browser](https://zen-browser.app/) :apple: _(currently unused)_
