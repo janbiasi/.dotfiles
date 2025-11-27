@@ -29,6 +29,9 @@ style = "bold blue"
 "node_modules" = ""
 ".github" = ""
 
+[battery]
+disabled = true
+
 [[battery.display]]
 threshold = 10
 style = 'red'
@@ -38,7 +41,7 @@ threshold = 30
 style = 'yellow'
 
 [time]
-disabled = false
+disabled = true
 time_format = "%R"                         # Hour:Minute Format
 style = "fg:yellow"
 format = '[[   $time ](fg:gray)]($style)'
