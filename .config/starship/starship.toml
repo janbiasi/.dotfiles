@@ -104,7 +104,7 @@ symbol = " "
 style = "red"
 
 [bun]
-symbol = " "
+symbol = " "
 style = "pink"
 
 [nix_shell]

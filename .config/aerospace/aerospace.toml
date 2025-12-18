@@ -171,6 +171,10 @@ if.app-id = 'company.thebrowser.Browser'
 run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
+if.app-id = 'net.imput.helium'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace B'
 
@@ -261,6 +265,9 @@ run = 'move-node-to-workspace M'
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome.app.cifhbcnohmdccbgoicgdjpfamggdegmo' # Teams PWA
 run = 'move-node-to-workspace M'
+[[on-window-detected]]
+if.app-id = 'net.imput.helium.app.cifhbcnohmdccbgoicgdjpfamggdegmo' # Teams PWA
+run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.MobileSMS'
@@ -275,8 +282,11 @@ run = 'move-node-to-workspace O'
 
 # Floating windows
 [[on-window-detected]]
-if.app-id = 'com.1password.1password'
 if.window-title-regex-substring = "^[^—]+ — 1Password$"
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
 run = ['layout floating']
 
 [[on-window-detected]]
