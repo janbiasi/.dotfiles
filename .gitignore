@@ -29,3 +29,6 @@ Temporary Items
 # Dotfiles related
 .credentials
 .env
+
+# Serena MCP
+.serena/cache/**

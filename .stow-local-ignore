@@ -18,7 +18,6 @@ CVS
 \.macos
 
 \.git
-\.gitignore
 \.gitmodules
 
 .+~ # emacs backup files
