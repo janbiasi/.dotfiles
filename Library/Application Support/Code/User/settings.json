@@ -19,7 +19,7 @@
   "catppuccin.italicComments": true,
 
   "editor.fontSize": 12,
-  "editor.fontFamily": "GeistMono Nerd Font",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
 
   "workbench.tree.renderIndentGuides": "always",
@@ -64,7 +64,7 @@
     "Terminate batch job (Y/N)": "Y\r"
   },
   "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.fontFamily": "GeistMono Nerd Font Mono",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.hideOnStartup": "never",
   "terminal.integrated.persistentSessionScrollback": 300,
   "terminal.integrated.ignoreProcessNames": ["starship", "bash", "zsh", "fish"],
@@ -390,5 +390,8 @@
   "vitest.nodeEnv": {
     "NODE_ENV": "TEST"
   },
-  "vitest.maximumConfigs": 10
+  "vitest.maximumConfigs": 10,
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

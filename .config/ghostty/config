@@ -4,7 +4,7 @@ cursor-style = block
 cursor-color = #777777
 cursor-opacity = 0.9
 cursor-text = #FFFFFF
-font-family = "GeistMono Nerd Font Mono"
+font-family = "JetBrainsMono Nerd Font"
 window-padding-color = background
 window-padding-x = 10,10
 window-padding-y = 10,10
@@ -19,8 +19,8 @@ macos-titlebar-proxy-icon = hidden
 macos-window-shadow = false
 mouse-hide-while-typing = true
 background-blur-radius = 70
-background-opacity = 0.92
+background-opacity = 0.8
 
-# Set the title to empty, since it only shows "t" when in 
+# Set the title to empty, since it only shows "t" when in
 # a tmux session and not what is actually going on
 title = " "

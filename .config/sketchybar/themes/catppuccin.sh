@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Font
-export FONT="GeistMono Nerd Font"
+export FONT="JetBrainsMono Nerd Font"
 export FONT_WEIGHT="Semibold"
 export FONT_SIZE="13.0"
 
