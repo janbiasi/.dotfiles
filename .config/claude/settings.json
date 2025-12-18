@@ -1,7 +1,12 @@
 {
+  "env": {
+    "API_TIMEOUT_MS": "3000000",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-4.5-air",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-4.6",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-4.6"
+  },
   "includeCoAuthoredBy": true,
   "permissions": {
-    "ask": ["Bash(git push:*)"],
     "allow": [
       "Bash(git diff:*)",
       "Bash(npm run lint)",
@@ -14,9 +19,13 @@
       "Bash(git rm:*)",
       "Bash(git stash:*)",
       "Bash(curl:*)",
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Read(./secrets/**)"
-    ]
+      "Read(**/.env)",
+      "Read(**/.envrc)",
+      "Read(**/.env.*)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials/**)"
+    ],
+    "ask": ["Bash(git push:*)"],
+    "defaultMode": "default"
   }
 }
