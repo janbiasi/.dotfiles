@@ -16,7 +16,7 @@ CVS
 \_darcs
 \.hg
 \.macos
-
+# \.gitignore
 \.git
 \.gitmodules
 
