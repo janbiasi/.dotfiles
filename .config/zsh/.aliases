@@ -19,8 +19,9 @@ alias tf='terraform'
 alias d='devbox'
 alias d-up='devbox services up'
 
-# Quick sesh
+# Tmux stuff
 alias qs='sesh connect $(sesh list | fzf)'
+alias tn='tmux new-session -A -s "$(basename "$PWD")"'
 
 # VSCode alias without using the UI to install it persistently
 alias code='function _code(){ VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;};_code'
