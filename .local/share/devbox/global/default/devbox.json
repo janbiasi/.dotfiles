@@ -8,13 +8,14 @@
     "uv@0.8.23",
     "yazi@25.5.31",
     "zoxide@0.9.8",
-    "gh@2.83.2"
+    "gh@2.83.2",
+    "nmap@latest"
   ],
   "shell": {
     "init_hook": [],
     "scripts": {
       "serena:create": "uvx --from git+https://github.com/oraios/serena serena project generate-yml",
-      "serena:index": "uvx --from git+https://github.com/oraios/serena serena project index",
+      "serena:index":  "uvx --from git+https://github.com/oraios/serena serena project index",
       "serena:health": "uvx --from git+https://github.com/oraios/serena serena project health-check"
     }
   }

@@ -165,7 +165,7 @@
         }
       }
     },
-    "gh@latest": {
+    "gh@2.83.2": {
       "last_modified": "2025-12-11T04:04:52Z",
       "resolved": "github:NixOS/nixpkgs/5d6bdbddb4695a62f0d00a3620b37a15275a5093#gh",
       "source": "devbox-search",
@@ -285,15 +285,57 @@
         }
       }
     },
-    "github-cli@2.23.0": {
-      "last_modified": "2023-02-24T09:01:09Z",
-      "resolved": "github:NixOS/nixpkgs/7d0ed7f2e5aea07ab22ccb338d27fbe347ed2f11#github-cli",
-      "source": "devbox-search",
-      "version": "2.23.0"
-    },
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
       "last_modified": "2025-11-08T12:28:21Z",
       "resolved": "github:NixOS/nixpkgs/f6b44b2401525650256b977063dbcf830f762369?lastModified=1762604901&narHash=sha256-Pr2jpryIaQr9Yx8p6QssS03wqB6UifnnLr3HJw9veDw%3D"
+    },
+    "nmap@latest": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#nmap",
+      "source": "devbox-search",
+      "version": "7.98",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ak8sxa06r0y36clyq5pp7dh36343rypk-nmap-7.98",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ak8sxa06r0y36clyq5pp7dh36343rypk-nmap-7.98"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/rcqc36lw352ky6pgwknj993zbg0l7d1g-nmap-7.98",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/rcqc36lw352ky6pgwknj993zbg0l7d1g-nmap-7.98"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kd0f2d9yzhs0fyww62znrcld0qr1j0k3-nmap-7.98",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/kd0f2d9yzhs0fyww62znrcld0qr1j0k3-nmap-7.98"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hil6r8hvx4cmcw4367pkw5jqphf37ijf-nmap-7.98",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/hil6r8hvx4cmcw4367pkw5jqphf37ijf-nmap-7.98"
+        }
+      }
     },
     "uv@0.8.23": {
       "last_modified": "2025-10-22T20:59:19Z",
