@@ -3,6 +3,7 @@
   "theme": "github",
   "model": "z.ai/glm-4.6",
   "autoupdate": true,
+  "instructions": ["CONTRIBUTING.md", ".cursor/rules/*.md"],
   "permission": {
     "edit": "ask",
     "bash": "ask",

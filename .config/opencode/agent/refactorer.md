@@ -1,7 +1,7 @@
 ---
 description: Pattern migration agent - applies transformations across the codebase. Use for migrating A→B, renames, API updates, style changes.
 mode: subagent
-model: z-ai/glm-4.6v
+model: z-ai/glm-4.7
 temperature: 0.1
 tools:
   bash: true

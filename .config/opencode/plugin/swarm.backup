@@ -1,0 +1,4 @@
+// Minimal fallback - install opencode-swarm-plugin globally for full functionality
+import SwarmPlugin from "opencode-swarm-plugin";
+
+export default SwarmPlugin;
