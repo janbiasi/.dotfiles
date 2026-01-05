@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="500" src="./docs/screenshot.png" />
+    <img width="500" src="./docs/screenshot-2026.png" />
 </p>
 <p align="center">
     <a href="#requirements">Requirements</a> · <a href="#included-configurations">Included Configurations</a> · <a href="#installation">Installation</a> · <a href="#available-tasks">Tasks</a>
