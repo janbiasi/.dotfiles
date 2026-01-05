@@ -5,11 +5,27 @@
   "autoupdate": true,
   "instructions": ["CONTRIBUTING.md", ".cursor/rules/*.md"],
   "permission": {
-    "edit": "ask",
-    "bash": "ask",
+    "*": "ask",
     "webfetch": "allow",
     "doom_loop": "ask",
-    "external_directory": "ask"
+    "external_directory": "deny",
+    "lsp": "allow",
+    "bash": {
+      "*": "ask",
+      "grep *": "allow",
+      "git *": "allow",
+      "npm *": "allow",
+      "pnpm *": "allow",
+      "go *": "allow",
+      "rm *": "deny"
+    },
+    "read": {
+      "*": "allow",
+      "*.envrc*": "deny",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    }
   },
   "mcp": {
     "serena": {
