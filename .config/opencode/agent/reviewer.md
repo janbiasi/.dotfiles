@@ -1,38 +1,11 @@
 ---
+name: reviewer
 description: Read-only code reviewer for pre-PR review, architecture critique, security/performance audits. Never modifies code.
-mode: subagent
-model: z-ai/glm-4.5-flash
-temperature: 0.2
-tools:
-  bash: true
-  read: true
-  write: false
-  edit: false
-  glob: true
-  grep: true
+model: zai-coding-plan/glm-4.7
+temperature: 0.1
 permission:
-  bash:
-    "git diff *": allow
-    "git show *": allow
-    "git log *": allow
-    "git blame *": allow
-    "rg *": allow
-    "wc *": allow
-    "head *": allow
-    "tail *": allow
-    "devbox *": deny
-    "cat *": deny
-    "rm *": deny
-    "mv *": deny
-    "cp *": deny
-    "mkdir *": deny
-    "touch *": deny
-    "echo *": deny
-    "npm *": deny
-    "pnpm *": deny
-    "yarn *": deny
-    "node *": deny
-    "*": deny
+  write: deny
+  edit: deny
 ---
 
 # Code Reviewer Agent

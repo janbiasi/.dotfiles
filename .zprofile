@@ -44,6 +44,7 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.antigravity/antigravity/bin"
 export PATH="$PATH:$HOME/.bun/bin"
+export PATH="$PATH:$HOME/.opencode/bin"
 
 # GitHub Dark theme for FZF (used by sesh amm.)
 # https://vitormv.github.io/fzf-themes#eyJib3JkZXJTdHlsZSI6InJvdW5kZWQiLCJib3JkZXJMYWJlbCI6IiIsImJvcmRlckxhYmVsUG9zaXRpb24iOjAsInByZXZpZXdCb3JkZXJTdHlsZSI6InJvdW5kZWQiLCJwYWRkaW5nIjoiMCIsIm1hcmdpbiI6IjAiLCJwcm9tcHQiOiI+ICIsIm1hcmtlciI6Ij4iLCJwb2ludGVyIjoi4peGIiwic2VwYXJhdG9yIjoi4pSAIiwic2Nyb2xsYmFyIjoi4pSCIiwibGF5b3V0IjoiZGVmYXVsdCIsImluZm8iOiJyaWdodCIsImNvbG9ycyI6ImZnKzojYzZjZGQ1LGJnKzojMTYxYjIyLGhsOiM3N2JkZmIsaGwrOiNhMmQyZmIsaW5mbzojYWZhZjg3LG1hcmtlcjojN2NlMzhiLHByb21wdDojY2VhNWZiLHNwaW5uZXI6I2M2Y2RkNSxwb2ludGVyOiNmYWEzNTYsaGVhZGVyOiM4N2FmYWYsYm9yZGVyOiM4OTkyOWIsc2VwYXJhdG9yOiM4OTkyOWIsbGFiZWw6I2FlYWVhZSxxdWVyeTojZDlkOWQ5In0=
@@ -66,3 +67,6 @@ export UV_PYTHON_PREFERENCE=only-managed
 # gemini cli doesn't follow xdg - https://github.com/google-gemini/gemini-cli/issues/1825
 export GEMINI_CLI_SYSTEM_DEFAULTS_PATH="$XDG_CONFIG_HOME/gemini/system"
 export GEMINI_CLI_SYSTEM_SETTINGS_PATH="$XDG_CONFIG_HOME/gemini/system"
+
+# sqlit doesn't follow xdg
+export SQLIT_CONFIG_DIR="$XDG_CONFIG_HOME/sqlit"
