@@ -1,0 +1,52 @@
+{
+    "React Functional Component": {
+        "prefix": "rfc",
+        "description": "Declare a react functional component",
+        "body": [
+            "/**",
+            " * Properties for the component {@link ${1:Component}}",
+            " */",
+            "export interface ${1:Component}Props extends PropsWithChildren {",
+            "\t${2:// Add props here}",
+            "}",
+            "",
+            "/**",
+            "* ${1:Component} description",
+            "*/",
+            "export const ${1:Component}: FC<${1:Component}Props> = ({ children }) => {",
+            "\treturn (",
+            "\t\t<div>",
+            "\t\t\t{children}",
+            "\t\t</div>",
+            "\t)",
+            "}",
+            "",
+            "${1:Component}.displayName = \"${1:Component}\";",
+        ]
+    },
+    "React Use Effect": {
+        "prefix": "useeffect",
+        "description": "Basic useEffect hook usage",
+        "body": [
+            "useEffect(() => {",
+            "\t$1",
+            "}, [$2]);"
+        ]
+    },
+    "Next.js Page (App Router)": {
+        "prefix": "nextpage",
+        "description": "Basic Next.js page for app router",
+        "body": [
+            "export interface ${1:Page}Props {",
+            "\tparams: {}",
+            "\tsearchParams: { ",
+            "\t\t[key: string]: string | string[] | undefined ",
+            "\t}",
+            "}",
+            "",
+            "export default function ${1:Page}({ params, searchParams }: ${1:Page}Props) {",
+            "\treturn <h1>Hello World from ${1:Page}</h1>",
+            "}",
+        ]
+    }
+}
