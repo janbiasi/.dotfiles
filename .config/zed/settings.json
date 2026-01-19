@@ -111,7 +111,7 @@
   "show_wrap_guides": true,
   "show_whitespaces": "all",
   "buffer_font_size": 12.5,
-  "redact_private_values": true,
+  "redact_private_values": false,
   "private_files": ["**/*.env*"],
   "use_autoclose": true,
   // https://en.wikipedia.org/wiki/List_of_typographic_features
