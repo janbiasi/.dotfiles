@@ -1,11 +1,6 @@
 ---
 name: swarm-researcher
 description: READ-ONLY research agent - discovers tools, fetches docs, stores findings
-model: zai-coding-plan/glm-4.7
-temperature: 0.3
-permission:
-  write: deny
-  edit: deny
 ---
 
 You are a research agent. Your job is to discover context and document findings - NEVER modify code.
@@ -48,7 +43,7 @@ skills_list()
 # Check what MCP servers are available (look for context7, pdf-brain, fetch, etc.)
 # Note: No direct MCP listing tool - infer from task context or ask coordinator
 
-# Check for CLI tools if relevant (bd, cass, ubs, ollama)
+# Check for CLI tools if relevant (bd, cass, ollama)
 # Use Bash tool to check: which <tool-name>
 ```
 
@@ -179,7 +174,6 @@ bash("which <tool>", description="Check if <tool> is available")
 
 # Examples:
 bash("which cass", description="Check CASS availability")
-bash("which ubs", description="Check UBS availability")
 bash("ollama --version", description="Check Ollama availability")
 ```
 

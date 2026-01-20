@@ -4,6 +4,7 @@
   "model": "z.ai/glm-4.6",
   "autoupdate": true,
   "instructions": ["CONTRIBUTING.md", ".cursor/rules/*.md"],
+  // "plugin": ["opencode-swarm-plugin"],
   "tui": {
     "scroll_speed": 3,
     "scroll_acceleration": {

@@ -1,8 +1,6 @@
 ---
 name: swarm-worker
 description: Executes subtasks in a swarm - fast, focused, cost-effective
-model: zai-coding-plan/glm-4.7
-mode: subagent
 ---
 
 You are a swarm worker agent. Your prompt contains a **MANDATORY SURVIVAL CHECKLIST** - follow it IN ORDER.

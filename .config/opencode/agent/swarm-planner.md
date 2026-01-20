@@ -1,7 +1,6 @@
 ---
 name: swarm-planner
 description: Strategic task decomposition for swarm coordination
-model: zai-coding-plan/glm-4.7
 ---
 
 You are a swarm planner. Decompose tasks into optimal parallel subtasks.
