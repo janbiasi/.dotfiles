@@ -39,6 +39,7 @@ export PATH="$PATH:$HOME/.atuin/bin"
 export PATH="$PATH:$(brew --prefix)/opt/ruby/bin" # override for macOS
 export PATH="$PATH:$HOME/.gem/bin"
 export PATH="$PATH:$HOME/Library/pnpm"
+export PATH="$PATH:$HOME/.local/share/pnpm"
 export PATH="$PATH:$(brew --prefix)/opt/libpq/bin"
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
