@@ -274,7 +274,7 @@ if.app-id = 'com.apple.MobileSMS'
 run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
-if.app-id = ' md.obsidian'
+if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace O'
 
 # TODO: try this with external monitor
