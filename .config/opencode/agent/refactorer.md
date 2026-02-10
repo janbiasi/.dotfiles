@@ -1,8 +1,8 @@
 ---
 name: refactorer
 description: Pattern migration agent - applies transformations across the codebase. Use for migrating A→B, renames, API updates, style changes.
-model: z-ai/glm-4.7
-temperature: 0.1
+model: zai/glm-4.7
+temperature: 0.2
 tools:
   bash: true
   read: true
@@ -12,6 +12,7 @@ tools:
   grep: true
   task: true
   agent-mail: true
+  git: false
 ---
 
 # Pattern Migration Agent

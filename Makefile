@@ -44,7 +44,7 @@ configure-credentials:
 .PHONY: configure-macos
 configure-macos:
 	# Run macOS configuration bash script
-	$(DOTFILES)/.macos 
+	$(DOTFILES)/.macos
 
 .PHONY: configure-macos-fish-default
 configure-macos-fish-default:

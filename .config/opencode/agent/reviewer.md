@@ -1,7 +1,7 @@
 ---
 name: reviewer
 description: Read-only code reviewer for pre-PR review, architecture critique, security/performance audits. Never modifies code.
-model: zai-coding-plan/glm-4.7
+model: zai/glm-4.7
 temperature: 0.1
 permission:
   write: deny

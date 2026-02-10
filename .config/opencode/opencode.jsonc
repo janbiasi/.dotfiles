@@ -1,0 +1,100 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "github",
+  "model": "zai/glm-4.7",
+  "autoupdate": true,
+  "instructions": ["CONTRIBUTING.md", ".cursor/rules/*.md"],
+  // "plugin": ["opencode-swarm-plugin"],
+  "plugin": ["opencode-beads"],
+  "tui": {
+    "scroll_speed": 3,
+    "scroll_acceleration": {
+      "enabled": true,
+    },
+  },
+  "permission": {
+    "*": "ask",
+    // Read, skill and todos are always allowed
+    "skill": "allow",
+    "todoread": "allow",
+    "todowrite": "allow",
+    "webfetch": "allow",
+    "lsp": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    // Important deny rules
+    "rm": "deny",
+    "external_directory": "deny",
+    // Bash execution permission (non-tools)
+    "bash": {
+      "*": "ask",
+      "find": "allow",
+      "find*": "allow",
+      "git": "allow",
+      "git push": "deny",
+      "git*": "allow",
+      "npm": "allow",
+      "npm*": "allow",
+      "pnpm": "allow",
+      "pnpm*": "allow",
+      "go": "allow",
+      "go*": "allow",
+      "ls": "allow",
+      "ls*": "allow",
+      "head": "allow",
+      "head*": "allow",
+    },
+    // General read permissions
+    "read": {
+      "*": "allow",
+      "*.envrc*": "deny",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow",
+    },
+    // MCP server permissions
+    "context7_*": "allow",
+    "serena_*": "allow",
+    // Tool integrations
+    "Beads-Task-Agent*": "allow",
+  },
+  "mcp": {
+    "serena": {
+      "type": "local",
+      "enabled": false,
+      "command": [
+        "uvx",
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "agent",
+      ],
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}",
+      },
+      "enabled": true,
+    },
+    "chrome": {
+      "type": "local",
+      "enabled": true,
+      "command": ["bun", "x", "chrome-devtools-mcp@latest"],
+    },
+    "posthog": {
+      "enabled": false,
+      "type": "local",
+      "command": [
+        "bun",
+        "x",
+        "mcp-remote@latest",
+        "https://mcp-eu.posthog.com/mcp",
+      ],
+    },
+  },
+}
