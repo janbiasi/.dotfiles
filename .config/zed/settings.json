@@ -1,268 +1,328 @@
 {
-  // ---------------------------------------------------------------
-  // Core Configuration
-  // ---------------------------------------------------------------
-  "tabs": {
-    "file_icons": true,
-    "git_status": true
-  },
-  "title_bar": {
-    "show_user_picture": false,
-    "show_sign_in": false,
-    "show_menus": false,
-    "show_branch_icon": true
-  },
-  "icon_theme": "Catppuccin Mocha",
-  "buffer_font_family": "JetBrainsMono Nerd Font",
-  "auto_update": false,
-  "base_keymap": "VSCode",
-  "autosave": "on_focus_change",
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "collaboration_panel": {
-    "button": false
-  },
-  // ---------------------------------------------------------------
-  // Terminal Configuration
-  // ---------------------------------------------------------------
-  "terminal": {
-    "font_family": "JetBrainsMono Nerd Font",
-    "font_size": 12.5,
-    "line_height": "standard",
-    "scroll_multiplier": 0.8,
-    "blinking": "terminal_controlled",
-    "dock": "bottom",
-    "toolbar": {
-      "breadcrumbs": false
+    // ---------------------------------------------------------------
+    // Core Configuration
+    // ---------------------------------------------------------------
+    "file_finder": {
+        "modal_max_width": "large",
     },
-    "env": {
-      "WITHIN_IDE": "true"
+    "diagnostics": {
+        "button": true,
     },
-    "shell": {
-      "with_arguments": {
-        "program": "zsh",
-        "args": [
-          "-c",
-          "if [[ \"$0 $*\" == *\"-c\"* ]]; then exec zsh \"$0\" \"$@\"; else exec tmux new -As \"${PWD##*/}\"; fi"
-        ],
-        "title_override": "tmux"
-      }
-    }
-  },
-  "inlay_hints": {
-    "enabled": false
-  },
-  // ---------------------------------------------------------------
-  // UI Configuration
-  // ---------------------------------------------------------------
-  "theme": "Github Dark",
-  "ui_font_size": 15,
-  "ui_font_weight": 500,
-  "ui_font_family": "JetBrainsMono Nerd Font",
-  "project_panel": {
-    "hide_hidden": false,
-    "hide_root": true,
-    "entry_spacing": "standard",
-    "indent_size": 12.0,
-    "default_width": 305.0,
-    "dock": "right",
-    "auto_reveal_entries": true,
-    "folder_icons": true,
-    "file_icons": true,
-    "auto_fold_dirs": true,
-    "show_diagnostics": "all",
-    "sticky_scroll": true
-  },
-  "notification_panel": {
-    "dock": "right"
-  },
-  // ---------------------------------------------------------------
-  // Git Configuration
-  // ---------------------------------------------------------------
-  "git": {
-    "blame": {
-      "show_avatar": true
+    "tab_bar": {
+        "show_tab_bar_buttons": false,
+        "show": true,
     },
-    "git_gutter": "tracked_files",
-    "gutter_debounce": 2000,
-    "inline_blame": {
-      "delay_ms": 500,
-      "enabled": true,
-      "show_commit_summary": true
-    }
-  },
-  "git_panel": {
-    "collapse_untracked_diff": false,
-    "status_style": "label_color",
-    "button": true,
-    "default_width": 380,
-    "dock": "right"
-  },
-  // ---------------------------------------------------------------
-  // Buffer Configuration
-  // ---------------------------------------------------------------
-  "tab_size": 4,
-  "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
-  "format_on_save": "on",
-  "soft_wrap": "none",
-  "wrap_guides": [120],
-  "show_wrap_guides": true,
-  "show_whitespaces": "all",
-  "buffer_font_size": 12.5,
-  "redact_private_values": false,
-  "private_files": ["**/*.env*"],
-  "use_autoclose": true,
-  // https://en.wikipedia.org/wiki/List_of_typographic_features
-  "buffer_font_features": {
-    "calt": true, // Contextual Alternates
-    "liga": true // Common ligatures
-  },
-  // ---------------------------------------------------------------
-  // Vim Configuration
-  // ---------------------------------------------------------------
-  "vim_mode": false,
-  "cursor_blink": true,
-  "relative_line_numbers": "enabled",
-  // ---------------------------------------------------------------
-  // Code Actions
-  // ---------------------------------------------------------------
-  "code_actions_on_format": {
-    // "source.organizeImports": true,
-    "source.fixAll.eslint": true
-  },
-  // ---------------------------------------------------------------
-  // AI & Agent Stuff
-  // ---------------------------------------------------------------
-  "agent_ui_font_size": 13,
-  "agent_buffer_font_size": 13,
-  "edit_predictions": {
-    "disabled_globs": ["**/*.env", "**/*.credentials"]
-  },
-  "agent_servers": {
-    "OpenCode": {
-      "type": "custom",
-      "command": "opencode",
-      "args": ["acp"]
-    }
-  },
-  "agent": {
-    "always_allow_tool_actions": true,
-    "profiles": {
-      "review": {
-        "name": "Review",
-        "tools": {},
-        "enable_all_context_servers": false,
-        "context_servers": {
-          "serena": {
-            "tools": {
-              "find_symbol": true,
-              "get_symbols_overview": true,
-              "list_memories": true,
-              "list_dir": true,
-              "read_file": true,
-              "read_memory": true,
-              "search_for_pattern": true,
-              "think_about_collected_information": true,
-              "think_about_task_adherence": true,
-              "think_about_whether_you_are_done": true
-            }
-          },
-          "context7": {
-            "tools": {
-              "get-library-docs": true,
-              "resolve-library-id": true
-            }
-          }
+    "search": {
+        "button": false,
+        "case_sensitive": true,
+    },
+    "tabs": {
+        "show_diagnostics": "off",
+        "file_icons": true,
+        "git_status": true,
+    },
+    "title_bar": {
+        "show_project_items": true,
+        "show_user_picture": false,
+        "show_sign_in": false,
+        "show_menus": false,
+        "show_branch_icon": true,
+    },
+    "icon_theme": "Catppuccin Mocha",
+    "buffer_font_family": "JetBrainsMono Nerd Font",
+    "auto_update": false,
+    "base_keymap": "VSCode",
+    "autosave": "on_focus_change",
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false,
+    },
+    "collaboration_panel": {
+        "button": false,
+    },
+    "file_scan_exclusions": [
+        "**/node_modules",
+        "**/.git",
+        "**/.classpath",
+        "**/build",
+        "**/*.lock",
+        "**/*-lock*",
+        "**/.DS_Store",
+    ],
+    // ---------------------------------------------------------------
+    // Terminal Configuration
+    // ---------------------------------------------------------------
+    "terminal": {
+        "font_family": "JetBrainsMono Nerd Font",
+        "font_size": 12.5,
+        "line_height": "standard",
+        "scroll_multiplier": 0.8,
+        "blinking": "terminal_controlled",
+        "dock": "bottom",
+        "toolbar": {
+            "breadcrumbs": false,
+        },
+        "env": {
+            "WITHIN_IDE": "true",
+        },
+        "shell": {
+            "with_arguments": {
+                "program": "zsh",
+                "args": [
+                    "-c",
+                    "if [[ \"$0 $*\" == *\"-c\"* ]]; then exec zsh \"$0\" \"$@\"; else exec tmux new -As \"${PWD##*/}\"; fi",
+                ],
+                "title_override": "tmux",
+            },
+        },
+    },
+    "inlay_hints": {
+        "enabled": false,
+    },
+    // ---------------------------------------------------------------
+    // UI Configuration
+    // ---------------------------------------------------------------
+    "theme": "GitHub Dark",
+    "ui_font_size": 14.0,
+    "ui_font_weight": 400.0,
+    "ui_font_family": "JetBrainsMono Nerd Font",
+    "project_panel": {
+        "button": true,
+        "hide_hidden": false,
+        "hide_root": true,
+        "entry_spacing": "standard",
+        "indent_size": 12.0,
+        "default_width": 305.0,
+        "dock": "right",
+        "auto_reveal_entries": true,
+        "folder_icons": true,
+        "file_icons": true,
+        "auto_fold_dirs": true,
+        "show_diagnostics": "all",
+        "sticky_scroll": true,
+    },
+    "notification_panel": {
+        "dock": "right",
+    },
+    // ---------------------------------------------------------------
+    // Theme overrides & extensions
+    // ---------------------------------------------------------------
+    "theme_overrides": {
+        "Github Dark": {
+            "syntax": {
+                "constant.comment.todo": {
+                    "background_color": "#1A61FEff",
+                    "font_weight": 700,
+                    "font_style": "italic",
+                },
+                "string.comment.info": {
+                    "background_color": "#8534F3ff",
+                    "font_weight": 700,
+                    "font_style": "italic",
+                },
+                "keyword.comment.warn": {
+                    "background_color": "#D8BD0Eff",
+                    "color": "#00000000",
+                    "font_weight": 700,
+                    "font_style": "italic",
+                },
+                "property.comment.error": {
+                    "background_color": "#801E0Fff",
+                    "font_weight": 700,
+                    "font_style": "italic",
+                },
+            },
+        },
+    },
+    // ---------------------------------------------------------------
+    // Git Configuration
+    // ---------------------------------------------------------------
+    "git": {
+        "blame": {
+            "show_avatar": true,
+        },
+        "git_gutter": "tracked_files",
+        "gutter_debounce": 2000,
+        "inline_blame": {
+            "min_column": 0,
+            "delay_ms": 500,
+            "enabled": true,
+            "show_commit_summary": true,
+        },
+    },
+    "git_panel": {
+        "tree_view": true,
+        "collapse_untracked_diff": false,
+        "status_style": "label_color",
+        "button": true,
+        "default_width": 380,
+        "dock": "right",
+    },
+    // ---------------------------------------------------------------
+    // Buffer Configuration
+    // ---------------------------------------------------------------
+    "tab_size": 4,
+    "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
+    "format_on_save": "on",
+    "soft_wrap": "none",
+    "wrap_guides": [120],
+    "show_wrap_guides": true,
+    "show_whitespaces": "all",
+    "buffer_font_size": 12.5,
+    "redact_private_values": false,
+    "private_files": ["**/*.env*"],
+    "use_autoclose": true,
+    // https://en.wikipedia.org/wiki/List_of_typographic_features
+    "buffer_font_features": {
+        "calt": true, // Contextual Alternates
+        "liga": true, // Common ligatures
+    },
+    // ---------------------------------------------------------------
+    // Vim Configuration
+    // ---------------------------------------------------------------
+    "vim_mode": false,
+    "cursor_blink": true,
+    "relative_line_numbers": "disabled",
+    // ---------------------------------------------------------------
+    // Code Actions
+    // ---------------------------------------------------------------
+    "code_actions_on_format": {
+        // "source.organizeImports": true,
+        "source.fixAll.eslint": true,
+    },
+    // ---------------------------------------------------------------
+    // AI & Agent Stuff
+    // ---------------------------------------------------------------
+    "agent_ui_font_size": 14.0,
+    "agent_buffer_font_size": 14.0,
+    "edit_predictions": {
+        "disabled_globs": ["**/*.env", "**/*.credentials"],
+    },
+    "agent_servers": {
+        "opencodeyy": {
+            "type": "registry",
+        },
+    },
+    // ---------------------------------------------------------------
+    // LSP configurations
+    // ---------------------------------------------------------------
+    "lsp": {
+        "vtsls": {
+            "settings": {
+                "typescript": {
+                    "updateImportsOnFileMove": {
+                        "enabled": "always"
+                    }
+                },
+                "javascript": {
+                    "updateImportsOnFileMove": {
+                        "enabled": "always"
+                    }
+                }
+            },
+            "enable_lsp_tasks": true
         }
-      }
     },
-    "default_model": {
-      "provider": "Z AI",
-      "model": "GLM-4.6V"
+    // ---------------------------------------------------------------
+    // MCP Servers
+    // ---------------------------------------------------------------
+    "context_servers": {
+        "chrome": {
+            "command": "bun",
+            "enabled": true,
+            "args": ["x", "chrome-devtools-mcp@latest"],
+        },
+        "context7": {
+            "command": "bun",
+            "enabled": true,
+            "args": ["x", "@upstash/context7-mcp"],
+        },
+        "serena": {
+            "command": "uvx",
+            "enabled": false,
+            "args": [
+                "--from",
+                "git+https://github.com/oraios/serena",
+                "serena",
+                "start-mcp-server",
+                "--context",
+                "ide-assistant",
+            ],
+        },
     },
-    "model_parameters": []
-  },
-  // ---------------------------------------------------------------
-  // LSP configurations
-  // ---------------------------------------------------------------
-  "lsp": {},
-  // ---------------------------------------------------------------
-  // MCP Servers
-  // ---------------------------------------------------------------
-  "context_servers": {
-    "chrome": {
-      "command": "npx",
-      "args": ["chrome-devtools-mcp@latest"]
+    // ---------------------------------------------------------------
+    // AI Language Models
+    // ---------------------------------------------------------------
+    "agent": {
+        "default_model": {
+            "provider": "Z AI",
+            "model": "GLM-4.7",
+        },
+        "favorite_models": [],
+        "model_parameters": [],
     },
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
+    "language_models": {
+        "openai_compatible": {
+            "Z AI": {
+                "api_url": "https://api.z.ai/api/coding/paas/v4",
+                "available_models": [
+                    {
+                        "name": "GLM-4.7",
+                        "display_name": "GLM 4.7",
+                        "max_tokens": 1000000,
+                        "capabilities": {
+                            "tools": true,
+                            "images": true,
+                            "parallel_tool_calls": true,
+                            "prompt_cache_key": false,
+                        },
+                    },
+                    {
+                        "name": "GLM-4.6V",
+                        "display_name": "GLM 4.6V",
+                        "max_tokens": 128000,
+                        "capabilities": {
+                            "tools": true,
+                            "images": false,
+                            "parallel_tool_calls": true,
+                            "prompt_cache_key": false,
+                        },
+                    },
+                    {
+                        "name": "GLM-4.6",
+                        "display_name": "GLM 4.6",
+                        "max_tokens": 200000,
+                        "capabilities": {
+                            "tools": true,
+                            "images": false,
+                            "parallel_tool_calls": true,
+                            "prompt_cache_key": false,
+                        },
+                    },
+                    {
+                        "name": "GLM-4.5",
+                        "display_name": "GLM 4.5",
+                        "max_tokens": 131072,
+                        "capabilities": {
+                            "tools": true,
+                            "images": false,
+                            "parallel_tool_calls": true,
+                            "prompt_cache_key": false,
+                        },
+                    },
+                    {
+                        "name": "GLM-4.5-air",
+                        "display_name": "GLM 4.5 Air",
+                        "max_tokens": 131072,
+                        "capabilities": {
+                            "tools": true,
+                            "images": false,
+                            "parallel_tool_calls": true,
+                            "prompt_cache_key": false,
+                        },
+                    },
+                ],
+            },
+        },
     },
-    "serena": {
-      "command": "uvx",
-      "args": [
-        "--from",
-        "git+https://github.com/oraios/serena",
-        "serena",
-        "start-mcp-server",
-        "--context",
-        "ide-assistant"
-      ]
-    }
-  },
-  "language_models": {
-    "openai_compatible": {
-      "Z AI": {
-        "api_url": "https://api.z.ai/api/coding/paas/v4",
-        "available_models": [
-          {
-            "name": "GLM-4.6V",
-            "display_name": "GLM 4.6V",
-            "max_tokens": 128000,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": true,
-              "prompt_cache_key": false
-            }
-          },
-          {
-            "name": "GLM-4.6",
-            "display_name": "GLM 4.6",
-            "max_tokens": 200000,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": true,
-              "prompt_cache_key": false
-            }
-          },
-          {
-            "name": "GLM-4.5",
-            "display_name": "GLM 4.5",
-            "max_tokens": 131072,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": true,
-              "prompt_cache_key": false
-            }
-          },
-          {
-            "name": "GLM-4.5-air",
-            "display_name": "GLM 4.5 Air",
-            "max_tokens": 131072,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": true,
-              "prompt_cache_key": false
-            }
-          }
-        ]
-      }
-    }
-  }
 }
