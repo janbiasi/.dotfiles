@@ -160,7 +160,7 @@ alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace C'
+run = 'move-node-to-workspace T'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Terminal'
@@ -263,10 +263,14 @@ run = 'move-node-to-workspace M'
 if.app-id = 'com.microsoft.teams2'
 run = 'move-node-to-workspace M'
 [[on-window-detected]]
-if.app-id = 'com.google.Chrome.app.cifhbcnohmdccbgoicgdjpfamggdegmo' # Teams PWA
+if.app-id = 'com.google.Chrome.app.cifhbcnohmdccbgoicgdjpfamggdegmo' # Teams PWA
 run = 'move-node-to-workspace M'
 [[on-window-detected]]
-if.app-id = 'net.imput.helium.app.cifhbcnohmdccbgoicgdjpfamggdegmo' # Teams PWA
+if.app-id = 'net.imput.helium.app.cifhbcnohmdccbgoicgdjpfamggdegmo' # Teams PWA
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'io.canarymail.mac'
 run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
@@ -280,7 +284,7 @@ run = 'move-node-to-workspace O'
 # TODO: try this with external monitor
 # [workspace-to-monitor-force-assignment]
 
-# Floating windows
+# Floating windows
 [[on-window-detected]]
 if.window-title-regex-substring = "^[^—]+ — 1Password$"
 run = ['layout floating']
@@ -323,4 +327,8 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'org.localsend.localsendApp'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'at.obdev.littlesnitch.agent'
 run = ['layout floating']
