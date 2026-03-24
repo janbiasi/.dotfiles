@@ -1,17 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "github",
   "model": "zai/glm-4.7",
   "autoupdate": true,
   "instructions": ["CONTRIBUTING.md", ".cursor/rules/*.md"],
-  // "plugin": ["opencode-swarm-plugin"],
   "plugin": ["opencode-beads"],
-  "tui": {
-    "scroll_speed": 3,
-    "scroll_acceleration": {
-      "enabled": true,
-    },
-  },
+  "default_agent": "plan",
   "permission": {
     "*": "ask",
     // Read, skill and todos are always allowed
@@ -44,6 +37,7 @@
       "ls*": "allow",
       "head": "allow",
       "head*": "allow",
+      "devbox*": "allow",
     },
     // General read permissions
     "read": {
@@ -59,6 +53,7 @@
     // Tool integrations
     "Beads-Task-Agent*": "allow",
   },
+  "provider": {},
   "mcp": {
     "serena": {
       "type": "local",
