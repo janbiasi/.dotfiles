@@ -30,7 +30,6 @@ This directory contains the dotfles for my development environment
 - [jankyborders](https://github.com/FelixKratz/JankyBorders) :apple:
 - [karabiner elements](https://karabiner-elements.pqrs.org/) :apple:
 - [lazygit](https://github.com/jesseduffield/lazygit)
-- [neofetch](https://github.com/dylanaraps/neofetch)
 - [nix](https://nixos.org)
 - [opencode](https://opencode.ai/) 🧠
 - [posting](https://posting.sh/)
