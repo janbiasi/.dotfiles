@@ -41,10 +41,8 @@
         "button": false,
     },
     "file_scan_exclusions": [
-        "**/node_modules",
         "**/.git",
         "**/.classpath",
-        "**/build",
         "**/*.lock",
         "**/*-lock*",
         "**/.DS_Store",
@@ -211,17 +209,17 @@
             "settings": {
                 "typescript": {
                     "updateImportsOnFileMove": {
-                        "enabled": "always"
-                    }
+                        "enabled": "always",
+                    },
                 },
                 "javascript": {
                     "updateImportsOnFileMove": {
-                        "enabled": "always"
-                    }
-                }
+                        "enabled": "always",
+                    },
+                },
             },
-            "enable_lsp_tasks": true
-        }
+            "enable_lsp_tasks": true,
+        },
     },
     // ---------------------------------------------------------------
     // MCP Servers
@@ -254,6 +252,7 @@
     // AI Language Models
     // ---------------------------------------------------------------
     "agent": {
+        "default_profile": "ask",
         "default_model": {
             "provider": "Z AI",
             "model": "GLM-4.7",
