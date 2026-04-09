@@ -21,6 +21,8 @@ fi
 
 # Use 1Password SSH agent
 export SSH_AUTH_SOCK="$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+# Use Proton Pass SSH agent
+# export SSH_AUTH_SOCK="$HOME/.protonpass/ssh-agent.sock"
 
 # Main obsidian vault
 export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/"
@@ -53,6 +55,7 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.antigravity/antigravity/bin"
 export PATH="$PATH:$HOME/.bun/bin"
 export PATH="$PATH:$HOME/.opencode/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
 
 # GitHub Dark theme for FZF (used by sesh amm.)
