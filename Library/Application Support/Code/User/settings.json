@@ -393,5 +393,6 @@
   "vitest.maximumConfigs": 10,
   "[mdx]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "chat.disableAIFeatures": true
 }

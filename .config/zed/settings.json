@@ -33,7 +33,7 @@
     "show_branch_icon": true,
   },
   "icon_theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Catppuccin Mocha",
     "dark": "Catppuccin Mocha",
   },
@@ -89,9 +89,9 @@
   // UI Configuration
   // ---------------------------------------------------------------
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark",
+    "dark": "GitHub Dark",
   },
   "ui_font_size": 14.0,
   "ui_font_weight": 400.0,
