@@ -1,107 +1,124 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "model": "zai/glm-5",
-  "small_model": "zai/glm-4.7-flash",
-  "autoupdate": true,
-  "instructions": ["CONTRIBUTING.md", ".cursor/rules/*.md"],
-  "plugin": ["opencode-beads"],
-  "default_agent": "plan",
-  "permission": {
-    "*": "ask",
-    // Read, skill and todos are always allowed
-    "skill": "allow",
-    "todoread": "allow",
-    "todowrite": "allow",
-    "webfetch": "allow",
-    "lsp": "allow",
-    "glob": "allow",
-    "grep": "allow",
-    "list": "allow",
-    // Important deny rules
-    "rm": "deny",
-    "external_directory": "deny",
-    // Bash execution permission (non-tools)
-    "bash": {
-      "*": "ask",
-      "echo *": "allow",
-      "grep *": "allow",
-      "find *": "allow",
-      "git *": "allow",
-      "git push": "deny",
-      "npm *": "allow",
-      "pnpm *": "allow",
-      "go *": "allow",
-      "tail *": "allow",
-      "ls": "allow",
-      "ls *": "allow",
-      "head": "allow",
-      "head *": "allow",
-      "devbox *": "allow",
+    "$schema": "https://opencode.ai/config.json",
+    "model": "zai/glm-5",
+    "small_model": "zai/glm-4.7-flash",
+    "autoupdate": true,
+    "instructions": ["CONTRIBUTING.md", ".cursor/rules/*.md"],
+    "plugin": ["opencode-beads", "cc-safety-net", "@mohak34/opencode-notifier"],
+    "default_agent": "plan",
+    "permission": {
+        "*": "ask",
+        // Read, skill and todos are always allowed
+        "skill": "allow",
+        "todoread": "allow",
+        "todowrite": "allow",
+        "webfetch": "allow",
+        "lsp": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        // Important deny rules
+        "rm": "deny",
+        "external_directory": "deny",
+        // Bash execution permission (non-tools)
+        "bash": {
+            "*": "ask",
+            "echo *": "allow",
+            "grep": "allow",
+            "grep*": "allow",
+            "grep *": "allow",
+            "find *": "allow",
+            "tail *": "allow",
+            "ls": "allow",
+            "ls *": "allow",
+            "head": "allow",
+            "head*": "allow",
+            "head *": "allow",
+            // git
+            "git *": "allow",
+            "git commit *": "deny",
+            "git push *": "deny",
+            // node
+            "npm *": "allow",
+            "pnpm *": "allow",
+            "yarn *": "allow",
+            "bun *": "allow",
+            // nix
+            "devbox *": "allow",
+            "devenv": "allow",
+            "devenv*": "allow",
+            "devenv *": "allow",
+            // golang
+            "go *": "allow",
+            "go test *": "allow",
+            "golangci-lint *": "allow",
+            // beads
+            "bd *": "allow",
+        },
+        // general read permissions
+        "read": {
+            "*": "allow",
+            "*.envrc*": "deny",
+            "*.env": "deny",
+            "*.env.*": "deny",
+            "*.env.example": "allow",
+        },
+        // MCP server permissions
+        "context7_*": "allow",
+        "serena_*": "allow",
+        // Tool integrations
+        "Beads-Task-Agent*": "allow",
     },
-    // General read permissions
-    "read": {
-      "*": "allow",
-      "*.envrc*": "deny",
-      "*.env": "deny",
-      "*.env.*": "deny",
-      "*.env.example": "allow",
+    "mcp": {
+        "plane": {
+            "type": "remote",
+            "enabled": false,
+            "url": "https://mcp.plane.so/http/mcp",
+        },
+        "github": {
+            "type": "remote",
+            "url": "https://api.githubcopilot.com/mcp/",
+            "oauth": false,
+            "enabled": false,
+            "headers": {
+                "Authorization": "Bearer {env:GITHUB_TOKEN}",
+            },
+        },
+        "serena": {
+            "type": "local",
+            "enabled": false,
+            "command": [
+                "uvx",
+                "--from",
+                "git+https://github.com/oraios/serena",
+                "serena",
+                "start-mcp-server",
+                "--context",
+                "agent",
+            ],
+        },
+        "context7": {
+            "type": "remote",
+            "url": "https://mcp.context7.com/mcp",
+            "headers": {
+                "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}",
+            },
+            "enabled": true,
+        },
+        "chrome": {
+            "type": "local",
+            "enabled": true,
+            "command": ["bun", "x", "chrome-devtools-mcp@latest"],
+        },
+        "posthog": {
+            "enabled": false,
+            "type": "local",
+            "command": [
+                "bun",
+                "x",
+                "mcp-remote@latest",
+                "https://mcp-eu.posthog.com/mcp",
+            ],
+        },
     },
-    // MCP server permissions
-    "context7_*": "allow",
-    "serena_*": "allow",
-    // Tool integrations
-    "Beads-Task-Agent*": "allow",
-  },
-  "mcp": {
-    "plane": {
-      "type": "remote",
-      "enabled": false,
-      "url": "https://mcp.plane.so/http/mcp",
-    },
-    "github": {
-      "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp/",
-      "oauth": false,
-      "enabled": false,
-      "headers": {
-        "Authorization": "Bearer {env:GITHUB_TOKEN}",
-      },
-    },
-    "serena": {
-      "type": "local",
-      "enabled": false,
-      "command": [
-        "uvx",
-        "--from",
-        "git+https://github.com/oraios/serena",
-        "serena",
-        "start-mcp-server",
-        "--context",
-        "agent",
-      ],
-    },
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "headers": {
-        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}",
-      },
-      "enabled": true,
-    },
-    "chrome": {
-      "type": "local",
-      "enabled": true,
-      "command": ["bun", "x", "chrome-devtools-mcp@latest"],
-    },
-    "posthog": {
-      "enabled": false,
-      "type": "local",
-      "command": [
-        "bun",
-        "x",
-        "mcp-remote@latest",
-        "https://mcp-eu.posthog.com/mcp",
-      ],
-    },
-  },
 }
