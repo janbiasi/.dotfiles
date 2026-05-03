@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "nodenext",
+    "module": "NodeNext",
+  },
+  "include": ["plugins/**/*.ts"],
+}

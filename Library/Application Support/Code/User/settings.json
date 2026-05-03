@@ -38,7 +38,7 @@
     "**/.hg": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    "**/.crush": true
+    "**/.crush": true,
   },
 
   "search.defaultViewMode": "tree",
@@ -46,7 +46,7 @@
     "**/.nx": true,
     "**/node_modules": true,
     "**/bower_components": true,
-    "**/*.code-search": true
+    "**/*.code-search": true,
   },
 
   "diffEditor.codeLens": true,
@@ -61,7 +61,7 @@
   "terminal.external.osxExec": "Ghostty.app",
   "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.autoReplies": {
-    "Terminate batch job (Y/N)": "Y\r"
+    "Terminate batch job (Y/N)": "Y\r",
   },
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
@@ -80,8 +80,8 @@
     "tmux": {
       "path": "bash",
       "args": ["-c", "tmux new -As ${PWD##*/}"],
-      "icon": "terminal-tmux"
-    }
+      "icon": "terminal-tmux",
+    },
   },
 
   // Terminal tmux profile on Linux
@@ -90,8 +90,8 @@
     "tmux": {
       "path": "bash",
       "args": ["-c", "tmux new -As ${PWD##*/}"],
-      "icon": "terminal-tmux"
-    }
+      "icon": "terminal-tmux",
+    },
   },
 
   // Explorer configuration
@@ -189,7 +189,7 @@
     "*.vbproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
     "*.vue": "$(capture).*.ts, $(capture).*.js, $(capture).story.vue",
     "*.w": "$(capture).*.w, I$(capture).w",
-    "*.xaml": "$(capture).xaml.cs"
+    "*.xaml": "$(capture).xaml.cs",
   },
 
   // Configure file association
@@ -241,15 +241,15 @@
       "commandTimeout": 30,
       "applicationName": "vscode-mssql",
       "authenticationType": "SqlLogin",
-      "savePassword": true
-    }
+      "savePassword": true,
+    },
   ],
 
   // GitHub extension
   "githubPullRequests.pullBranch": "never",
   "githubPullRequests.terminalLinksHandler": "github",
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   // Import cost extension
@@ -286,35 +286,35 @@
     "iconColour": "#74c7ec",
     "background": "#74c7ec",
     "foreground": "#11111b",
-    "fontWeight": "600"
+    "fontWeight": "600",
   },
   "todo-tree.highlights.customHighlight": {
     "BUG": {
-      "icon": "bug"
+      "icon": "bug",
     },
     "HACK": {
-      "icon": "tools"
+      "icon": "tools",
     },
     "FIXME": {
-      "icon": "flame"
+      "icon": "flame",
     },
     "XXX": {
-      "icon": "x"
+      "icon": "x",
     },
     "[ ]": {
-      "icon": "issue-draft"
+      "icon": "issue-draft",
     },
     "[x]": {
-      "icon": "issue-closed"
-    }
+      "icon": "issue-closed",
+    },
   },
 
   // JSON settings
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   // TypeScript settings
@@ -323,15 +323,15 @@
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   // JavaScript settings
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
   "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
@@ -354,19 +354,19 @@
   "chat.commandCenter.enabled": false,
   "chat.experimental.statusIndicator.enabled": true,
   "github.copilot.advanced": {
-    "authProvider": "github"
+    "authProvider": "github",
   },
 
   // Prettier Extension
   "prettier.printWidth": 120,
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   // Docker Settings
@@ -379,20 +379,20 @@
     "editor.quickSuggestions": {
       "other": true,
       "comments": false,
-      "strings": true
+      "strings": true,
     },
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
 
   // Vitest settings
   "vitest.configSearchPatternExclude": "{**/node_modules/**,**/.*/**,**/*.d.ts}",
   "vitest.disableWorkspaceWarning": true,
   "vitest.nodeEnv": {
-    "NODE_ENV": "TEST"
+    "NODE_ENV": "TEST",
   },
   "vitest.maximumConfigs": 10,
   "[mdx]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-  "chat.disableAIFeatures": true
+  "chat.disableAIFeatures": true,
 }

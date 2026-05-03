@@ -33,6 +33,5 @@ Temporary Items
 # Serena MCP
 .serena/cache/**
 
-# Beads CLI
-.beads
-.hive
+# Beads
+.beads/issues*

@@ -80,5 +80,8 @@ export UV_PYTHON_PREFERENCE=only-managed
 export GEMINI_CLI_SYSTEM_DEFAULTS_PATH="$XDG_CONFIG_HOME/gemini/system"
 export GEMINI_CLI_SYSTEM_SETTINGS_PATH="$XDG_CONFIG_HOME/gemini/system"
 
+# codex doesn't follow xdg - https://github.com/openai/codex/issues/1980
+export CODEX_HOME="$XDG_CONFIG_HOME/codex"
+
 # sqlit doesn't follow xdg
 export SQLIT_CONFIG_DIR="$XDG_CONFIG_HOME/sqlit"

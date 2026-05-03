@@ -19,7 +19,7 @@ macos-titlebar-proxy-icon = hidden
 macos-window-shadow = false
 mouse-hide-while-typing = true
 background-blur-radius = 70
-background-opacity = 0.8
+background-opacity = 1
 
 # Set the title to empty, since it only shows "t" when in
 # a tmux session and not what is actually going on

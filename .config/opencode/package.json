@@ -1,0 +1,12 @@
+{
+  "name": "@janbiasi/dotfiles",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@opencode-ai/plugin": "1.4.10"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "typescript": "^6"
+  }
+}

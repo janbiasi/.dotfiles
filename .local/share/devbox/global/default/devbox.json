@@ -4,7 +4,7 @@
     "bat@0.26.0",
     "btop@1.4.5",
     "eza@0.23.4",
-    "git@2.51.0",
+    "git@2.53.0",
     "uv@0.8.23",
     "yazi@25.5.31",
     "zoxide@0.9.8",
@@ -15,7 +15,7 @@
     "init_hook": [],
     "scripts": {
       "serena:create": "uvx --from git+https://github.com/oraios/serena serena project generate-yml",
-      "serena:index":  "uvx --from git+https://github.com/oraios/serena serena project index",
+      "serena:index": "uvx --from git+https://github.com/oraios/serena serena project index",
       "serena:health": "uvx --from git+https://github.com/oraios/serena serena project health-check"
     }
   }

@@ -105,6 +105,7 @@ alt-shift-1 = 'resize smart +50'
 alt-shift-2 = 'resize smart -50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+alt-a = 'workspace A' # Agents
 alt-b = 'workspace B' # Browsing
 alt-c = 'workspace C' # Code
 alt-d = 'workspace D' # Design
@@ -116,6 +117,7 @@ alt-m = 'workspace M' # Messaging
 alt-o = 'workspace O' # Obsidian
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+alt-shift-a = 'move-node-to-workspace A'
 alt-shift-b = 'move-node-to-workspace B'
 alt-shift-c = 'move-node-to-workspace C'
 alt-shift-d = 'move-node-to-workspace D'
@@ -284,6 +286,14 @@ run = 'move-node-to-workspace M'
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace O'
+
+[[on-window-detected]]
+if.app-id = 'com.openai.codex'
+run = 'move-node-to-workspace A'
+
+[[on-window-detected]]
+if.app-id = 'ai.opencode.desktop'
+run = 'move-node-to-workspace A'
 
 # TODO: try this with external monitor
 # [workspace-to-monitor-force-assignment]
