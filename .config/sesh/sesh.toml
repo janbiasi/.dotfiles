@@ -1,4 +1,4 @@
-blacklist = ["scratch", "temp", ".nix-profile", ".ssh", "Library"]
+blacklist = ["scratch", "temp", ".nix-profile", ".ssh", ".git", ".devbox", ".devenv", "Library"]
 
 sort_order = [
   "tmuxinator", # show first
