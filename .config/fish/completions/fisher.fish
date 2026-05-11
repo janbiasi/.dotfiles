@@ -1,1 +1,0 @@
-../../../dotfiles/.config/fish/completions/fisher.fish

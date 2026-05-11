@@ -1,1 +1,0 @@
-bind --preset \cC 'cancel-commandline'
