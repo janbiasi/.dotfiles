@@ -269,6 +269,15 @@
     "agent_ui_font_size": 14.0,
     "agent_buffer_font_size": 13.0,
     "agent_servers": {
+        "pi-acp": {
+            "type": "registry"
+        },
+        "glm-acp-agent": {
+            "type": "registry"
+        },
+        "codex-acp": {
+            "type": "registry"
+        },
         "opencode": {
             "type": "registry",
         },
