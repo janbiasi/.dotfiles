@@ -29,6 +29,4 @@ if [ -d /opt/zerobrew ]; then
 
   _zb_path_append "$ZEROBREW_BIN"
   _zb_path_append "$ZEROBREW_PREFIX/bin"
-
-  eval "$(zb completion zsh)"
 fi
