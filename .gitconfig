@@ -19,13 +19,13 @@
   # https://git-scm.com/docs/git-update-index#_untracked_cache
   untrackedCache = true
 
-  # Integrate delta
-  # https://github.com/dandavison/delta
-	pager = delta
+  # Integrate hunk
+  # https://github.com/modem-dev/hunk/
+	pager = hunk pager
 
 [commit]
 
-    # https://help.github.com/articles/signing-commits-using-gpg/
+  # https://help.github.com/articles/signing-commits-using-gpg/
   gpgsign = true
 
 [merge]
@@ -103,7 +103,10 @@
 [gpg "ssh"]
 
   # Use 1Password to sign commits
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  # macOS path:
+  # program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  # Linux path (uncomment and comment out macOS line when on Linux):
+  # program = "/opt/1Password/op-ssh-sign"
 
 [user]
 
@@ -131,4 +134,3 @@
   dark = true
   side-by-side = true
   colorMoved = default
-  hyperlinks-file-link-format = "vscode://file/{path}:{line}"
