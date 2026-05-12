@@ -130,3 +130,8 @@ impure_msg = 'impure'
 pure_msg = 'pure'
 unknown_msg = 'unknown'
 format = 'in [󱄅 nix](cyan)'
+
+[cmd_duration]
+min_time = 3500
+format = "[ 󰅐 $duration]($style)"
+style = "yellow"
