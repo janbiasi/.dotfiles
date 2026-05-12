@@ -1,5 +1,5 @@
 # basic ui configuration
-theme = GitHub Dark Default
+theme = light:GitHub Light Default,dark:GitHub Dark Default
 cursor-style = block
 cursor-color = #777777
 cursor-opacity = 0.9
