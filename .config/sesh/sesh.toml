@@ -14,14 +14,18 @@ replace = "git:"
 
 [[window]]
 name = "git"
-startup_script = "git pull"
+startup_script = "git pull && lazygit"
 
 [[window]]
-name = "neovim"
+name = "nvim"
 startup_script = "nvim ."
 
 [[window]]
-name = "shell"
+name = "sh"
+
+[[window]]
+name = "devenv-services"
+startup_script = "devenv up"
 
 [default_session]
 # startup_command = "nvim -c ':Telescope find_files'"
@@ -63,6 +67,6 @@ preview_command = "bat --color=always README.md"
 windows = ["neovim"]
 
 [[session]]
-name = "seekme"
+name = "seekme.io"
 path = "~/.local/share/git/seekmeio/"
 windows = ["api", "platform", "website"]
