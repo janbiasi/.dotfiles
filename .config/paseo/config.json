@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "daemon": {
+    "listen": "127.0.0.1:6767",
+    "cors": {
+      "allowedOrigins": ["https://app.paseo.sh"]
+    },
+    "relay": {
+      "enabled": true
+    },
+    "hostnames": ["localhost", "macbook.netbird.cloud", "100.122.136.60"]
+  },
+  "app": {
+    "baseUrl": "https://app.paseo.sh"
+  }
+}

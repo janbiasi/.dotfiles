@@ -1,4 +1,5 @@
 {
   "lastChangelogVersion": "0.74.0",
-  "enableInstallTelemetry": false
+  "enableInstallTelemetry": false,
+  "packages": ["npm:@plannotator/pi-extension"]
 }
