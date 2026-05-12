@@ -1,0 +1,17 @@
+# AUR packages for Arch Linux setup
+# Install with yay: yay -S --needed - < extra/arch/aur.txt
+
+# Node version manager
+fnm-bin
+
+# Browsers
+zen-browser-bin
+
+# Password manager
+1password
+
+# Terminal emulator
+ghostty-bin
+
+# Editor
+visual-studio-code-bin
