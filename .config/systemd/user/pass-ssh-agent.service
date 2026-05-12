@@ -1,0 +1,11 @@
+[Unit]
+Description=Proton Pass SSH Agent
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/pass-cli ssh-agent start
+Restart=on-failure
+ExecStartPost=/usr/bin/systemctl --user set-environment SSH_AUTH_SOCK=%h/.protonpass/ssh-agent.sock
+
+[Install]
+WantedBy=default.target
