@@ -12,3 +12,5 @@ export AVANTE_ANTHROPIC_API_KEY="op://Personal/oush65edlqwj634y54gxqzf7tu/creden
 export AVANTE_OPENAI_API_KEY=""
 
 export CONTEXT7_API_KEY="op://Personal/vw5uq42daywk3lrwifgth6im2a/credential"
+
+export OPENCODE_API_KEY="op://Personal/df5vsow22qb3kgdh4keyo743ou/credential"
