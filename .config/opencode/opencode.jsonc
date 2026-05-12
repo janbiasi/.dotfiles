@@ -142,5 +142,10 @@
         "WS_UI_PORT": "9711",
       },
     },
+    "treepolicy": {
+      "enabled": false,
+      "type": "local",
+      "command": ["treepolicy-mcp"],
+    },
   },
 }

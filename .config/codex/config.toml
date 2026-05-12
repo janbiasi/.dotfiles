@@ -1,7 +1,7 @@
 personality = "pragmatic"
 approval_policy = "on-request"
 web_search = "cached"
-model = "gpt-5.4-mini"
+model = "gpt-5.5"
 model_reasoning_effort = "low"
 
 [analytics]
@@ -74,12 +74,12 @@ args = [
 ]
 
 [marketplaces.openai-bundled]
-last_updated = "2026-05-01T22:32:55Z"
+last_updated = "2026-05-12T20:10:09Z"
 source_type = "local"
 source = "/Users/janbiasi/.dotfiles/.config/codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-04-30T17:48:11Z"
+last_updated = "2026-05-12T07:40:30Z"
 source_type = "local"
 source = "/Users/janbiasi/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 

@@ -53,13 +53,7 @@
         "dock": "right",
         "button": false,
     },
-    "file_scan_exclusions": [
-        "**/.git",
-        "**/.classpath",
-        "**/*.lock",
-        "**/*-lock*",
-        "**/.DS_Store",
-    ],
+    "file_scan_exclusions": ["**/.git", "**/.classpath", "**/.DS_Store"],
     // ---------------------------------------------------------------
     // Terminal Configuration
     // ---------------------------------------------------------------
@@ -270,13 +264,13 @@
     "agent_buffer_font_size": 13.0,
     "agent_servers": {
         "pi-acp": {
-            "type": "registry"
+            "type": "registry",
         },
         "glm-acp-agent": {
-            "type": "registry"
+            "type": "registry",
         },
         "codex-acp": {
-            "type": "registry"
+            "type": "registry",
         },
         "opencode": {
             "type": "registry",
