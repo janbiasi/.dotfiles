@@ -1,3 +1,4 @@
+[[ "$OSTYPE" != darwin* ]] && return
 
 # Set config and data share directories like they should be
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -85,3 +86,9 @@ export CODEX_HOME="$XDG_CONFIG_HOME/codex"
 
 # sqlit doesn't follow xdg
 export SQLIT_CONFIG_DIR="$XDG_CONFIG_HOME/sqlit"
+
+# pi doesn't follow xdg - https://github.com/earendil-works/pi/issues/2870
+export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi"
+
+# paseo doesn't follow xdg - https://github.com/earendil-works/paseo/issues/
+export PASEO_HOME="$XDG_CONFIG_HOME/paseo"
