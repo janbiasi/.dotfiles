@@ -23,8 +23,10 @@ alias d-up='devbox services up'
 alias qs='sesh connect $(sesh list | fzf)'
 alias tn='tmux new-session -A -s "$(basename "$PWD")"'
 
-# VSCode alias without using the UI to install it persistently
-alias code='function _code(){ VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;};_code'
+if [[ "$OSTYPE" == darwin* ]]; then
+  # VSCode alias without using the UI to install it persistently
+  alias code='function _code(){ VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;};_code'
+fi
 
 # Useful parent cd aliases
 alias ..='cd ..'
@@ -35,7 +37,9 @@ alias .....='cd ../../../../../'
 # Convenience alias for Spring projects
 alias spring-dev="./gradlew bootRun --args='--spring.profiles.active=dev'"
 
-# Convenience alias for networking stuff
-alias flush-dns-cache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+if [[ "$OSTYPE" == darwin* ]]; then
+  # Convenience alias for networking stuff
+  alias flush-dns-cache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+fi
 
 alias serenax="uvx --from git+https://github.com/oraios/serena serena"
