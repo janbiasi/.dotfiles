@@ -1,0 +1,243 @@
+# AdGuard Home allowlist — Adblock whitelist rules (||domain^)
+# Format: whitelist rules using ||...^ (CI validator expects # comments + ||domain^)
+
+# ############################
+# AMAZON / PRIME VIDEO / AWS
+# ############################
+||amazon.com^
+||amazon.ca^
+||media-amazon.com^
+||amazonaws.com^
+||cloudfront.net^
+||device-metrics-us.amazon.com^
+||primevideo.com^
+||amazonvideo.com^
+||video.amazon.com^
+||atv-ext.amazon.com^
+||fls-na.amazon.com^
+||fls-na.amazon.ca^
+
+# #############################
+# NETFLIX
+# #############################
+||netflix.com^
+||nflxvideo.net^
+||nflximg.net^
+||nflxso.net^
+||nflxext.com^
+||fast.com^
+
+# #######################################
+# DISNEY+
+# #######################################
+||disneyplus.com^
+||disney-plus.net^
+||dssott.com^
+||bamgrid.com^
+||api.disneyplus.com^
+||global.edge.bamgrid.com^
+||global.api.edge.bamgrid.com^
+||bam.nr-data.net^
+||cdn.registerdisney.go.com^
+||cdn.disneyplus.com^
+||cdn.dssott.com^
+||disneyplus.bncdn.net^
+||disneyplus.edgesuite.net^
+||disneyplus.akamaized.net^
+||dssott.akamaized.net^
+||dssott.edge.bamgrid.com^
+||widevine.entitlement.eu.bamgrid.com^
+||widevine.entitlement.us.bamgrid.com^
+||disney.playback.edge.bamgrid.com^
+||disney.playback.api.bamgrid.com^
+||disney.demdex.net^
+||disneyplus.demdex.net^
+||assets.adobedtm.com^
+||images.disneyplus.com^
+||static.dssott.com^
+||static.dssott-cdn.com^
+||akamaihd.net^
+||akamaihd-staging.net^
+||edgesuite.net^
+||edgekey.net^
+
+# #############################
+# YOUTUBE
+# #############################
+||youtube.com^
+||ytimg.com^
+||googlevideo.com^
+||gvt2.com^
+||gvt1.com^
+||googleusercontent.com^
+
+# #############################
+# APPLE / iOS
+# #############################
+||apple.com^
+||icloud.com^
+||mzstatic.com^
+||itunes.apple.com^
+||apple-dns.net^
+
+# #############################
+# SMARTTHINGS
+# #############################
+||smartthings.com^
+||api.smartthings.com^
+
+# #############################
+# KUNA
+# #############################
+||kuna.com^
+||api.kuna.com^
+
+# #############################
+# RING
+# #############################
+||ring.com^
+||cloud.ring.com^
+
+# #############################
+# SAMSUNG TV
+# #############################
+||samsung.com^
+||samsungcloudsolution.com^
+||samsungosp.com^
+||tizenstore.com^
+
+# #############################
+# LG TV
+# #############################
+||lg.com^
+||lgtvsdp.com^
+||webosapp.club^
+
+# #######################################
+# Sony TV / Bravia / Google TV
+# #######################################
+# Sony core services
+||sony.com^
+||sony.net^
+||bravia.sony.net^
+||bravia-tv.com^
+||bravia.dl.playstation.net^
+
+# Firmware updates
+||update.sony.net^
+||prd.sonyglobal.net^
+||prd.sony.net^
+
+# Certificate validation
+||ocsp.sony.net^
+||ocsp.digicert.com^
+||ocsp.verisign.com^
+
+# Android TV / Google TV core
+||android.com^
+||google.com^
+||gvt1.com^
+||gvt2.com^
+||gvt3.com^
+||gstatic.com^
+||googleapis.com^
+||play.googleapis.com^
+||play-fe.googleapis.com^
+
+# Chromecast built-in
+||chromecast.com^
+||cast.google.com^
+||clients3.google.com^
+||clients4.google.com^
+
+# Time sync
+||time.android.com^
+||time.google.com^
+
+# #############################
+# PLAYSTATION
+# #############################
+||playstation.com^
+||sonyentertainmentnetwork.com^
+||pscdn.co^
+
+# #############################
+# STEAM
+# #############################
+||steampowered.com^
+||steamcontent.com^
+||steamstatic.com^
+
+# #############################
+# EA
+# #############################
+||ea.com^
+||origin.com^
+||eaassets-a.akamaihd.net^
+
+# #############################
+# CANADIAN BANKING
+# #############################
+||rbcroyalbank.com^
+||td.com^
+||bmo.com^
+||scotiabank.com^
+||atb.com^
+||cibc.com^
+
+# #############################
+# CDNs
+# #############################
+||akamai.net^
+||akamaihd.net^
+||cloudfront.net^
+||cloudflare.com^
+||cloudflare-dns.com^
+||edgekey.net^
+||edgesuite.net^
+||fastly.net^
+
+# #############################
+# CLOUD PROVIDERS
+# #############################
+||amazonaws.com^
+||azureedge.net^
+||microsoft.com^
+||googleapis.com^
+||gvt1.com^
+||gvt2.com^
+
+# #############################
+# ANDROID
+# #############################
+||googleplay.com^
+||play.googleapis.com^
+||firebaseio.com^
+
+# #######################################
+# Audio Services Allowlist Module
+# Includes:
+# - Spotify
+
+# #######################################
+# Spotify
+# #######################################
+||spotify.com^
+||scdn.co^
+||spoti.fi^
+
+||audio-fa.scdn.co^
+||audio-ak.spotify.com^
+||audio4-ak.spotify.com^
+||audio2-ak.spotify.com^
+
+||api.spotify.com^
+||apresolve.spotify.com^
+||dealer.spotify.com^
+||exp.wg.spotify.com^
+
+||heads4-ak.spotify.com^
+||heads-ak.spotify.com^
+
+
+# End of allowlist
