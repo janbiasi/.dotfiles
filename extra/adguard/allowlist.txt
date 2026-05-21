@@ -2,6 +2,12 @@
 # Format: whitelist rules using ||...^ (CI validator expects # comments + ||domain^)
 
 # ############################
+# GitHub
+# ############################
+||github.com^
+||api.github.com^
+
+# ############################
 # AMAZON / PRIME VIDEO / AWS
 # ############################
 ||amazon.com^
