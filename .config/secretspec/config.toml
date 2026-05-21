@@ -1,0 +1,3 @@
+[defaults]
+provider = "onepassword"
+profile = "default"
