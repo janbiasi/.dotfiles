@@ -2,15 +2,30 @@
   "version": 1,
   "daemon": {
     "listen": "127.0.0.1:6767",
+    "hostnames": ["localhost", "macbook.netbird.cloud", "100.122.136.60"],
+    "mcp": {
+      "injectIntoAgents": false
+    },
     "cors": {
       "allowedOrigins": ["https://app.paseo.sh"]
     },
     "relay": {
-      "enabled": true
-    },
-    "hostnames": ["localhost", "macbook.netbird.cloud", "100.122.136.60"]
+      "enabled": true,
+      "endpoint": "100.122.229.240:8411",
+      "publicEndpoint": "100.122.229.240:8411"
+    }
   },
   "app": {
     "baseUrl": "https://app.paseo.sh"
+  },
+  "agents": {
+    "providers": {
+      "claude": {
+        "enabled": false
+      },
+      "copilot": {
+        "enabled": false
+      }
+    }
   }
 }

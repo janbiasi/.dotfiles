@@ -79,7 +79,7 @@ style = "purple"
 disabled = true
 
 [java]
-symbol = "☕"
+symbol = "󰅶 "
 version_format = "${major}"
 style = "red"
 

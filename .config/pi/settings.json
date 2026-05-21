@@ -1,5 +1,14 @@
 {
   "lastChangelogVersion": "0.74.0",
   "enableInstallTelemetry": false,
-  "packages": ["npm:@plannotator/pi-extension"]
+  "packages": [
+    {
+      "source": "npm:@plannotator/pi-extension",
+      "skills": []
+    },
+    "npm:pi-mcp-adapter"
+  ],
+  "defaultProvider": "opencode-go",
+  "defaultModel": "deepseek-v4-flash",
+  "defaultThinkingLevel": "high"
 }
