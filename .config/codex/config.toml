@@ -2,7 +2,7 @@ personality = "pragmatic"
 approval_policy = "on-request"
 web_search = "cached"
 model = "gpt-5.5"
-model_reasoning_effort = "low"
+model_reasoning_effort = "medium"
 
 [analytics]
 enabled = false
@@ -11,7 +11,28 @@ enabled = false
 include_only = ["PATH", "HOME", "SHELL", "LC_ALL", "EDITOR", "DIRENV_DIR", "DIRENV_FILE"]
 
 [features]
-memories = true
+hooks = true
+memories = false
+js_repl = false
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "context-used", "five-hour-limit", "weekly-limit"]
+status_line_use_colors = true
+
+[desktop]
+keepRemoteControlAwakeWhilePluggedIn = true
+git-show-sidebar-pr-icons = true
+
+[desktop.open-in-target-preferences]
+global = "zed"
+
+# Plugins
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
 
 # MCP Servers
 
@@ -72,25 +93,3 @@ args = [
   "mcp-remote@latest",
   "https://mcp-eu.posthog.com/mcp",
 ]
-
-[marketplaces.openai-bundled]
-last_updated = "2026-05-12T20:10:09Z"
-source_type = "local"
-source = "/Users/janbiasi/.dotfiles/.config/codex/.tmp/bundled-marketplaces/openai-bundled"
-
-[marketplaces.openai-primary-runtime]
-last_updated = "2026-05-12T07:40:30Z"
-source_type = "local"
-source = "/Users/janbiasi/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
-
-[plugins."documents@openai-primary-runtime"]
-enabled = true
-
-[plugins."spreadsheets@openai-primary-runtime"]
-enabled = true
-
-[plugins."presentations@openai-primary-runtime"]
-enabled = true
-
-[plugins."browser-use@openai-bundled"]
-enabled = true

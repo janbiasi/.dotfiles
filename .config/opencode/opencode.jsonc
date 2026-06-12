@@ -17,6 +17,12 @@
   ],
   "default_agent": "plan",
   "permission": {
+    "external_directory": {
+      "~/.config/**": "allow",
+    },
+    "edit": {
+      "~/.config/**": "deny",
+    },
     "*": "ask",
     // Read, skill and todos are always allowed
     "skill": "allow",
@@ -29,14 +35,13 @@
     "list": "allow",
     // Important deny rules
     "rm": "deny",
-    "external_directory": "deny",
     // Bash execution permission (non-tools)
     "bash": {
       "*": "ask",
       "echo *": "allow",
       "grep": "allow",
       "grep*": "allow",
-      "grep *": "allow",
+      "cat*": "allow",
       "find *": "allow",
       "tail *": "allow",
       "ls": "allow",
@@ -78,6 +83,7 @@
     "serena_*": "allow",
     // Tool integrations
     "Beads-Task-Agent*": "allow",
+    "codegraph*": "allow",
   },
   "mcp": {
     "plane": {
@@ -146,6 +152,11 @@
       "enabled": false,
       "type": "local",
       "command": ["treepolicy-mcp"],
+    },
+    "codegraph": {
+      "type": "local",
+      "command": ["codegraph", "serve", "--mcp"],
+      "enabled": true,
     },
   },
 }
