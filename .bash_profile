@@ -23,10 +23,6 @@ export DO_NOT_TRACK=1
 # Use 1Password SSH agent (Linux path)
 export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 
-# GitHub Dark theme for FZF (used by sesh amm.)
-# https://vitormv.github.io/fzf-themes#eyJib3JkZXJTdHlsZSI6InJvdW5kZWQiLCJib3JkZXJMYWJlbCI6IiIsImJvcmRlckxhYmVsUG9zaXRpb24iOjAsInByZXZpZXdCb3JkZXJTdHlsZSI6InJvdW5kZWQiLCJwYWRkaW5nIjoiMCIsIm1hcmdpbiI6IjAiLCJwcm9tcHQiOiI+ICIsIm1hcmtlciI6Ij4iLCJwb2ludGVyIjoi4peGIiwic2VwYXJhdG9yIjoi4pSAIiwic2Nyb2xsYmFyIjoi4pSCIiwibGF5b3V0IjoiZGVmYXVsdCIsImluZm8iOiJyaWdodCIsImNvbG9ycyI6ImZnKzojYzZjZGQ1LGJnKzojMTYxYjIyLGhsOiM3N2JkZmIsaGwrOiNhMmQyZmIsaW5mbzojYWZhZjg3LG1hcmtlcjojN2NlMzhiLHByb21wdDojY2VhNWZiLHNwaW5uZXI6I2M2Y2RkNSxwb2ludGVyOiNmYWEzNTYsaGVhZGVyOiM4N2FmYWYsYm9yZGVyOiM4OTkyOWIsc2VwYXJhdG9yOiM4OTkyOWIsbGFiZWw6I2FlYWVhZSxxdWVyeTojZDlkOWQ5In0=
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color=fg:-1,fg+:#c6cdd5,bg:-1,bg+:#161b22
   --color=hl:#77bdfb,hl+:#a2d2fb,info:#afaf87,marker:#7ce38b
   --color=prompt:#cea5fb,spinner:#c6cdd5,pointer:#faa356,header:#87afaf
   --color=border:#89929b,separator:#89929b,label:#aeaeae,query:#d9d9d9

@@ -4,8 +4,7 @@ if [ -x "$(command -v zoxide)" ]; then
   eval "$(zoxide init zsh)"
 fi
 
-# Fuzzyfinder
-# https://github.com/junegunn/fzf
-if [ -x "$(command -v fzf)" ]; then
-  source <(fzf --zsh)
+# https://github.com/alexpasmantier/television
+if [ -x "$(command -v tv)" ]; then
+  eval "$(tv init zsh)"
 fi
