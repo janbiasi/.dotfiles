@@ -35,13 +35,6 @@ export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documen
 # 10ms for key sequences
 export KEYTIMEOUT=1
 
-# zerobrew
-export ZEROBREW_DIR="$XDG_DATA_HOME/zerobrew"
-export ZEROBREW_BIN="$XDG_DATA_HOME/zerobrew/bin"
-export ZEROBREW_ROOT=/opt/zerobrew
-export ZEROBREW_PREFIX=/opt/zerobrew
-export PKG_CONFIG_PATH="$ZEROBREW_PREFIX/lib/pkgconfig:${PKG_CONFIG_PATH:-}"
-
 export PATH="$PATH:/opt/homebrew/bin"
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 export PATH="$PATH:$HOME/.docker/bin"
@@ -61,13 +54,7 @@ export PATH="$PATH:$HOME/.bun/bin"
 export PATH="$PATH:$HOME/.opencode/bin"
 export PATH="$PATH:$HOME/.lmstudio/bin"
 export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
-
-  --color=hl:#77bdfb,hl+:#a2d2fb,info:#afaf87,marker:#7ce38b
-  --color=prompt:#cea5fb,spinner:#c6cdd5,pointer:#faa356,header:#87afaf
-  --color=border:#89929b,separator:#89929b,label:#aeaeae,query:#d9d9d9
-  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
-  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"
-  --info="right"'
+export PATH="$PATH:$HOME/.vite-plus/bin"
 
 # Cocoapods settings
 export LANG=en_US.UTF-8

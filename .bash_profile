@@ -23,13 +23,6 @@ export DO_NOT_TRACK=1
 # Use 1Password SSH agent (Linux path)
 export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 
-  --color=hl:#77bdfb,hl+:#a2d2fb,info:#afaf87,marker:#7ce38b
-  --color=prompt:#cea5fb,spinner:#c6cdd5,pointer:#faa356,header:#87afaf
-  --color=border:#89929b,separator:#89929b,label:#aeaeae,query:#d9d9d9
-  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
-  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"
-  --info="right"'
-
 # python uv settings
 export UV_PYTHON_PREFERENCE=only-managed
 
@@ -56,3 +49,6 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.atuin/bin"
 export PATH="$PATH:$HOME/.docker/bin"
 export PATH="$PATH:$HOME/.local/share/pnpm"
+
+# Vite+ bin (https://viteplus.dev)
+. "$HOME/.vite-plus/env"
