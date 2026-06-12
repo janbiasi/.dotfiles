@@ -1,0 +1,35 @@
+[metadata]
+name = "opencode-sessions"
+description = "Browse and resume OpenCode sessions"
+requirements = [ "opencode", "jq",]
+
+[source]
+command = "opencode session list --format json | jq -r '.[] | \"\\(.id)\\t\\(.title)\\t\\(.directory)\\t\\(.directory | split(\"/\") | last // \"?\")\"' "
+display = "{split:\t:3}  {split:\t:1}"
+output = "{split:\t:0}"
+
+[preview]
+command = "opencode session list --format json | jq -r '.[] | select(.id == \"{split:\\t:0}\") | \"TITLE:     \\(.title)\\nID:        \\(.id)\\nPROJECT:   \\(.projectId)\\nDIRECTORY: \\(.directory)\\nUPDATED:   \\((.updated / 1000) | strftime(\"%Y-%m-%d %H:%M:%S\"))\"' "
+
+[ui]
+layout = "landscape"
+
+[keybindings]
+shortcut = "f4"
+enter = "actions:resume"
+ctrl-d = "actions:delete"
+
+[ui.preview_panel]
+size = 60
+header = "Session: {split:\t:1}"
+border_type = "rounded"
+
+[actions.resume]
+description = "Resume session"
+command = "opencode -s {split:\t:0}"
+mode = "execute"
+
+[actions.delete]
+description = "Delete session"
+command = "bash -c 'echo \"Delete {split:\\t:1}?\" && read -p \"[y/N]: \" conf && [[ $conf == \"y\" ]] && opencode session delete {split:\\t:0} ' "
+mode = "execute"

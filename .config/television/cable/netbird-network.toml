@@ -1,0 +1,18 @@
+[metadata]
+name = "netbird-network"
+description = "A channel to select a NetBird network / exit-node route"
+requirements = ["netbird", "awk"]
+
+[source]
+command = "netbird networks list | awk '/^[ \t]*- ID: / { sub(/^[ \t]*- ID: /, \"\"); print } END { if (NR <= 1) print \"No networks available\" }'"
+
+[preview]
+command = "netbird networks list | awk -v id='{}' 'found {print; count++; if (count>=3) exit} index($0, id) {found=1; print}'"
+
+[keybindings]
+enter = "actions:connect"
+
+[actions.connect]
+description = "Select selected NetBird network / exit node"
+command = "netbird networks select '{}'"
+mode = "execute"
