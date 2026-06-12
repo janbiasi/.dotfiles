@@ -35,3 +35,6 @@ Temporary Items
 
 # Beads
 .beads/issues*
+
+# Codegraph
+.codegraph
