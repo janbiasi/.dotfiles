@@ -28,6 +28,7 @@ This directory contains the dotfiles for my development environment.
 - [claude](https://www.claude.com/product/claude-code) 🧠
 - [codex](https://openai.com/index/introducing-codex/) 🧠
 - [devbox](https://www.jetify.com/devbox)
+- [television](https://github.com/alexpasmantier/television)
 - [ghostty](https://ghostty.org/)
 - [jankyborders](https://github.com/FelixKratz/JankyBorders) :apple:
 - [karabiner elements](https://karabiner-elements.pqrs.org/) :apple:
