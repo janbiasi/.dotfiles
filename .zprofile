@@ -78,3 +78,6 @@ export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi"
 
 # paseo doesn't follow xdg - https://github.com/earendil-works/paseo/issues/
 export PASEO_HOME="$XDG_CONFIG_HOME/paseo"
+
+# plannator doesn't follow xdg
+export PLANNOTATOR_DATA_DIR="$XDG_CONFIG_HOME/plannator"
