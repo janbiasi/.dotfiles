@@ -31,6 +31,7 @@ This directory contains the dotfiles for my development environment.
 - [television](https://github.com/alexpasmantier/television)
 - [ghostty](https://ghostty.org/)
 - [jankyborders](https://github.com/FelixKratz/JankyBorders) :apple:
+- [plannotator](https://plannotator.ai/) 🧠
 - [karabiner elements](https://karabiner-elements.pqrs.org/) :apple:
 - [lazygit](https://github.com/jesseduffield/lazygit)
 - [nix](https://nixos.org)
