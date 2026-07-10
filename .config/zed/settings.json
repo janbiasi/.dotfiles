@@ -93,9 +93,9 @@
         "light": "One Light",
         "dark": "GitHub Dark",
     },
-    "ui_font_size": 14.0,
-    "ui_font_weight": 400.0,
-    "ui_font_family": "JetBrainsMono Nerd Font",
+    "ui_font_size": 13.0,
+    "ui_font_weight": 250.0,
+    "ui_font_family": "JetBrainsMono Nerd Font Propo",
     "project_panel": {
         "button": true,
         "hide_hidden": false,
