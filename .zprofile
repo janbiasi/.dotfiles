@@ -60,6 +60,10 @@ export PATH="$PATH:$HOME/.vite-plus/bin"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# Android
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+
 # python uv settings
 export UV_PYTHON_PREFERENCE=only-managed
 
