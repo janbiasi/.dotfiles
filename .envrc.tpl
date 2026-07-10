@@ -5,6 +5,7 @@ export ANTHROPIC_BASE_URL="https://api.z.ai/api/anthropic"
 export ANTHROPIC_API_KEY="op://Personal/oush65edlqwj634y54gxqzf7tu/credential"
 
 export Z_AI_API_KEY="op://Personal/oush65edlqwj634y54gxqzf7tu/credential"
+export ZAI_API_KEY="op://Personal/oush65edlqwj634y54gxqzf7tu/credential"
 
 export AVANTE_GEMINI_API_KEY="op://Personal/xrsv6h3oaklxmcqwafftsuzoo4/credential"
 export AVANTE_ANTHROPIC_BASE_URL="https://api.z.ai/api/anthropic"
