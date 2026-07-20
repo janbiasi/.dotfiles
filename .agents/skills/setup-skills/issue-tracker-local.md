@@ -1,18 +1,18 @@
 # Issue tracker: Local Markdown
 
-Issues and PRDs for this repo live as markdown files in `.tasks/`.
+Issues and specs (you may know a spec as a PRD) for this repo live as markdown files in `.tickets/`.
 
 ## Conventions
 
-- One feature per directory: `.tasks/<feature-slug>/`
-- The PRD is `.tasks/<feature-slug>/PRD.md`
-- Implementation issues are `.tasks/<feature-slug>/issues/<NN>-<slug>.md`, numbered from `01`
+- One feature per directory: `.tickets/<feature-slug>/`
+- The spec is `.tickets/<feature-slug>/spec.md`
+- Implementation issues are one file per ticket at `.tickets/<feature-slug>/issues/<NN>-<slug>.md`, numbered from `01` — never a single combined tickets file
 - Triage state is recorded as a `Status:` line near the top of each issue file (see `triage-labels.md` for the role strings)
 - Comments and conversation history append to the bottom of the file under a `## Comments` heading
 
 ## When a skill says "publish to the issue tracker"
 
-Create a new file under `.tasks/<feature-slug>/` (creating the directory if needed).
+Create a new file under `.tickets/<feature-slug>/` (creating the directory if needed).
 
 ## When a skill says "fetch the relevant ticket"
 
@@ -22,9 +22,9 @@ Read the file at the referenced path. The user will normally pass the path or th
 
 Used by `/wayfinder`. The **map** is a file with one **child** file per ticket.
 
-- **Map**: `.tasks/<effort>/map.md` — the Notes / Decisions-so-far / Fog body.
-- **Child ticket**: `.tasks/<effort>/issues/NN-<slug>.md`, numbered from `01`, with the question in the body. A `Type:` line records the ticket type (`research`/`prototype`/`grilling`/`task`); a `Status:` line records `claimed`/`resolved`.
+- **Map**: `.tickets/<effort>/map.md` — the Notes / Decisions-so-far / Fog body.
+- **Child ticket**: `.tickets/<effort>/issues/NN-<slug>.md`, numbered from `01`, with the question in the body. A `Type:` line records the ticket type (`research`/`prototype`/`grilling`/`task`); a `Status:` line records `claimed`/`resolved`.
 - **Blocking**: a `Blocked by: NN, NN` line near the top. A ticket is unblocked when every file it lists is `resolved`.
-- **Frontier**: scan `.tasks/<effort>/issues/` for files that are open, unblocked, and unclaimed; first by number wins.
+- **Frontier**: scan `.tickets/<effort>/issues/` for files that are open, unblocked, and unclaimed; first by number wins.
 - **Claim**: set `Status: claimed` and save before any work.
 - **Resolve**: append the answer under an `## Answer` heading, set `Status: resolved`, then append a context pointer (gist + link) to the map's Decisions-so-far in `map.md`.
