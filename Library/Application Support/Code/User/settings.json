@@ -395,4 +395,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "chat.disableAIFeatures": true,
+  "prettier.requireConfig": true,
 }
