@@ -1,11 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "zai/glm-5",
+  "model": "zai/glm-5.3",
   "small_model": "zai/glm-4.7-flash",
   "autoupdate": true,
   "instructions": ["CONTRIBUTING.md", ".cursor/rules/*.md"],
   "plugin": [
-    "opencode-beads@latest",
+    // "opencode-beads@latest",
     "cc-safety-net@latest",
     [
       "@plannotator/opencode@latest",
@@ -100,19 +100,19 @@
         "Authorization": "Bearer {env:GITHUB_TOKEN}",
       },
     },
-    "serena": {
-      "type": "local",
-      "enabled": false,
-      "command": [
-        "uvx",
-        "--from",
-        "git+https://github.com/oraios/serena",
-        "serena",
-        "start-mcp-server",
-        "--context",
-        "agent",
-      ],
-    },
+    // "serena": {
+    //   "type": "local",
+    //   "enabled": false,
+    //   "command": [
+    //     "uvx",
+    //     "--from",
+    //     "git+https://github.com/oraios/serena",
+    //     "serena",
+    //     "start-mcp-server",
+    //     "--context",
+    //     "agent",
+    //   ],
+    // },
     "context7": {
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
@@ -157,6 +157,22 @@
       "type": "local",
       "command": ["codegraph", "serve", "--mcp"],
       "enabled": true,
+    },
+    "kaneo": {
+      "type": "remote",
+      "url": "https://kaneo.biasi.info/api/mcp",
+      "enabled": true,
+    },
+  },
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://localhost:11434/v1",
+      },
+      "models": {
+        "gemma4": {},
+      },
     },
   },
 }
