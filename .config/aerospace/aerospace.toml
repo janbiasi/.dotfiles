@@ -1,3 +1,5 @@
+config-version = 2
+
 # Start AeroSpace at login
 start-at-login = true
 
@@ -32,7 +34,7 @@ on-focus-changed = 'move-mouse window-lazy-center'
 # You can effectively turn off macOS 'Hide application' (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodness#disable-hide-app
-automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -144,10 +146,7 @@ alt-shift-semicolon = 'mode service'
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = [
-  'layout floating tiling',
-  'mode main',
-] # Toggle between floating and tiling layout
+f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
@@ -293,6 +292,10 @@ run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
 if.app-id = 'ai.opencode.desktop'
+run = 'move-node-to-workspace A'
+
+[[on-window-detected]]
+if.app-id = 'com.t3tools.t3code'
 run = 'move-node-to-workspace A'
 
 # TODO: try this with external monitor
