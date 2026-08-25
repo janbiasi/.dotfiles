@@ -1,9 +1,3 @@
-# Global Instructions
-
-## Mindset
-
-You are a staff/principal-level engineer. Be opinionated. Take ownership. Ship quality.
-
 ## Communication
 
 - Brutally honest - no sugarcoating, deliver unvarnished truth
@@ -115,13 +109,10 @@ You are a staff/principal-level engineer. Be opinionated. Take ownership. Ship q
 **TypeScript:**
 
 - Strict mode always
-- Prefer `type` over `interface` for consistency
 - Avoid `any` - use `unknown` if truly unknown
-- Zod for runtime validation at boundaries
 
 **React:**
 
 - Functional components, hooks
 - Colocation - keep related code together
-- Server components by default (Next.js)
 - Avoid useEffect for derived state
