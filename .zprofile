@@ -15,6 +15,7 @@ export HOMEBREW_REQUIRE_TAP_TRUST=1
 
 # https://consoledonottrack.com/
 export DO_NOT_TRACK=1
+export T3CODE_TELEMETRY_ENABLED=false
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then

@@ -19,6 +19,7 @@ fi
 
 # https://consoledonottrack.com/
 export DO_NOT_TRACK=1
+export T3CODE_TELEMETRY_ENABLED=false
 
 # Use 1Password SSH agent (Linux path)
 export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
