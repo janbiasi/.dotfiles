@@ -89,8 +89,8 @@
     // UI Configuration
     // ---------------------------------------------------------------
     "theme": {
-        "mode": "dark",
-        "light": "One Light",
+        "mode": "system",
+        "light": "GitHub Light",
         "dark": "GitHub Dark",
     },
     "ui_font_size": 13.0,
@@ -158,6 +158,7 @@
         },
     },
     "git_panel": {
+        "group_by": "staging",
         "tree_view": true,
         "collapse_untracked_diff": false,
         "status_style": "label_color",
@@ -201,30 +202,7 @@
     // ---------------------------------------------------------------
     // Filetypes and mappings
     // ---------------------------------------------------------------
-    "file_types": {
-        "Ansible": [
-            "**.ansible.yml",
-            "**.ansible.yaml",
-            "**/defaults/*.yml",
-            "**/defaults/*.yaml",
-            "**/meta/*.yml",
-            "**/meta/*.yaml",
-            "**/tasks/*.yml",
-            "**/tasks/*.yaml",
-            "**/handlers/*.yml",
-            "**/handlers/*.yaml",
-            "**/group_vars/*.yml",
-            "**/group_vars/*.yaml",
-            "**/playbooks/*.yaml",
-            "**/playbooks/*.yml",
-            "**playbook*.yaml",
-            "**playbook*.yml",
-        ],
-    },
     "languages": {
-        "YAML": {
-            "tab_size": 2
-        },
         "Go": {
             "language_servers": ["gopls", "golangci-lint"],
         },
@@ -260,6 +238,26 @@
                 ],
             },
         },
+        "yaml-language-server": {
+            "settings": {
+                "yaml": {
+                    "completion": true,
+                    "schemaStore": {
+                        "enable": true,
+                    },
+                    "kubernetesCRDStore": {
+                        "enable": true,
+                    },
+                    "schemas": {
+                        "https://json.schemastore.org/kustomization": [
+                            "**/.local/**/kustomization.yaml",
+                            "**/.local/**/kustomization.yml",
+                            "**/.local/**/Kustomization",
+                        ],
+                    },
+                },
+            },
+        },
     },
     // ---------------------------------------------------------------
     // AI & Agent Stuff
@@ -276,13 +274,13 @@
         "codex-acp": {
             "default_config_options": {
                 "reasoning_effort": "high",
-                "model": "gpt-5.6-terra"
+                "model": "gpt-5.6-terra",
             },
             "type": "registry",
         },
         "opencode": {
             "default_config_options": {
-                "model": "opencode-go/kimi-k3"
+                "model": "opencode-go/kimi-k3",
             },
             "type": "registry",
         },
