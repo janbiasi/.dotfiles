@@ -86,3 +86,7 @@ export PASEO_HOME="$XDG_CONFIG_HOME/paseo"
 
 # plannator doesn't follow xdg
 export PLANNOTATOR_DATA_DIR="$XDG_CONFIG_HOME/plannator"
+
+# t3code doesn't follow xdg
+export T3CODE_BASE_DIR="$XDG_CONFIG_HOME/t3"
+export T3CODE_STATE_DIR="$XDG_STATE_HOME/t3"

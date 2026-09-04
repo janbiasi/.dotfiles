@@ -15,6 +15,3 @@ for conf in "${configs[@]}"; do
   source "$conf"
 done
 unset conf configs
-
-# Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
