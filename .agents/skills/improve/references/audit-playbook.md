@@ -21,19 +21,19 @@ The highest-trust category — real bugs found by reading, not speculation.
 
 ## 2. Security
 
-Report only what's evidenced in the code. Do not generate exploit code in plans — describe the fix.
+Review only what is directly supported by code evidence. Keep findings framed as defensive maintenance: identify the code pattern, explain the production impact, and describe the remediation. Keep plans at the level of code changes, configuration changes, and tests; do not include runnable demonstration strings or step-by-step misuse details.
 
 **Handling rule:** never copy a secret value into a finding or plan — those files get committed. Reference the `file:line` and credential type only ("Stripe live key at `config.ts:12`"), and the fix sketch always includes rotation, not just removal (a committed secret is burned even after deletion).
 
-**By-design is not a finding:** standard platform conventions are intentional behavior — honoring `https_proxy`/`NO_PROXY`, reading `~/.netrc`, an explicitly local dev tool shelling out to configured package managers. Flag these only when the *implementation* adds risk beyond the convention itself.
+**By-design is not a finding:** standard platform conventions are intentional behavior — honoring `https_proxy`/`NO_PROXY`, reading `~/.netrc`, an explicitly local dev tool shelling out to configured package managers. A tradeoff explicitly recorded in an ADR or decision doc is likewise settled, not a finding. Flag these only when the _implementation_ adds risk beyond the convention or the documented decision itself — and note that a **stale ADR is itself a finding**: if the code has drifted from what the decision doc says, report the decision drift (the doc or the code is wrong; either way the team should know), don't use the doc to suppress it.
 
-- Secrets: hardcoded keys/tokens/passwords, secrets in committed `.env` files, secrets logged or persisted in event/history stores.
-- Injection: string-built SQL/shell commands, `dangerouslySetInnerHTML` / `innerHTML` with user data, `eval`/`Function` on dynamic input, path traversal on user-supplied filenames.
-- AuthN/Z: endpoints/server actions missing auth checks, authorization checked client-side only, IDOR (object access by ID without ownership check), missing CSRF protection on state-changing routes.
-- Input validation: API boundaries trusting request bodies (no schema validation), file-upload handling (type/size/path), mass assignment from request objects.
-- Dependencies: run the ecosystem's audit command (`npm audit`, `pip-audit`, `cargo audit`) in read-only mode; flag critical/high with known exploits, not the noise floor.
-- Headers/config: CORS wildcard with credentials, missing CSP where it matters, cookies without `HttpOnly`/`Secure`/`SameSite`, debug/verbose modes reachable in production config.
-- Data exposure: PII in logs, stack traces returned to clients, internal error details in API responses.
+- Credential hygiene: hardcoded keys/tokens/passwords, credentials in committed `.env` files, credentials logged or persisted in event/history stores. Findings should name only the credential type and location, then recommend removal, rotation, and a safer configuration path.
+- Data crossing into interpreters or privileged APIs: SQL or shell operations assembled from request data (SQL/command injection), HTML sinks fed by user-controlled content (XSS), dynamic execution APIs used with runtime input, or filesystem paths derived from request data (path traversal). Describe the safer API or validation boundary; do not provide runnable examples.
+- Access control: endpoints/server actions that lack server-side identity checks, authorization enforced only in the client, object access by ID without ownership or tenant checks (IDOR), or missing request authenticity checks (CSRF) on state-changing routes.
+- Input contracts: API boundaries that trust request bodies without schema validation, file upload handling without clear type/size/storage constraints, or broad object assignment from request data into persistence models (mass assignment).
+- Dependency posture: run the ecosystem's audit command (`npm audit`, `pip-audit`, `cargo audit`) in read-only mode. Report only critical/high advisories that affect reachable runtime code or build/distribution paths; avoid low-signal audit noise.
+- Production configuration: overly broad CORS where credentials are allowed, missing response-hardening headers (e.g. CSP) where sensitive browser surfaces exist, cookies missing appropriate `HttpOnly`/`Secure`/`SameSite` attributes, or debug/verbose behavior enabled in production configuration.
+- Data minimization: PII or sensitive operational data in logs, stack traces returned to clients, or internal error details exposed through API responses.
 
 ## 3. Performance
 
@@ -49,7 +49,7 @@ Look for the algorithmic and architectural wins, not micro-optimizations.
 
 ## 4. Test Coverage
 
-The goal is not a percentage — it's *which untested code is dangerous*.
+The goal is not a percentage — it's _which untested code is dangerous_.
 
 - Map the critical paths (money, auth, data mutation, the feature the repo exists for) and check which have zero or trivial coverage.
 - Modules with high churn (git log) + no tests = top refactor risk; flag as "characterization tests first" candidates.
@@ -96,12 +96,12 @@ Lowest default priority — only flag where absence has a concrete cost:
 Forward-looking: not what's broken, but what this codebase wants to become. **Grounding rule:** every suggestion must cite evidence from the repo itself — a suggestion that could apply to any project in the category ("add dark mode", "add AI") is noise, not a finding. Sources of grounded direction signal:
 
 - **Unfinished intent**: TODO/FIXME clusters around one theme, feature flags never rolled out, stubbed or half-built modules, commented-out feature code, abandoned mid-feature work visible in git history.
-- **Stated-but-undelivered**: README/docs/roadmap promises with no corresponding code, CLI flags or config options that are no-ops, issue templates for features that don't exist.
+- **Stated-but-undelivered**: README/docs/roadmap promises with no corresponding code, CLI flags or config options that are no-ops, issue templates for features that don't exist. A PRD or `PRODUCT.md` that names users, use cases, or a direction the code hasn't caught up to is the strongest grounding signal there is — prefer it over inferred intent, and never propose something a decision doc already rejected (note the contradiction instead).
 - **Surface asymmetries**: one-directional pairs (export without import, create without bulk-create, webhooks out but not in), entities with CRUD minus one, a public API that internal code clearly needed and hand-rolled around.
 - **The adjacent possible**: capabilities the existing architecture makes disproportionately cheap — a plugin system one interface away, a public API one route file from the existing service layer, an integration the data model already supports.
 - **Friction worth productizing**: things users of this project evidently do by hand around it (visible in docs, examples, issues) that the project could absorb.
 
-Direction findings use the standard format with two adaptations: **Impact** is product/user value (who wants this and why now), and **Confidence** reflects how grounded the evidence is — not certainty that it's the right call. Strategy belongs to the maintainer; the advisor's job is grounded options with honest trade-offs. Effort estimates here are coarser; say so. Plans for selected direction findings are usually a *design/spike plan* (investigate, prototype, define the API, list open questions) rather than a build-everything plan — scope them that way.
+Direction findings use the standard format with two adaptations: **Impact** is product/user value (who wants this and why now), and **Confidence** reflects how grounded the evidence is — not certainty that it's the right call. Strategy belongs to the maintainer; the advisor's job is grounded options with honest trade-offs. Effort estimates here are coarser; say so. Plans for selected direction findings are usually a _design/spike plan_ (investigate, prototype, define the API, list open questions) rather than a build-everything plan — scope them that way.
 
 ---
 
@@ -114,7 +114,7 @@ Every finding, from every category and every subagent, comes back in this shape:
 
 - **Evidence**: `path/file.ts:123` — one-sentence description of what's there. (Repeat per location; 2–5 strongest locations, note "and ~N similar sites" if widespread.)
 - **Impact**: What goes wrong / what's being paid because of this. Concrete: "every order-list render issues 1+N queries", not "suboptimal".
-- **Effort**: S (hours) / M (a day-ish) / L (multi-day) — for the *fix*, including tests.
+- **Effort**: S (hours) / M (a day-ish) / L (multi-day) — for the _fix_, including tests.
 - **Risk**: What the fix could break; LOW/MED/HIGH plus one line why.
 - **Confidence**: HIGH (read the code, certain) / MED (strong signal, needs verification) / LOW (smell, needs investigation). LOW-confidence findings may be reported but get an "investigate" plan, not a "fix" plan.
 - **Fix sketch**: 1–3 sentences. Not the plan — just enough to judge effort honestly.
