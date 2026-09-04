@@ -1,9 +1,9 @@
-# XDG base directories (only set defaults if not already defined)
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
-export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
-export XDG_BIN_HOME="${XDG_BIN_HOME:-$HOME/.local/bin}"
+# XDG base directories
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_BIN_HOME="$HOME/.local/bin"
 
 # Source .bashrc for interactive shell configuration
 if [ -f "$HOME/.bashrc" ]; then
@@ -21,7 +21,7 @@ fi
 export DO_NOT_TRACK=1
 export T3CODE_TELEMETRY_ENABLED=false
 
-# Use 1Password SSH agent (Linux path)
+# Use 1Password SSH agent
 export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 
 # python uv settings
@@ -40,18 +40,10 @@ export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi"
 export PASEO_HOME="$XDG_CONFIG_HOME/paseo"
 # plannator doesn't follow xdg
 export PLANNOTATOR_DATA_DIR="$XDG_CONFIG_HOME/plannator"
+# t3code doesn't follow xdg
+export T3CODE_BASE_DIR="$XDG_CONFIG_HOME/t3"
+export T3CODE_STATE_DIR="$XDG_STATE_HOME/t3"
 
 # PATH additions
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.bun/bin"
-export PATH="$PATH:$HOME/.opencode/bin"
-export PATH="$PATH:$HOME/.lmstudio/bin"
-export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/bin"
-export PATH="$PATH:$HOME/.atuin/bin"
-export PATH="$PATH:$HOME/.docker/bin"
-export PATH="$PATH:$HOME/.local/share/pnpm"
-
-# Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"
+export PATH="$PATH:$HOME/.local/bin"
