@@ -1,4 +1,11 @@
-DOTFILES=${HOME}/.dotfiles
+DOTFILES := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
+SYSTEM := $(shell uname -s)
+STOW_OPTIONS := --verbose --restow --target="$(HOME)" --dir="$(DOTFILES)"
+
+ifeq ($(SYSTEM),Linux)
+STOW_OPTIONS += --ignore='^/Library'
+endif
+
 NVIM_CONFIG_DIR=${HOME}/.config/nvim
 NVIM_CONFIG_REPO=git@github.com:janbiasi/nvim.config.git
 DOTFILES_REPO_SSH_URL=git@github.com:janbiasi/.dotfiles.git
@@ -7,7 +14,7 @@ DOTFILES_REPO_SSH_URL=git@github.com:janbiasi/.dotfiles.git
 .PHONY: install
 install:
 	# Sync configuration files
-	stow -v --restow --target="$(HOME)" --dir="$(DOTFILES)" .
+	stow $(STOW_OPTIONS) .
 	# Change from HTTPS to SSH as we now have 1Password providing our SSH key
 	git remote set-url origin $(DOTFILES_REPO_SSH_URL)
 
@@ -20,7 +27,7 @@ update-nvim:
 
 .PHONY: update-dotfiles
 update-dotfiles:
-	stow -v --restow --adopt .
+	stow $(STOW_OPTIONS) .
 
 .PHONY: install-nvim
 install-nvim:
