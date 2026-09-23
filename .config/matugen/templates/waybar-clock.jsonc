@@ -1,0 +1,29 @@
+{
+  "clock": {
+    "timezone": "Europe/Zurich",
+    "interval": 30,
+    "format": "{:%H:%M}",
+    "format-alt": "{:%a, %d %b · %H:%M}",
+    "format-alt-click": 1,
+    "tooltip-format": "<span background='{{colors.secondary_container.default.hex}}' color='{{colors.on_secondary_container.default.hex}}'><b> W{0:%V} </b></span>  {0:%A, %d %B %Y}\\n\\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='{{colors.primary.default.hex}}'><b>{}</b></span>",
+        "days": "<span color='{{colors.on_surface.default.hex}}'>{}</span>",
+        "weeks": "<span color='{{colors.outline.default.hex}}'><small>W{}</small></span>",
+        "weekdays": "<span color='{{colors.on_surface_variant.default.hex}}'>{}</span>",
+        "today": "<span background='{{colors.primary.default.hex}}' color='{{colors.on_primary.default.hex}}'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  }
+}

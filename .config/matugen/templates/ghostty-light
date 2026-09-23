@@ -1,0 +1,23 @@
+background = {{colors.surface_container_lowest.light.hex}}
+foreground = {{colors.on_surface.light.hex}}
+cursor-color = {{colors.primary.light.hex}}
+cursor-text = {{colors.on_primary.light.hex}}
+selection-background = {{colors.primary_container.light.hex}}
+selection-foreground = {{colors.on_primary_container.light.hex}}
+
+palette = 0={{colors.on_surface.light.hex}}
+palette = 1={{colors.error.light.hex}}
+palette = 2={{colors.success.light.hex}}
+palette = 3={{colors.tertiary.light.hex}}
+palette = 4={{colors.primary.light.hex}}
+palette = 5={{colors.secondary.light.hex}}
+palette = 6={{colors.primary.light.hex}}
+palette = 7={{colors.on_surface_variant.light.hex}}
+palette = 8={{colors.outline.light.hex | to_color | set_lightness: 54.0}}
+palette = 9={{colors.error.light.hex}}
+palette = 10={{colors.success.light.hex}}
+palette = 11={{colors.tertiary.light.hex}}
+palette = 12={{colors.primary.light.hex}}
+palette = 13={{colors.secondary.light.hex}}
+palette = 14={{colors.primary.light.hex}}
+palette = 15={{colors.on_surface.light.hex}}

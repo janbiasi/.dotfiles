@@ -1,0 +1,84 @@
+[config]
+
+[config.custom_colors]
+# A semantic success colour blended into each generated wallpaper palette.
+success = { color = "#5fbd72", blend = true }
+
+[templates.waybar]
+input_path = './templates/waybar-colors.css'
+output_path = '~/.config/waybar/tokens/colors.css'
+
+[templates.waybar_clock]
+input_path = './templates/waybar-clock.jsonc'
+output_path = '~/.config/waybar/modules/clock.jsonc'
+
+[templates.hyprlock]
+input_path = './templates/hyprlock.conf'
+output_path = '~/.config/hypr/hyprlock.conf'
+
+[templates.rofi]
+input_path = './templates/rofi.rasi'
+output_path = '~/.config/rofi/theme.rasi'
+
+[templates.gtk]
+input_path = './templates/gtk.css'
+output_path = '~/.local/share/themes/personal/gtk-3.0/gtk.css'
+
+[templates.qt]
+input_path = './templates/Matugen.colors'
+output_path = '~/.local/share/color-schemes/Matugen.colors'
+
+[templates.hyprtoolkit]
+input_path = './templates/hyprtoolkit.conf'
+output_path = '~/.config/hypr/hyprtoolkit.conf'
+
+[templates.hyprland]
+input_path = './templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/modules/colors.lua'
+
+[templates.hyprpolkitagent]
+input_path = './templates/hyprpolkitagent-env.sh'
+output_path = '~/.config/hypr/hyprpolkitagent-env.sh'
+
+[templates.opencode]
+input_path = './templates/opencode.json'
+output_path = '~/.config/opencode/themes/matugen.json'
+
+[templates.obsidian]
+input_path = './templates/obsidian.css'
+output_path = '~/git/private/obsidian/.obsidian/snippets/matugen.css'
+
+[templates.yazi]
+input_path = './templates/yazi.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.zed]
+input_path = './templates/zed.json'
+output_path = '~/.config/zed/themes/matugen.json'
+
+[templates.ghostty_dark]
+input_path = './templates/ghostty-dark'
+output_path = '~/.config/ghostty/themes/Matugen Dark'
+
+[templates.ghostty_light]
+input_path = './templates/ghostty-light'
+output_path = '~/.config/ghostty/themes/Matugen Light'
+
+[templates.ghostty]
+input_path = './templates/ghostty'
+output_path = '~/.config/ghostty/themes/Matugen'
+post_hook = 'pkill -SIGUSR2 ghostty'
+
+[templates.television]
+input_path = './templates/television.toml'
+output_path = '~/.config/television/themes/matugen.toml'
+
+[templates.tmux]
+input_path = './templates/tmux.conf'
+output_path = '~/.config/tmux/generated.conf'
+post_hook = 'tmux source-file ~/.config/tmux/tmux.conf'
+
+[templates.btop]
+input_path = './templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'pkill -USR2 btop || true'
