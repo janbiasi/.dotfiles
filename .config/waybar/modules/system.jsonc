@@ -1,0 +1,43 @@
+{
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": [
+      "memory",
+      "cpu",
+      "temperature"
+    ]
+  },
+  "memory": {
+    "interval": 3,
+    "format": "󰍛 {percentage}%",
+    "tooltip-format": "RAM: {used:0.1f} / {total:0.1f} GiB",
+    "states": {
+      "warning": 80,
+      "critical": 95
+    }
+  },
+  "cpu": {
+    "interval": 3,
+    "format": "󰻠 {usage}%",
+    "tooltip-format": "CPU: {usage}%\nLoad: {load}",
+    "states": {
+      "warning": 80,
+      "critical": 95
+    }
+  },
+  "temperature": {
+    "interval": 3,
+    "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+    "input-filename": "temp1_input",
+    "format": " {temperatureC}°",
+    "warning-threshold": 80,
+    "critical-threshold": 95,
+    "tooltip-format": "CPU package: {temperatureC}°C"
+  },
+  "idle_inhibitor": {
+    "format": "",
+    "start-activated": false,
+    "tooltip-format-activated": "Sleep prevention active\nClick to allow sleep",
+    "tooltip-format-deactivated": "Sleep prevention inactive\nClick to prevent sleep"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "battery": {
+    "interval": 15,
+    "states": {
+      "warning": 29,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-full": "󰁹 {capacity}%",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁼",
+      "󰁾",
+      "󰂀",
+      "󰁹"
+    ],
+    "tooltip-format": "{capacity}% · {timeTo}\nDraw: {power:0.1f} W\nHealth: {health}% · {cycles} cycles",
+    "menu": "on-click",
+    "menu-file": "/home/jan/.config/waybar/menus/battery.xml",
+    "menu-actions": {
+      "details": "ghostty --wait-after-command -e sh -c 'upower -i \"$(upower -e | sed -n \"/battery/s/.*/&/p\" | head -n 1)\"'",
+      "balanced": "tuned-adm profile balanced",
+      "save": "tuned-adm profile laptop-battery-powersave"
+    }
+  }
+}

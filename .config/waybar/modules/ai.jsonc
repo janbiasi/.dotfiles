@@ -1,0 +1,17 @@
+{
+  // Single cycling module backed by ai-usagebar (binary in ~/.local/bin).
+  // Credentials resolve env-first; see ~/.config/ai-usagebar/config.toml
+  // (no secrets in either file). 300s interval: the Codex endpoint rate-limits
+  // aggressively below that. Click opens the TUI, scroll cycles providers,
+  // signal 13 refreshes after cycling.
+  "custom/ai-all": {
+    "exec": "~/.config/waybar/scripts/ai-usagebar.sh",
+    "return-type": "json",
+    "interval": 300,
+    "signal": 13,
+    "tooltip": true,
+    "on-click": "ghostty --title=\"AI\" -e ai-usagebar-tui",
+    "on-scroll-up": "~/.local/bin/ai-usagebar --cycle-next",
+    "on-scroll-down": "~/.local/bin/ai-usagebar --cycle-prev"
+  }
+}

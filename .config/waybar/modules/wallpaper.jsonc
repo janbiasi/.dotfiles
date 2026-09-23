@@ -1,0 +1,7 @@
+{
+  "custom/wallpaper": {
+    "format": "󰸉",
+    "tooltip-format": "Choose wallpaper",
+    "on-click": "waypaper --zen-mode"
+  }
+}

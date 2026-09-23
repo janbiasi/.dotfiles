@@ -1,0 +1,14 @@
+{
+  "custom/power": {
+    "format": "",
+    "tooltip-format": "Power",
+    "menu": "on-click",
+    "menu-file": "/home/jan/.config/waybar/menus/power.xml",
+    "menu-actions": {
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate",
+      "poweroff": "systemctl poweroff",
+      "reboot": "systemctl reboot"
+    }
+  }
+}

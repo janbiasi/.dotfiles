@@ -1,0 +1,237 @@
+@import "tokens/colors.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 12px;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+window#waybar {
+  background: alpha(@surface, 0.85);
+  color: @on_surface;
+}
+
+.modules-left {
+  margin-left: 6px;
+}
+.modules-right {
+  margin-right: 6px;
+}
+
+#custom-distro,
+#workspaces,
+#custom-wallpaper,
+#system,
+#clock,
+#pulseaudio,
+#network,
+#custom-vpn,
+#bluetooth,
+#battery,
+#idle_inhibitor,
+#custom-voxtype,
+#custom-power,
+#custom-notifications,
+#custom-ai-all {
+  margin: 5px 0;
+  border-radius: 14px;
+  background: @surface_container;
+}
+
+#custom-distro,
+#custom-wallpaper,
+#clock,
+#pulseaudio,
+#network,
+#custom-vpn,
+#bluetooth,
+#battery,
+#idle_inhibitor,
+#custom-voxtype,
+#custom-power,
+#custom-notifications,
+#custom-ai-all {
+  padding: 0 10px;
+}
+
+#pulseaudio,
+#network {
+  min-height: 28px;
+}
+
+#custom-distro {
+  background: @primary;
+  color: @on_primary;
+  border-radius: 10px;
+  font-size: 17px;
+  padding: 0 9px;
+}
+
+#workspaces {
+  padding: 0 3px;
+}
+#workspaces button {
+  padding: 0 8px;
+  margin: 2px 1px;
+  min-width: 12px;
+  border-radius: 12px;
+  background: transparent;
+  color: alpha(@on_surface, 0.5);
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+/* The number has an explicit Pango size; app glyphs inherit this label size. */
+#workspaces button label {
+  font-size: 0;
+}
+#workspaces button.active label {
+  font-size: 12px;
+}
+#workspaces button.active {
+  background: @primary_container;
+  color: @on_primary_container;
+  padding: 0 10px;
+}
+#workspaces button.urgent {
+  background: @error_container;
+  color: @on_error_container;
+}
+#workspaces button:hover {
+  background: @surface_container_highest;
+  color: @on_surface;
+}
+#workspaces button.active:hover {
+  background: @primary;
+  color: @on_primary;
+}
+
+#system {
+  padding: 0 3px;
+  color: @on_surface_variant;
+}
+#memory,
+#cpu,
+#temperature {
+  padding: 0 7px;
+}
+#clock {
+  background: @secondary_container;
+  color: @on_secondary_container;
+  font-weight: bold;
+  padding: 0 14px;
+}
+
+#custom-distro:hover,
+#custom-wallpaper:hover,
+#pulseaudio:hover,
+#network:hover,
+#custom-vpn:hover,
+#bluetooth:hover,
+#battery:hover,
+#idle_inhibitor:hover,
+#custom-voxtype:hover,
+#custom-power:hover,
+#custom-notifications:hover,
+#custom-ai-all:hover {
+  background: @surface_container_highest;
+  color: @on_surface;
+}
+
+#pulseaudio.muted,
+#pulseaudio.zero,
+#network.disconnected,
+#network.disabled,
+#bluetooth.off,
+#bluetooth.disabled,
+#custom-vpn.disconnected {
+  color: @outline;
+}
+#bluetooth.on,
+#bluetooth.connected,
+#custom-vpn.connected {
+  color: @primary;
+}
+#idle_inhibitor.deactivated {
+  color: @outline;
+}
+#idle_inhibitor.activated {
+  background: @primary_container;
+  color: @on_primary_container;
+}
+#custom-voxtype.recording {
+  color: @error;
+  animation: voxtype-pulse 1s ease-in-out infinite;
+}
+#custom-voxtype.transcribing {
+  color: @tertiary;
+}
+#battery.charging {
+  color: @success;
+}
+#battery.plugged {
+  color: @primary;
+}
+#memory.warning,
+#cpu.warning,
+#temperature.warning,
+#custom-vpn.error {
+  color: @tertiary;
+}
+#battery.warning:not(.charging):not(.plugged) {
+  color: #f9e2af;
+}
+#memory.critical,
+#cpu.critical,
+#temperature.critical {
+  color: @error;
+}
+#battery.critical:not(.charging):not(.plugged) {
+  color: #f38ba8;
+}
+#custom-power {
+  color: @error;
+}
+#custom-notifications.notification {
+  background: @tertiary_container;
+  color: @on_tertiary_container;
+}
+#custom-notifications.dnd-none,
+#custom-notifications.dnd-notification {
+  color: @outline;
+}
+
+@keyframes voxtype-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+tooltip,
+menu {
+  background: @surface_container_high;
+  color: @on_surface;
+  border: 1px solid @outline_variant;
+  border-radius: 12px;
+}
+tooltip label {
+  padding: 10px 12px;
+}
+menu {
+  padding: 6px;
+}
+menuitem {
+  padding: 9px 14px;
+  border-radius: 8px;
+}
+menuitem:hover {
+  background: @secondary_container;
+  color: @on_secondary_container;
+}
