@@ -1,0 +1,23 @@
+[ui]
+primary = "openai"
+
+[anthropic]
+enabled = false
+
+[copilot]
+enabled = false
+
+[openrouter]
+enabled = false
+
+[openai]
+enabled = true
+codex_auth_path = "~/.config/codex/auth.json"
+
+[zai]
+enabled = true
+api_key_env = "ZAI_API_KEY"
+
+[opencode-go]
+enabled = true
+api_key_env = "OPENCODE_API_KEY"
