@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ ${ROFI_RETV:-0} == 1 ]]; then
+  case ${ROFI_INFO:-} in
+    suspend | hibernate)
+      systemctl "${ROFI_INFO}"
+      exit 0
+      ;;
+    reboot | poweroff)
+      printf '\0prompt\x1fConfirm\n\0no-custom\x1ftrue\n\0data\x1f%s\n' "$ROFI_INFO"
+      printf 'Confirm %s\0icon\x1fsystem-shutdown\x1finfo\x1fconfirm\n' "$ROFI_INFO"
+      printf 'Cancel\0icon\x1fdialog-cancel\x1finfo\x1fcancel\n'
+      exit 0
+      ;;
+    confirm)
+      case ${ROFI_DATA:-} in
+        reboot | poweroff) systemctl "$ROFI_DATA" ;;
+      esac
+      exit 0
+      ;;
+    cancel) exit 0 ;;
+  esac
+fi
+
+printf '\0prompt\x1fPower\n\0no-custom\x1ftrue\n'
+printf 'Sleep\0icon\x1fsystem-suspend\x1finfo\x1fsuspend\n'
+printf 'Hibernate\0icon\x1fsystem-suspend-hibernate\x1finfo\x1fhibernate\n'
+printf 'Restart\0icon\x1fview-refresh\x1finfo\x1freboot\n'
+printf 'Power off\0icon\x1fsystem-shutdown\x1finfo\x1fpoweroff\n'

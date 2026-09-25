@@ -1,0 +1,92 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    icon-theme: "breeze-dark";
+    display-drun: "Apps";
+    drun-display-format: "{name}";
+    drun-match-fields: "name,generic";
+
+    kb-remove-to-eol: "";
+    kb-accept-entry: "Return,KP_Enter";
+    kb-row-up: "Up,Control+k";
+    kb-row-down: "Down,Control+j";
+
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+@theme "theme"
+
+window {
+    location: north;
+    anchor: north;
+    y-offset: 20%;
+}
+
+mainbox {
+    children: [ "inputbar", "mode-switcher", "message", "listview" ];
+}
+
+inputbar {
+    children: [ "prompt", "textbox-prompt-colon", "entry" ];
+    padding: 6px 8px;
+    spacing: 8px;
+    border: 1px;
+    border-color: @primary;
+}
+
+prompt {
+    padding: 0px;
+    background-color: transparent;
+    text-color: @primary;
+    font: "JetBrains Mono 10";
+    vertical-align: 0.5;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: "›";
+    text-color: @primary;
+    vertical-align: 0.5;
+}
+
+message {
+    padding: 8px 12px;
+    background-color: @surface-container-high;
+    border-radius: 8px;
+}
+
+textbox {
+    text-color: @text;
+}
+
+mode-switcher {
+    enabled: true;
+    spacing: 4px;
+    background-color: transparent;
+}
+
+button {
+    padding: 4px 4px;
+    font: "JetBrains Mono 9";
+    border-radius: 8px;
+    background-color: @surface-container-high;
+    text-color: @muted;
+    cursor: pointer;
+}
+
+element {
+    padding: 4px 10px;
+}
+
+button selected {
+    background-color: @primary-container;
+    text-color: @on-primary-container;
+}
+
+entry {
+    placeholder: "Search...";
+    hide-cursor-on-empty: false;
+    vertical-align: 0.5;
+}

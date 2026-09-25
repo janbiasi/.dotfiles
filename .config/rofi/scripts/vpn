@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+vpn="$HOME/.config/waybar/scripts/vpn.sh"
+
+if [[ ${ROFI_RETV:-0} == 1 ]]; then
+  case ${ROFI_INFO:-} in
+    netbird | tailscale) "$vpn" "$ROFI_INFO" toggle ;;
+    netbird-ui)
+      coproc (netbird-ui --daemon-addr unix:///var/run/netbird/main.sock >/dev/null 2>&1)
+      exit 0
+      ;;
+  esac
+fi
+
+cache=${XDG_RUNTIME_DIR:-}/super-rofi-vpn.json
+cache_age=999
+if [[ -n ${XDG_RUNTIME_DIR:-} && -s $cache ]]; then
+  cache_age=$(( $(date +%s) - $(stat -c %Y "$cache") ))
+fi
+if [[ ${ROFI_RETV:-0} != 1 && $cache_age -le 15 ]]; then
+  status=$(< "$cache")
+else
+  status=$("$vpn")
+fi
+details=$(jq -r '.tooltip | split("\n") | .[0], .[1]' <<< "$status")
+mapfile -t providers <<< "$details"
+
+if [[ ${providers[1]} == *' · Exit: '* ]]; then
+  state=${providers[1]#Tailscale: }
+  state=${state%% · *}
+  exit_node=${providers[1]##* · Exit: }
+  exit_node=${exit_node%% · *}
+  providers[1]="Tailscale: $state · Exit: $exit_node"
+fi
+
+printf '\0prompt\x1fVPN\n\0no-custom\x1ftrue\n'
+printf '%s\0icon\x1fnetwork-vpn\x1finfo\x1fnetbird\n' "${providers[0]}"
+printf '%s\0icon\x1fnetwork-vpn\x1finfo\x1ftailscale\n' "${providers[1]}"
+printf 'NetBird settings…\0icon\x1fdocument-edit\x1finfo\x1fnetbird-ui\n'

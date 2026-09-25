@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ ${ROFI_RETV:-0} == 1 ]]; then
+  case ${ROFI_INFO:-} in
+    on)
+      if ! { rfkill unblock bluetooth && bluetoothctl power on; } >/dev/null 2>&1; then
+        notify-send -a Bluetooth 'Could not turn Bluetooth on'
+      fi
+      ;;
+    off)
+      if ! bluetoothctl power off >/dev/null 2>&1; then
+        notify-send -a Bluetooth 'Could not turn Bluetooth off'
+      fi
+      ;;
+    devices)
+      coproc (ghostty --title=Bluetooth -e bluetui >/dev/null 2>&1)
+      exit 0
+      ;;
+  esac
+fi
+
+controller=$(timeout 4 bluetoothctl show 2>/dev/null) || controller=
+powered=$(awk '/^[[:space:]]*Powered:/ {print $2; exit}' <<< "$controller")
+
+case $powered in
+  yes) status=On; action='Turn Bluetooth off'; next=off ;;
+  no) status=Off; action='Turn Bluetooth on'; next=on ;;
+  *) status=Unavailable; action='Turn Bluetooth on'; next=on ;;
+esac
+
+if [[ $powered == yes ]]; then
+  devices=$(timeout 4 bluetoothctl devices Connected 2>/dev/null) || devices=
+  if [[ -n $devices ]]; then
+    names=
+    while IFS= read -r device; do
+      name=${device#Device * }
+      name=${name//$'\n'/ }
+      names="${names:+$names, }$name"
+    done <<< "$devices"
+    status="On · Connected: $names"
+  else
+    status='On · No devices connected'
+  fi
+fi
+
+printf '\0prompt\x1fBluetooth\n\0no-custom\x1ftrue\n\0message\x1f%s\n' "$status"
+printf '%s\0icon\x1fpreferences-system-bluetooth\x1finfo\x1f%s\n' "$action" "$next"
+printf 'Bluetooth devices…\0icon\x1fpreferences-system-bluetooth\x1finfo\x1fdevices\n'

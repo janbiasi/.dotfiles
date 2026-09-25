@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cache=${XDG_RUNTIME_DIR:-}/super-rofi-wifi.menu
+if [[ ${1:-} == --cache && -n ${XDG_RUNTIME_DIR:-} ]]; then
+  exec 9>"$XDG_RUNTIME_DIR/super-rofi-wifi.lock"
+  flock -n 9 || exit 0
+  if [[ -s $cache ]]; then
+    cache_age=$(( $(date +%s) - $(stat -c %Y "$cache") ))
+    if (( cache_age < 3 )); then
+      exit 0
+    fi
+  fi
+fi
+
+if [[ ${1:-} != --cache && ${ROFI_RETV:-0} != 1 && -s $cache ]]; then
+  cache_age=$(( $(date +%s) - $(stat -c %Y "$cache") ))
+  if (( cache_age <= 10 )); then
+    cat "$cache"
+    exit 0
+  fi
+fi
+
+if [[ ${ROFI_RETV:-0} == 1 ]]; then
+  case ${ROFI_INFO:-} in
+    on | off)
+      if ! nmcli radio wifi "$ROFI_INFO" >/dev/null 2>&1; then
+        notify-send -a Wi-Fi "Could not turn Wi-Fi $ROFI_INFO"
+      fi
+      ;;
+    connect)
+      coproc (ghostty --title=Network -e nmtui connect >/dev/null 2>&1)
+      exit 0
+      ;;
+    edit)
+      coproc (nm-connection-editor >/dev/null 2>&1)
+      exit 0
+      ;;
+  esac
+fi
+
+radio=$(nmcli radio wifi 2>/dev/null) || radio=unavailable
+device_row=$(nmcli -t -e no -f DEVICE,TYPE,CONNECTION device status 2>/dev/null | awk -F: '$2 == "wifi" {print; exit}') || device_row=
+device=${device_row%%:*}
+connection=${device_row#*:*:}
+connection=${connection//$'\n'/ }
+
+case $radio in
+  enabled)
+    signal=
+    if [[ -n $device && -n $connection && $connection != -- ]]; then
+      signal=$(nmcli -t -f IN-USE,SIGNAL device wifi list --rescan no ifname "$device" 2>/dev/null |
+        awk -F: '$1 == "*" {print $2; exit}') || signal=
+    fi
+    if [[ -n $connection && $connection != -- ]]; then
+      status="Connected to $connection${signal:+ · $signal% signal}"
+    else
+      status='On · Not connected'
+    fi
+    action='Turn Wi-Fi off'
+    next=off
+    ;;
+  disabled)
+    status='Off'
+    action='Turn Wi-Fi on'
+    next=on
+    ;;
+  *)
+    status='Unavailable'
+    action='Turn Wi-Fi on'
+    next=on
+    ;;
+esac
+
+render() {
+  printf '\0prompt\x1fWi-Fi\n\0no-custom\x1ftrue\n\0message\x1f%s\n' "$status"
+  printf '%s\0icon\x1fnetwork-wireless-disconnected\x1finfo\x1f%s\n' "$action" "$next"
+  printf 'Connect to a network…\0icon\x1fnetwork-connect\x1finfo\x1fconnect\n'
+  printf 'Saved connections…\0icon\x1fdocument-edit\x1finfo\x1fedit\n'
+}
+
+if [[ -n ${XDG_RUNTIME_DIR:-} ]]; then
+  cache_tmp=$(mktemp "$cache.XXXXXX")
+  render > "$cache_tmp"
+  mv "$cache_tmp" "$cache"
+  if [[ ${1:-} != --cache ]]; then
+    cat "$cache"
+  fi
+else
+  render
+fi
