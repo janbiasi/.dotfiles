@@ -1,0 +1,17 @@
+[delta "matugen"]
+    dark = true
+    syntax-theme = OneHalfDark
+    file-style = "{{colors.primary.default.hex}} bold"
+    file-decoration-style = "{{colors.outline_variant.default.hex}} ul"
+    hunk-header-style = "{{colors.secondary.default.hex}} bold"
+    hunk-header-decoration-style = "{{colors.outline_variant.default.hex}} ul"
+    commit-style = "{{colors.tertiary.default.hex}} bold"
+    commit-decoration-style = "{{colors.outline_variant.default.hex}} box"
+    minus-style = "syntax {{colors.error.default.hex | to_color | set_lightness: 16.0}}"
+    minus-emph-style = "syntax bold {{colors.error.default.hex | to_color | set_lightness: 25.0}}"
+    plus-style = "syntax {{colors.success.default.hex | to_color | set_lightness: 16.0}}"
+    plus-emph-style = "syntax bold {{colors.success.default.hex | to_color | set_lightness: 25.0}}"
+    line-numbers-minus-style = "{{colors.error.default.hex}}"
+    line-numbers-plus-style = "{{colors.success.default.hex}}"
+    line-numbers-zero-style = "{{colors.on_surface_variant.default.hex}}"
+    whitespace-error-style = "{{colors.error.default.hex}} reverse"
