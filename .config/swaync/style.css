@@ -1,0 +1,214 @@
+@import "/etc/xdg/swaync/style.css";
+@import "../waybar/tokens/colors.css";
+
+:root {
+  --cc-bg: @surface_container_lowest;
+  --noti-bg: 23, 28, 31;
+  --noti-bg-alpha: 1;
+  --noti-bg-darker: @surface_container_lowest;
+  --noti-bg-hover: @surface_container_high;
+  --noti-bg-focus: transparent;
+  --noti-border-color: @outline_variant;
+  --noti-close-bg: @surface_container_high;
+  --noti-close-bg-hover: @surface_container_highest;
+  --text-color: @on_surface;
+  --text-color-disabled: @on_surface_variant;
+  --bg-selected: @surface_tint;
+  --border-radius: 8px;
+  --notification-shadow: none;
+  --notification-icon-size: 24px;
+  --notification-app-icon-size: 12px;
+  --notification-group-icon-size: 16px;
+  --font-size-body: 12px;
+  --font-size-summary: 12px;
+}
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 13px;
+  text-shadow: none;
+}
+
+.control-center {
+  border: 1px solid @outline_variant;
+  border-radius: 14px;
+  padding: 6px;
+}
+
+.widget {
+  margin: 4px;
+  padding: 8px;
+}
+
+.widget-title > label,
+.widget-inhibitors > label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.widget-title > button,
+.widget-inhibitors > button,
+.notification-row
+  .notification-background
+  .notification
+  .notification-action
+  > button {
+  background: @surface_container_high;
+  color: @on_surface_variant;
+  border: none;
+  border-radius: 14px;
+  padding: 6px 10px;
+  min-height: 0;
+  box-shadow: none;
+  font-weight: normal;
+}
+
+.widget-title > button:hover,
+.widget-inhibitors > button:hover,
+.notification-row
+  .notification-background
+  .notification
+  .notification-action
+  > button:hover {
+  background: @surface_container_highest;
+  color: @on_surface;
+}
+
+.widget-dnd {
+  background: @surface_container_low;
+  margin: 0 12px 8px;
+  padding: 10px;
+  border-radius: 14px;
+}
+
+.widget-dnd label {
+  font-size: 12px;
+  color: @on_surface_variant;
+}
+
+.widget-dnd switch {
+  background: @outline_variant;
+  border: none;
+  min-width: 36px;
+  min-height: 20px;
+  padding: 2px;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.widget-dnd switch:checked {
+  background: @surface_tint;
+}
+
+.widget-dnd switch slider {
+  background: @on_surface;
+  min-width: 16px;
+  min-height: 16px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.widget-dnd switch:checked slider {
+  background: @surface_container_lowest;
+}
+
+.widget-notifications {
+  margin: 0;
+  padding: 0;
+}
+
+.notification-row .notification-background {
+  padding: 4px 8px;
+}
+
+.control-center .notification-row .notification-background {
+  padding: 4px 10px;
+}
+
+.notification-row .notification-background .notification {
+  background: @surface_container_low;
+}
+
+.notification-row .notification-background .notification.critical {
+  border-color: @error;
+}
+
+.notification-row
+  .notification-background
+  .notification
+  .notification-default-action {
+  padding: 12px;
+}
+
+.notification-row
+  .notification-background
+  .notification
+  .notification-default-action
+  .notification-content
+  .image {
+  -gtk-icon-style: symbolic;
+  color: @on_surface;
+  border-radius: 6px;
+  margin: 0 10px 0 0;
+}
+
+.notification-row
+  .notification-background
+  .notification
+  .notification-default-action
+  .notification-content
+  .app-icon {
+  -gtk-icon-style: symbolic;
+  color: @on_surface;
+  -gtk-icon-shadow: none;
+  margin: 0 6px 0 0;
+}
+
+.notification-row
+  .notification-background
+  .notification
+  .notification-default-action
+  .notification-content
+  .text-box
+  .time {
+  font-size: 10px;
+  font-weight: normal;
+  color: @outline;
+  margin-right: 20px;
+}
+
+.notification-row
+  .notification-background
+  .notification
+  .notification-default-action
+  .notification-content
+  .text-box
+  .body {
+  color: @on_surface_variant;
+  margin-top: 4px;
+}
+
+.notification-row
+  .notification-background
+  .notification
+  .notification-alt-actions {
+  padding: 0 8px 8px;
+}
+
+.close-button {
+  min-width: 20px;
+  min-height: 20px;
+  margin-top: 8px;
+  margin-right: 12px;
+}
+
+.notification-row:focus .notification,
+.notification-group:focus .notification {
+  border-color: @surface_tint;
+}
+
+.control-center .control-center-list-placeholder {
+  opacity: 1;
+  color: @outline;
+}

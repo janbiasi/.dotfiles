@@ -1,0 +1,23 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "cssPriority": "user",
+  "positionX": "right",
+  "positionY": "top",
+  "fit-to-screen": true,
+  "control-center-width": 400,
+  "control-center-margin-top": 8,
+  "control-center-margin-bottom": 8,
+  "control-center-margin-right": 8,
+  "notification-window-width": 400,
+  "widgets": ["inhibitors", "title", "dnd", "notifications"],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "button-text": "Clear all"
+    },
+    "dnd": {
+      "text": "Do not disturb"
+    }
+  }
+}
