@@ -30,8 +30,15 @@ CVS
 ^/.gitconfig
 
 /extra # additional installation files not needed to copy
+^/etc # system configuration installed separately with make install-etc
 /Makefile # utility tool
 /docs # only for documentation purposes
 \*.rayconfig # raycast config backup files
 
-\*.tpl # template files
+\*.tpl # template files
+\.target\.wants # systemd enablement artifacts (created by systemctl enable, machine state not config)
+node_modules # workspace dependencies (pnpm install)
+^/package.json # pnpm workspace root
+^/pnpm-workspace.yaml
+^/pnpm-lock.yaml
+^/.config/pi/extensions # loaded from the repo via .config/pi/settings.json, never symlinked
