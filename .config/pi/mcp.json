@@ -2,11 +2,11 @@
   "mcpServers": {
     "context7": {
       "url": "https://mcp.context7.com/mcp",
-      "auth": "bearer",
       "headers": {
-        "CONTEXT7_API_KEY": "$env:CONTEXT7_API_KEY"
+        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
       },
-      "directTools": true
+      "description": "Up-to-date library and framework documentation",
+      "exposure": "direct"
     },
     "chrome-devtools": {
       "command": "npx",
@@ -14,7 +14,8 @@
         "-y",
         "chrome-devtools-mcp@latest"
       ],
-      "directTools": false
+      "description": "Drive and inspect a Chrome browser via DevTools",
+      "exposure": "deferred"
     }
   }
 }

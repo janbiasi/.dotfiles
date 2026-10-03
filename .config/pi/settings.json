@@ -1,14 +1,6 @@
 {
-  "lastChangelogVersion": "0.80.3",
+  "lastChangelogVersion": "1.0.0",
   "enableInstallTelemetry": false,
-  "packages": [
-    {
-      "source": "npm:@plannotator/pi-extension",
-      "skills": []
-    },
-    "npm:pi-mcp-adapter"
-  ],
-  "defaultProvider": "zai",
-  "defaultModel": "glm-5.3",
-  "defaultThinkingLevel": "medium"
+  "packages": ["~/src/dotfiles/.config/pi/extensions/sandbox"],
+  "theme": "dark"
 }
