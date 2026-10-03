@@ -10,6 +10,11 @@
     "deny": ["Read(./.env)", "Read(./.env.*)"]
   },
   "model": "opus",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 0
+  },
   "hooks": {
     "SessionStart": [
       {

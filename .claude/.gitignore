@@ -1,6 +1,5 @@
 **
-!mods
-!mods/**
 !.gitignore
 !skills
 !settings.json
+!statusline.sh

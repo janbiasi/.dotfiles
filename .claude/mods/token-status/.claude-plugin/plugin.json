@@ -1,1 +1,0 @@
-{ "name": "token-status", "version": "0.1.0", "description": "Status line with model, context %, and session tokens in/out/total", "types": "./types/index.d.ts" }
