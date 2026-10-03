@@ -113,7 +113,7 @@
         "deleted.background": "{{colors.error_container.dark.hex}}80",
         "deleted.border": "{{colors.on_error_container.dark.hex}}",
         "error": "{{colors.error.dark.hex}}",
-        "error.background": "{{colors.error_container.dark.hex}}",
+        "error.background": "{{colors.error_container.dark.hex}}80",
         "error.border": "{{colors.on_error_container.dark.hex}}",
         "hidden": "{{colors.outline_variant.dark.hex}}",
         "hidden.border": "{{colors.outline_variant.dark.hex}}60",
@@ -178,7 +178,7 @@
             "font_weight": null
           },
           "constructor": {
-            "color": "{{colors.secondary.dark.hex | to_color | set_saturation: 65.0 | set_lightness: 68.0}}",
+            "color": "{{colors.syntax_type.dark.hex | to_color | set_saturation: 65.0 | set_lightness: 68.0}}",
             "font_style": null,
             "font_weight": null
           },
@@ -198,7 +198,7 @@
             "font_weight": null
           },
           "keyword": {
-            "color": "{{colors.secondary.dark.hex | to_color | set_saturation: 65.0 | set_lightness: 68.0}}",
+            "color": "{{colors.syntax_keyword.dark.hex | to_color | set_saturation: 65.0 | set_lightness: 68.0}}",
             "font_style": null,
             "font_weight": null
           },
@@ -278,7 +278,7 @@
             "font_weight": null
           },
           "type": {
-            "color": "{{colors.secondary.dark.hex | to_color | set_saturation: 65.0 | set_lightness: 68.0}}",
+            "color": "{{colors.syntax_type.dark.hex | to_color | set_saturation: 65.0 | set_lightness: 68.0}}",
             "font_style": null,
             "font_weight": null
           },
@@ -470,7 +470,7 @@
             "font_weight": null
           },
           "constructor": {
-            "color": "{{colors.secondary.light.hex | to_color | set_saturation: 65.0 | set_lightness: 38.0}}",
+            "color": "{{colors.syntax_type.light.hex | to_color | set_saturation: 65.0 | set_lightness: 38.0}}",
             "font_style": null,
             "font_weight": null
           },
@@ -490,7 +490,7 @@
             "font_weight": null
           },
           "keyword": {
-            "color": "{{colors.secondary.light.hex | to_color | set_saturation: 65.0 | set_lightness: 38.0}}",
+            "color": "{{colors.syntax_keyword.light.hex | to_color | set_saturation: 65.0 | set_lightness: 38.0}}",
             "font_style": null,
             "font_weight": null
           },
@@ -570,7 +570,7 @@
             "font_weight": null
           },
           "type": {
-            "color": "{{colors.secondary.light.hex | to_color | set_saturation: 65.0 | set_lightness: 38.0}}",
+            "color": "{{colors.syntax_type.light.hex | to_color | set_saturation: 65.0 | set_lightness: 38.0}}",
             "font_style": null,
             "font_weight": null
           },

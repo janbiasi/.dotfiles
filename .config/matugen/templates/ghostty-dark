@@ -5,7 +5,7 @@ cursor-text = {{colors.on_primary.dark.hex}}
 selection-background = {{colors.primary_container.dark.hex}}
 selection-foreground = {{colors.on_primary_container.dark.hex}}
 
-palette = 0={{colors.surface_container_highest.dark.hex}}
+palette = 0={{colors.surface_container.dark.hex}}
 palette = 1={{colors.error.dark.hex | to_color | set_saturation: 60.0 | set_lightness: 68.0}}
 palette = 2={{colors.success.dark.hex | to_color | set_saturation: 55.0 | set_lightness: 68.0}}
 palette = 3={{colors.tertiary.dark.hex | to_color | set_saturation: 60.0 | set_lightness: 68.0}}

@@ -3,6 +3,8 @@
 [config.custom_colors]
 # A semantic success colour blended into each generated wallpaper palette.
 success = { color = "#5fbd72", blend = true }
+syntax_keyword = { color = "#e99472", blend = true }
+syntax_type = { color = "#e98ba7", blend = true }
 
 [templates.waybar]
 input_path = './templates/waybar-colors.css'
@@ -48,6 +50,10 @@ output_path = '~/.config/yazi/theme.toml'
 input_path = './templates/zed.json'
 output_path = '~/.config/zed/themes/matugen.json'
 
+[templates.nvim]
+input_path = './templates/nvim.lua'
+output_path = '~/.config/nvim/colors/matugen.lua'
+
 [templates.ghostty_dark]
 input_path = './templates/ghostty-dark'
 output_path = '~/.config/ghostty/themes/Matugen Dark'
@@ -82,3 +88,9 @@ output_path = '~/.config/hunk/config.toml'
 [templates.delta]
 input_path = './templates/delta.gitconfig'
 output_path = '~/.config/delta/themes/matugen.gitconfig'
+
+# swaync doesn't recolor symbolic icons, so bake the palette into the icon.
+[templates.herdr_icon]
+input_path = './templates/herdr-icon.svg'
+output_path = '~/.local/share/icons/hicolor/scalable/apps/herdr.svg'
+post_hook = 'gtk-update-icon-cache -f -t ~/.local/share/icons/hicolor'
