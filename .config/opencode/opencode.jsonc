@@ -1,173 +1,197 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "zai/glm-5.3",
-  "small_model": "zai/glm-4.7-flash",
-  "autoupdate": true,
+  "update": "auto",
   "instructions": ["CONTRIBUTING.md", ".cursor/rules/*.md"],
-  "plugin": [
+  "plugins": [
     // "opencode-beads@latest",
     "cc-safety-net@latest",
-    [
-      "@plannotator/opencode@latest",
+  ],
+  "default_agent": "build",
+  "experimental": {
+    "policies": [
+      { "action": "permission", "resource": "shell:sudo *", "effect": "deny" },
       {
-        "workflow": "plan-agent",
-        "planningAgents": ["plan"],
+        "action": "permission",
+        "resource": "shell:sudoedit *",
+        "effect": "deny",
+      },
+      {
+        "action": "permission",
+        "resource": "shell:pacman *",
+        "effect": "deny",
+      },
+      { "action": "permission", "resource": "shell:yay *", "effect": "deny" },
+      { "action": "permission", "resource": "shell:paru *", "effect": "deny" },
+      {
+        "action": "permission",
+        "resource": "shell:pkexec *",
+        "effect": "deny",
+      },
+      { "action": "permission", "resource": "shell:run0 *", "effect": "deny" },
+      { "action": "permission", "resource": "shell:doas *", "effect": "deny" },
+      { "action": "permission", "resource": "shell:su *", "effect": "deny" },
+      {
+        "action": "permission",
+        "resource": "shell:/usr/bin/sudo *",
+        "effect": "deny",
+      },
+      {
+        "action": "permission",
+        "resource": "shell:/usr/bin/sudoedit *",
+        "effect": "deny",
+      },
+      {
+        "action": "permission",
+        "resource": "shell:/usr/bin/pacman *",
+        "effect": "deny",
+      },
+      {
+        "action": "permission",
+        "resource": "shell:/usr/bin/yay *",
+        "effect": "deny",
+      },
+      {
+        "action": "permission",
+        "resource": "shell:/usr/bin/paru *",
+        "effect": "deny",
+      },
+      {
+        "action": "permission",
+        "resource": "shell:/usr/bin/pkexec *",
+        "effect": "deny",
+      },
+      {
+        "action": "permission",
+        "resource": "shell:/usr/bin/run0 *",
+        "effect": "deny",
+      },
+      {
+        "action": "permission",
+        "resource": "shell:/usr/bin/doas *",
+        "effect": "deny",
+      },
+      {
+        "action": "permission",
+        "resource": "shell:/usr/bin/su *",
+        "effect": "deny",
       },
     ],
-  ],
-  "default_agent": "plan",
-  "permission": {
-    "external_directory": {
-      "~/.config/**": "allow",
+  },
+  "permissions": [
+    { "action": "*", "resource": "*", "effect": "ask" },
+    {
+      "action": "external_directory",
+      "resource": "~/.config/*",
+      "effect": "allow",
     },
-    "edit": {
-      "~/.config/**": "deny",
+    {
+      "action": "external_directory",
+      "resource": "/tmp/*",
+      "effect": "allow",
     },
-    "*": "ask",
     // Read, skill and todos are always allowed
-    "skill": "allow",
-    "todoread": "allow",
-    "todowrite": "allow",
-    "webfetch": "allow",
-    "lsp": "allow",
-    "glob": "allow",
-    "grep": "allow",
-    "list": "allow",
-    // Important deny rules
-    "rm": "deny",
-    // Bash execution permission (non-tools)
-    "bash": {
-      "*": "ask",
-      "echo *": "allow",
-      "grep": "allow",
-      "grep*": "allow",
-      "cat*": "allow",
-      "find *": "allow",
-      "tail *": "allow",
-      "ls": "allow",
-      "ls *": "allow",
-      "head": "allow",
-      "head*": "allow",
-      "head *": "allow",
-      // git
-      "git *": "allow",
-      "git commit *": "deny",
-      "git push *": "deny",
-      // node
-      "npm *": "allow",
-      "pnpm *": "allow",
-      "yarn *": "allow",
-      "bun *": "allow",
-      // nix
-      "devbox *": "allow",
-      "devenv": "allow",
-      "devenv*": "allow",
-      "devenv *": "allow",
-      // golang
-      "go *": "allow",
-      "go test *": "allow",
-      "golangci-lint *": "allow",
-      // beads
-      "bd *": "allow",
-    },
+    { "action": "skill", "resource": "*", "effect": "allow" },
+    { "action": "todoread", "resource": "*", "effect": "allow" },
+    { "action": "todowrite", "resource": "*", "effect": "allow" },
+    { "action": "webfetch", "resource": "*", "effect": "allow" },
+    { "action": "glob", "resource": "*", "effect": "allow" },
+    { "action": "grep", "resource": "*", "effect": "allow" },
+    { "action": "list", "resource": "*", "effect": "allow" },
+    // Shell execution permission (non-tools)
+    { "action": "shell", "resource": "echo *", "effect": "allow" },
+    { "action": "shell", "resource": "grep *", "effect": "allow" },
+    { "action": "shell", "resource": "cat *", "effect": "allow" },
+    { "action": "shell", "resource": "find *", "effect": "allow" },
+    { "action": "shell", "resource": "tail *", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    // git
+    { "action": "shell", "resource": "git *", "effect": "allow" },
+    { "action": "shell", "resource": "git commit *", "effect": "deny" },
+    { "action": "shell", "resource": "git push *", "effect": "deny" },
+    // node
+    { "action": "shell", "resource": "npm *", "effect": "allow" },
+    { "action": "shell", "resource": "pnpm *", "effect": "allow" },
+    { "action": "shell", "resource": "yarn *", "effect": "allow" },
+    { "action": "shell", "resource": "bun *", "effect": "allow" },
+    // nix
+    { "action": "shell", "resource": "devbox *", "effect": "allow" },
+    { "action": "shell", "resource": "devenv *", "effect": "allow" },
+    // golang
+    { "action": "shell", "resource": "go *", "effect": "allow" },
+    { "action": "shell", "resource": "golangci-lint *", "effect": "allow" },
+    // beads
+    { "action": "shell", "resource": "bd *", "effect": "allow" },
     // general read permissions
-    "read": {
-      "*": "allow",
-      "*.envrc*": "deny",
-      "*.env": "deny",
-      "*.env.*": "deny",
-      "*.env.example": "allow",
-    },
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "read", "resource": "*.envrc*", "effect": "deny" },
+    { "action": "read", "resource": "*.env", "effect": "deny" },
+    { "action": "read", "resource": "*.env.*", "effect": "deny" },
+    { "action": "read", "resource": "*.env.example", "effect": "allow" },
     // MCP server permissions
-    "context7_*": "allow",
-    "serena_*": "allow",
+    { "action": "context7_*", "resource": "*", "effect": "allow" },
+    { "action": "serena_*", "resource": "*", "effect": "allow" },
     // Tool integrations
-    "Beads-Task-Agent*": "allow",
-    "codegraph*": "allow",
-  },
+    { "action": "Beads-Task-Agent*", "resource": "*", "effect": "allow" },
+    { "action": "codegraph*", "resource": "*", "effect": "allow" },
+    // Important deny rules
+    { "action": "rm", "resource": "*", "effect": "deny" },
+  ],
   "mcp": {
-    "plane": {
-      "type": "remote",
-      "enabled": false,
-      "url": "https://mcp.plane.so/http/mcp",
-    },
-    "github": {
-      "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp/",
-      "oauth": false,
-      "enabled": false,
-      "headers": {
-        "Authorization": "Bearer {env:GITHUB_TOKEN}",
+    "servers": {
+      "plane": {
+        "type": "remote",
+        "disabled": true,
+        "url": "https://mcp.plane.so/http/mcp",
       },
-    },
-    // "serena": {
-    //   "type": "local",
-    //   "enabled": false,
-    //   "command": [
-    //     "uvx",
-    //     "--from",
-    //     "git+https://github.com/oraios/serena",
-    //     "serena",
-    //     "start-mcp-server",
-    //     "--context",
-    //     "agent",
-    //   ],
-    // },
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "headers": {
-        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}",
+      "github": {
+        "type": "remote",
+        "url": "https://api.githubcopilot.com/mcp/",
+        "oauth": false,
+        "disabled": true,
+        "headers": {
+          "Authorization": "Bearer {env:GITHUB_TOKEN}",
+        },
       },
-      "enabled": true,
-    },
-    "chrome": {
-      "type": "local",
-      "enabled": true,
-      "command": ["bun", "x", "chrome-devtools-mcp@latest"],
-    },
-    "posthog": {
-      "enabled": false,
-      "type": "local",
-      "command": [
-        "bun",
-        "x",
-        "mcp-remote@latest",
-        "https://mcp-eu.posthog.com/mcp",
-      ],
-    },
-    "tolaria": {
-      "enabled": false,
-      "type": "local",
-      "command": [
-        "node",
-        "/Applications/Tolaria.app/Contents/Resources/mcp-server/index.js",
-      ],
-      "environment": {
-        "VAULT_PATH": "/Users/janbiasi/.local/share/tolaria/Getting Started",
-        "WS_UI_PORT": "9711",
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp",
+        "headers": {
+          "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}",
+        },
+        "disabled": false,
       },
-    },
-    "treepolicy": {
-      "enabled": false,
-      "type": "local",
-      "command": ["treepolicy-mcp"],
-    },
-    "codegraph": {
-      "type": "local",
-      "command": ["codegraph", "serve", "--mcp"],
-      "enabled": true,
-    },
-    "kaneo": {
-      "type": "remote",
-      "url": "https://kaneo.biasi.info/api/mcp",
-      "enabled": true,
+      "chrome": {
+        "type": "local",
+        "disabled": false,
+        "command": ["npx", "chrome-devtools-mcp@latest"],
+      },
+      "posthog": {
+        "disabled": true,
+        "type": "remote",
+        "url": "https://mcp-eu.posthog.com/mcp",
+      },
+      "treepolicy": {
+        "disabled": true,
+        "type": "local",
+        "command": ["treepolicy-mcp"],
+      },
+      "codegraph": {
+        "type": "local",
+        "command": ["codegraph", "serve", "--mcp"],
+        "disabled": true,
+      },
+      "kaneo": {
+        "type": "remote",
+        "url": "https://kaneo.biasi.info/api/mcp",
+        "disabled": true,
+      },
     },
   },
-  "provider": {
+  "providers": {
     "ollama": {
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
         "baseURL": "http://localhost:11434/v1",
       },
       "models": {
