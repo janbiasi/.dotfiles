@@ -28,7 +28,7 @@ hl.window_rule({
   name = "chromium-scroll-speed-override",
   match = {
     class =
-    "^(brave.*|chromium.*|chrome.*|google-chrome.*|microsoft-edge.*|msedge.*|vivaldi.*|opera.*|chatgpt|com.t3tools.T3Code|Paseo|md.obsidian.Obsidian|discord)$"
+    "^(brave.*|chromium.*|chrome.*|google-chrome.*|microsoft-edge.*|msedge.*|vivaldi.*|opera.*|chatgpt|com.t3tools.T3Code|md.obsidian.Obsidian|discord)$"
   },
   scroll_touchpad = 0.15
 })
