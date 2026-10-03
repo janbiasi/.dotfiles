@@ -36,6 +36,7 @@ export CODEX_HOME="$XDG_CONFIG_HOME/codex"
 export SQLIT_CONFIG_DIR="$XDG_CONFIG_HOME/sqlit"
 # pi doesn't follow xdg - https://github.com/earendil-works/pi/issues/2870
 export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi"
+export PI_CODING_AGENT_SESSION_DIR="$XDG_DATA_HOME/pi-sessions"
 # paseo doesn't follow xdg - https://github.com/earendil-works/paseo/issues/
 export PASEO_HOME="$XDG_CONFIG_HOME/paseo"
 # plannator doesn't follow xdg
@@ -47,3 +48,4 @@ export T3CODE_STATE_DIR="$XDG_STATE_HOME/t3"
 # PATH additions
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.hunk/bin':"

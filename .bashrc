@@ -1,6 +1,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Use the host's locale archive in Nix/devenv subprocesses.
+if [[ -f /usr/lib/locale/locale-archive ]]; then
+  export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+fi
+
+PS1='[\u@\h \W]\$ '
+
 # Load aliases
 if [ -f "$XDG_CONFIG_HOME/bash/.aliases" ]; then
   source "$XDG_CONFIG_HOME/bash/.aliases"
