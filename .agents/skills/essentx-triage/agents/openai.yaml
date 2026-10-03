@@ -1,0 +1,5 @@
+interface:
+  display_name: "Essentx Triage"
+  short_description: "Essentx vulnerability analysis triage"
+policy:
+  allow_implicit_invocation: false

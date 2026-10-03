@@ -1,2 +1,3 @@
-skills/kami/.github
-skills/kami/.claude-plugin
+skills/**/.github
+skills/**/.claude-plugin
+skills/sgkb**

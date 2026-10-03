@@ -1,0 +1,5 @@
+interface:
+  display_name: "Update Monorepo Dependencies"
+  short_description: "Dependency tree and relation aware updates for monorepo dependencies"
+policy:
+  allow_implicit_invocation: false
