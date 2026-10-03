@@ -12,7 +12,7 @@ add_newline = true
 [character]
 success_symbol = "[❯](green)"
 error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](gray)"   # For use with zsh-vi-mode
+vimcmd_symbol = "[❮](bright-black)"   # For use with zsh-vi-mode
 
 [username]
 disabled = true
@@ -50,7 +50,7 @@ style = 'yellow'
 disabled = true
 time_format = "%R"                         # Hour:Minute Format
 style = "fg:yellow"
-format = '[[   $time ](fg:gray)]($style)'
+format = '[[   $time ](fg:bright-black)]($style)'
 
 [package]
 disabled = true
@@ -62,13 +62,14 @@ format = "[$branch]($style) "
 style = "purple"
 
 [git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "purple"
-conflicted = "​"
-untracked = "​"
-modified = "​"
-staged = "​"
-renamed = "​"
-deleted = "​"
+conflicted = "="
+untracked = "?"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = ""
 stashed = "≡"
 
 [git_state]
@@ -96,12 +97,12 @@ style = "blue"
 [elixir]
 symbol = " "
 version_format = "${major}.${minor}"
-style = "violet"
+style = "purple"
 
 [erlang]
 symbol = "  "
 version_format = "${major}"
-style = "pink"
+style = "bright-purple"
 
 [gradle]
 symbol = " "
@@ -111,11 +112,11 @@ style = "blue"
 [kotlin]
 symbol = " "
 version_format = "${major}"
-style = "violet"
+style = "purple"
 
 [scala]
 symbol = " "
-style = "orange"
+style = "yellow"
 
 [rust]
 symbol = " "
@@ -123,7 +124,7 @@ style = "red"
 
 [bun]
 symbol = " "
-style = "pink"
+style = "bright-purple"
 
 [nix_shell]
 impure_msg = 'impure'

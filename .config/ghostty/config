@@ -1,10 +1,10 @@
 # basic ui configuration
-theme = light:GitHub Light Default,dark:GitHub Dark Default
+theme = light:Matugen Light,dark:Matugen Dark
 cursor-style = block
-cursor-color = #777777
 cursor-opacity = 0.9
-cursor-text = #FFFFFF
 font-family = "JetBrainsMono Nerd Font"
+font-codepoint-map = U+2714=Noto Sans Symbols 2
+font-size = 10
 window-padding-color = background
 window-padding-x = 10,10
 window-padding-y = 10,10
@@ -12,6 +12,7 @@ window-padding-y = 10,10
 # keybindings
 keybind = alt+left=esc:B
 keybind = alt+right=esc:F
+keybind = ctrl+enter=unbind
 
 # macos specific configuration
 macos-titlebar-style = hidden

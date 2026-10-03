@@ -36,6 +36,7 @@ window#waybar {
 #battery,
 #idle_inhibitor,
 #custom-voxtype,
+#custom-screen-share,
 #custom-power,
 #custom-notifications,
 #custom-ai-all {
@@ -54,6 +55,7 @@ window#waybar {
 #battery,
 #idle_inhibitor,
 #custom-voxtype,
+#custom-screen-share,
 #custom-power,
 #custom-notifications,
 #custom-ai-all {
@@ -112,6 +114,14 @@ window#waybar {
   background: @primary;
   color: @on_primary;
 }
+#workspaces button.special {
+  background: @tertiary_container;
+  color: @on_tertiary_container;
+}
+#workspaces button.special:hover {
+  background: @tertiary;
+  color: @surface;
+}
 
 #system {
   padding: 0 3px;
@@ -138,6 +148,7 @@ window#waybar {
 #battery:hover,
 #idle_inhibitor:hover,
 #custom-voxtype:hover,
+#custom-screen-share:hover,
 #custom-power:hover,
 #custom-notifications:hover,
 #custom-ai-all:hover {
@@ -173,6 +184,16 @@ window#waybar {
 #custom-voxtype.transcribing {
   color: @tertiary;
 }
+#custom-screen-share.idle {
+  color: @outline;
+}
+#custom-screen-share.error {
+  color: @error;
+}
+#custom-screen-share.sharing {
+  background: @error_container;
+  color: @on_error_container;
+}
 #battery.charging {
   color: @success;
 }
@@ -204,8 +225,11 @@ window#waybar {
   color: @on_tertiary_container;
 }
 #custom-notifications.dnd-none,
-#custom-notifications.dnd-notification {
-  color: @outline;
+#custom-notifications.dnd-notification,
+#custom-notifications.dnd-inhibited-none,
+#custom-notifications.dnd-inhibited-notification {
+  background: @error;
+  color: @surface;
 }
 
 @keyframes voxtype-pulse {

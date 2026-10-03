@@ -131,7 +131,7 @@
 }
 
 .notification-row .notification-background .notification.critical {
-  border-color: @error;
+  border-color: @surface_tint;
 }
 
 .notification-row
@@ -147,7 +147,7 @@
   .notification-default-action
   .notification-content
   .image {
-  -gtk-icon-style: symbolic;
+  -gtk-icon-style: regular;
   color: @on_surface;
   border-radius: 6px;
   margin: 0 10px 0 0;
