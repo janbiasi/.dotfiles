@@ -27,8 +27,31 @@ Temporary Items
 .apdisk
 
 # Dotfiles related
+extra/backups/
 .credentials
 .env
+.local/bin/hyprpolkitagent
+.config/waybar/tokens/
+.config/hypr/hyprlock.conf
+.config/hypr/hyprpaper.conf
+.config/hypr/hyprtoolkit.conf
+.config/hypr/hyprpolkitagent-env.sh
+.config/hypr/modules/colors.lua
+.config/rofi/theme.rasi
+.config/opencode/themes/matugen.json
+.config/yazi/theme.toml
+.config/zed/themes/matugen.json
+.config/nvim/colors/matugen.lua
+.config/ghostty/themes/Matugen
+.config/ghostty/themes/Matugen Dark
+.config/ghostty/themes/Matugen Light
+.config/television/themes/matugen.toml
+.config/tmux/generated.conf
+.config/btop/themes/matugen.theme
+.config/hunk/config.toml
+.config/delta/themes/matugen.gitconfig
+.local/share/color-schemes/Matugen.colors
+.local/share/themes/personal/gtk-3.0/
 
 # Serena MCP
 .serena/cache/**
@@ -41,3 +64,8 @@ Temporary Items
 
 # PNPM
 .pnpm-store
+
+**/.claude/.cc-writes/
+
+# pnpm workspace (.config/pi/extensions)
+node_modules/
