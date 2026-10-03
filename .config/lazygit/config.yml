@@ -6,6 +6,6 @@ gui:
   commitHashLength: 7
   border: rounded
 git:
-  pagers:
+  diffRenderers:
     - colorArg: never
-      pager: delta --dark --paging=never
+      command: delta --dark --paging=never
