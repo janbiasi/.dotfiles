@@ -128,8 +128,13 @@ EOF
 	*Connected*) class=connected ;;
 	*Unavailable*) class=error ;;
 	esac
-	printf '{"text": "%s", "alt": "%s", "class": "%s", "tooltip": "NetBird: %s\\nTailscale: %s\\n\\nClick to manage VPN connections"}\n' \
-		"$text" "$class" "$class" "$nb_detail" "$ts_detail"
+	status=$(printf '{"text": "%s", "alt": "%s", "class": "%s", "tooltip": "NetBird: %s\\nTailscale: %s\\n\\nClick to manage VPN connections"}' \
+		"$text" "$class" "$class" "$nb_detail" "$ts_detail")
+	if [ -n "${XDG_RUNTIME_DIR:-}" ] && cache_tmp=$(mktemp "$XDG_RUNTIME_DIR/super-rofi-vpn.json.XXXXXX"); then
+		printf '%s\n' "$status" > "$cache_tmp"
+		mv "$cache_tmp" "$XDG_RUNTIME_DIR/super-rofi-vpn.json"
+	fi
+	printf '%s\n' "$status"
 }
 
 case ${1:-} in

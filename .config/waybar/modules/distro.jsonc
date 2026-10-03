@@ -2,6 +2,6 @@
   "custom/distro": {
     "format": "",
     "tooltip-format": "Applications",
-    "on-click": "rofi -show drun"
+    "on-click": "$HOME/.config/hypr/scripts/rofi-toggle"
   }
 }

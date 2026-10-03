@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<interface>
-  <object class="GtkMenu" id="menu">
-    <child><object class="GtkMenuItem" id="connect"><property name="label">Connect to a network…</property></object></child>
-    <child><object class="GtkMenuItem" id="edit"><property name="label">Saved connections…</property></object></child>
-    <child><object class="GtkMenuItem" id="on"><property name="label">Turn Wi-Fi on</property></object></child>
-    <child><object class="GtkMenuItem" id="off"><property name="label">Turn Wi-Fi off</property></object></child>
-  </object>
-</interface>

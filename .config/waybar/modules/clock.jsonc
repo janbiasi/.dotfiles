@@ -1,0 +1,30 @@
+{
+  "clock": {
+    "timezone": "Europe/Zurich",
+    "interval": 30,
+    "format": "{:%H:%M}",
+    "format-alt": "{:%a, %d %b · %H:%M}",
+    "format-alt-click": 1,
+    "tooltip-format": "<b>W{0:%V}</b>  {0:%A, %d %B %Y}\n\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "iso8601": true,
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<b>{}</b>",
+        "days": "{}",
+        "weeks": "W{}",
+        "weekdays": "{}",
+        "today": "<b>{}</b>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  }
+}

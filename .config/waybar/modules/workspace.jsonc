@@ -1,6 +1,10 @@
 {
   "hyprland/workspaces": {
-    "format": "<span size='9pt' weight='bold'>{id}</span> {windows}",
+    "format": "<span size='9pt' weight='bold'>{icon}</span> {windows}",
+    "format-icons": {
+      "scratchpad": "✦",
+      "special:scratchpad": "✦",
+    },
     "on-click": "activate",
     "all-outputs": false,
     "show-special": true,
@@ -17,6 +21,7 @@
       "class<.*t3code.*>": "󰚩",
       "class<.*[Pp]aseo.*>": "󰚩",
       "class<.*[Cc]hatgpt.*>": "",
+      "class<.*([Cc]itrix|[Ss]elfservice|[Ww]fica).*>": "󰢹",
       "class<.*[Oo]bsidian.*>": "",
       "class<.*[Dd]iscord.*>": "",
       "title<.*[Tt]eams.*>": "󰊻",

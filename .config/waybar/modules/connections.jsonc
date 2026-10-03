@@ -1,7 +1,7 @@
 {
   "network": {
     "interval": 5,
-    "format-wifi": "{icon} {essid}",
+    "format-wifi": "{icon}",
     "format-ethernet": "󰈀 Ethernet",
     "format-linked": "󰈀 No IP",
     "format-disconnected": "󰤭 Offline",
@@ -16,14 +16,8 @@
     "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}% · {frequency} GHz\n{ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
     "tooltip-format-ethernet": "{ifname} · {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
     "tooltip-format-disconnected": "No network connection\nClick to manage Wi-Fi",
-    "menu": "on-click",
-    "menu-file": "/home/jan/.config/waybar/menus/network.xml",
-    "menu-actions": {
-      "connect": "ghostty --title=\"Network\" -e nmtui connect",
-      "edit": "nm-connection-editor",
-      "on": "nmcli radio wifi on",
-      "off": "nmcli radio wifi off"
-    }
+    "on-update": "$HOME/.config/rofi/scripts/wifi --cache",
+    "on-click": "$HOME/.config/hypr/scripts/rofi-toggle Wi-Fi"
   },
   "bluetooth": {
     "format": "󰂯",
@@ -35,13 +29,7 @@
     "tooltip-format-connected": "{num_connections} connected\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
     "tooltip-format-enumerate-connected-battery": "{device_alias} · {device_battery_percentage}%",
-    "menu": "on-click",
-    "menu-file": "/home/jan/.config/waybar/menus/bluetooth.xml",
-    "menu-actions": {
-      "devices": "ghostty --title=\"Bluetooth\" -e bluetui",
-      "on": "rfkill unblock bluetooth && bluetoothctl power on",
-      "off": "bluetoothctl power off"
-    }
+    "on-click": "$HOME/.config/hypr/scripts/rofi-toggle Bluetooth"
   },
   "custom/vpn": {
     "exec": "$HOME/.config/waybar/scripts/vpn.sh",
@@ -53,12 +41,6 @@
       "disconnected": "󰦞",
       "error": "󱦚"
     },
-    "menu": "on-click",
-    "menu-file": "/home/jan/.config/waybar/menus/vpn.xml",
-    "menu-actions": {
-      "netbird_toggle": "$HOME/.config/waybar/scripts/vpn.sh netbird toggle",
-      "tailscale_toggle": "$HOME/.config/waybar/scripts/vpn.sh tailscale toggle",
-      "netbird_ui": "netbird-ui --daemon-addr unix:///var/run/netbird/main.sock"
-    }
+    "on-click": "$HOME/.config/hypr/scripts/rofi-toggle VPN"
   }
 }

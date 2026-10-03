@@ -1,0 +1,8 @@
+{
+  "custom/screen-share": {
+    "exec": "~/.config/waybar/scripts/screen-share-indicator.py --status",
+    "return-type": "json",
+    "interval": 1,
+    "tooltip": true
+  }
+}

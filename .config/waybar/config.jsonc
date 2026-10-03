@@ -16,6 +16,7 @@
     "./modules/battery.jsonc",
     "./modules/power.jsonc",
     "./modules/voxtype.jsonc",
+    "./modules/screen-share.jsonc",
     "./modules/tray-notif.jsonc",
     "./modules/ai.jsonc",
   ],
@@ -29,6 +30,7 @@
   "modules-right": [
     "custom/ai-all",
     "custom/voxtype",
+    "custom/screen-share",
     "pulseaudio",
     "network",
     "custom/vpn",
