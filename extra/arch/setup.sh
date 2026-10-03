@@ -20,6 +20,14 @@ if [ -f "${SCRIPT_DIR}/aur.txt" ]; then
   yay -S --needed - < "${SCRIPT_DIR}/aur.txt"
 fi
 
+echo "==> Installing flatpak apps from flatpak.txt ..."
+if [ -f "${SCRIPT_DIR}/flatpak.txt" ]; then
+  mapfile -t flatpak_apps < <(grep -vE '^\s*(#|$)' "${SCRIPT_DIR}/flatpak.txt")
+  if [ "${#flatpak_apps[@]}" -gt 0 ]; then
+    flatpak install --system --noninteractive --or-update "${flatpak_apps[@]}"
+  fi
+fi
+
 # echo "==> Enabling Docker service ..."
 # sudo systemctl enable --now docker.service || true
 

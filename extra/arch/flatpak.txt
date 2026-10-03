@@ -1,0 +1,5 @@
+# Flatpak apps for Arch Linux setup
+# Install with: flatpak install --system --noninteractive --or-update - < extra/arch/flatpak.txt
+
+com.spotify.Client
+org.localsend.localsend_app

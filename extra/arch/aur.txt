@@ -13,5 +13,8 @@ zen-browser-bin
 # Terminal emulator
 ghostty-bin
 
+# Wallpaper picker
+waypaper
+
 # Editor
 visual-studio-code-bin
