@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<zone>
+  <short>Public</short>
+  <description>
+    Public/untrusted networks, only allows LocalSend as it requires manual approval and no execution of files
+  </description>
+  <service name="dhcpv6-client" />
+  <port port="53317" protocol="tcp" />
+  <port port="53317" protocol="udp" />
+</zone>

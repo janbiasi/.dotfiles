@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<zone>
+  <short>Home</short>
+  <description>
+    Trusted home network with separated VLAN.
+  </description>
+  <service name="dhcpv6-client" />
+  <service name="mdns" />
+  <service name="samba-client" />
+  <service name="ssh" />
+  <port port="3773" protocol="tcp" />
+  <port port="53317" protocol="tcp" />
+  <port port="53317" protocol="udp" />
+</zone>

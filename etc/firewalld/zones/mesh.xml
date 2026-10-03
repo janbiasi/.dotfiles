@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<zone>
+  <short>Mesh</short>
+  <description>
+    Private overlay networks of own devices.
+  </description>
+  <interface name="wt0" />
+  <interface name="tailscale0" />
+  <service name="ssh" />
+  <port port="3773" protocol="tcp" />
+</zone>
