@@ -12,3 +12,11 @@ fi
 if type lazygit &>/dev/null; then
   source <(lazygit completion bash)
 fi
+
+if type delta &>/dev/null; then
+  source <(delta --generate-completion bash)
+fi
+
+if type herdr &>/dev/null; then
+  source <(herdr completion bash)
+fi
