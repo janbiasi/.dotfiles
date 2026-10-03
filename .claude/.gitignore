@@ -1,4 +1,6 @@
 **
+!mods
+!mods/**
 !.gitignore
 !skills
 !settings.json
