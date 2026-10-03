@@ -1,0 +1,12 @@
+{
+  "runtime": {
+    "version": "Lua 5.5"
+  },
+  "workspace": {
+    "library": [
+      "/usr/share/hypr/stubs",
+      "/usr/share/yay/meta",
+      "/usr/share/nvim/runtime/lua"
+    ]
+  }
+}
