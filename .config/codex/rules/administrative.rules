@@ -1,0 +1,11 @@
+prefix_rule(
+    pattern = [[
+        "sudo", "sudoedit", "pacman", "yay", "paru", "pkexec", "run0", "doas", "su",
+        "/usr/bin/sudo", "/usr/bin/sudoedit", "/usr/bin/pacman", "/usr/bin/yay",
+        "/usr/bin/paru", "/usr/bin/pkexec", "/usr/bin/run0", "/usr/bin/doas", "/usr/bin/su",
+    ]],
+    decision = "forbidden",
+    justification = "Run administrative and system package commands yourself outside coding agents.",
+    match = ["sudo pacman -Syu", "pacman -Syu", "yay -S package", "pkexec id", "/usr/bin/sudo -v"],
+    not_match = ["git status", "rg pacman README.md"],
+)
