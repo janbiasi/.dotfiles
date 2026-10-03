@@ -1,0 +1,10 @@
+[hotkey]
+enabled = false
+
+[output]
+mode = "paste"
+# Terminals (ghostty) ignore ctrl+v; ctrl+shift+v also pastes in GUI apps
+paste_keys = "ctrl+shift+v"
+
+[osd]
+enabled = false
