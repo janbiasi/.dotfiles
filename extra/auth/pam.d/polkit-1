@@ -1,0 +1,8 @@
+#%PAM-1.0
+
+auth       requisite    pam_u2f.so authfile=/etc/security/admin-u2f-mappings origin=pam://framework-admin appid=pam://framework-admin cue userpresence=1
+auth       sufficient   pam_fprintd.so max-tries=3 timeout=10
+auth       include      system-auth
+account    include      system-auth
+password   include      system-auth
+session    include      system-auth

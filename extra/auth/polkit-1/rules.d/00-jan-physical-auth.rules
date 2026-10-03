@@ -1,0 +1,5 @@
+polkit.addRule(function(action, subject) {
+    if (subject.user === "jan") {
+        return polkit.Result.AUTH_ADMIN;
+    }
+});
