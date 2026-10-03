@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if pgrep -x rofi >/dev/null; then
+  pkill -x rofi
+  exit 0
+fi
+
+case ${1:-drun} in
+  drun | Power | VPN | Wi-Fi | Bluetooth) mode=${1:-drun} ;;
+  *) printf 'Unknown Rofi mode: %s\n' "$1" >&2; exit 2 ;;
+esac
+
+script_dir="$(dirname "$(realpath "$0")")/../../rofi/scripts"
+modes="drun,Power:$script_dir/power,VPN:$script_dir/vpn,Wi-Fi:$script_dir/wifi,Bluetooth:$script_dir/bluetooth"
+exec rofi -modi "$modes" -show "$mode" -config "$HOME/.config/rofi/config.rasi"

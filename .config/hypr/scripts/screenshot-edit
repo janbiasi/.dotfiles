@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+selection=$(slurp) || exit 0
+[[ -n "$selection" ]] || exit 0
+
+output_dir="$HOME/Pictures/Screenshots"
+mkdir -p "$output_dir"
+
+grim -g "$selection" -t ppm - |
+  satty --filename - \
+    --fullscreen \
+    --initial-tool arrow \
+    --copy-command wl-copy \
+    --output-filename "$output_dir/screenshot-$(date +%Y%m%d-%H%M%S-%N).png" \
+    --actions-on-enter save-to-clipboard,save-to-file,exit \
+    --actions-on-escape exit
