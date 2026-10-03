@@ -1,0 +1,14 @@
+[Unit]
+Description=Waybar status bar
+Documentation=https://github.com/Alexays/Waybar
+PartOf=default.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/waybar
+EnvironmentFile=-%h/.config/private/waybar
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
