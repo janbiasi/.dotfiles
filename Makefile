@@ -1,6 +1,7 @@
 DOTFILES := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 SYSTEM := $(shell uname -s)
 STOW_OPTIONS := --verbose --no-folding --target="$(HOME)" --dir="$(DOTFILES)"
+MATUGEN_MODE ?= dark
 
 ifeq ($(SYSTEM),Linux)
 STOW_IGNORE_OPTIONS := --ignore='^Library(/|$$)'
@@ -28,15 +29,17 @@ update-nvim:
 .PHONY: update-dotfiles
 update-dotfiles: install-runtime-config
 	stow $(STOW_OPTIONS) $(STOW_IGNORE_OPTIONS) --restow .
-	$(MAKE) install-pi-extensions
 
 .PHONY: theme
 theme:
 	@test -n "$(WALLPAPER)" || { echo 'Usage: make theme WALLPAPER=/path/to/image' >&2; exit 1; }
 	@test -f "$(WALLPAPER)" || { echo 'Wallpaper file does not exist: $(WALLPAPER)' >&2; exit 1; }
 	@command -v matugen >/dev/null || { echo 'matugen is not installed' >&2; exit 1; }
-	matugen image "$(WALLPAPER)" --config "$(DOTFILES)/.config/matugen/config.toml" -m dark --source-color-index=0 -t scheme-fidelity
+	@case "$(MATUGEN_MODE)" in dark|light) ;; *) echo 'MATUGEN_MODE must be dark or light' >&2; exit 1;; esac
+	matugen image "$(WALLPAPER)" --config "$(DOTFILES)/.config/matugen/config.toml" -m "$(MATUGEN_MODE)" --source-color-index=0 -t scheme-fidelity
+	@if [ "$(MATUGEN_MODE)" = dark ]; then base_scheme=BreezeDark; else base_scheme=BreezeLight; fi; plasma-apply-colorscheme "$$base_scheme"
 	plasma-apply-colorscheme Matugen
+	"$(DOTFILES)/.config/waypaper/apply-icon-theme.sh" "$(MATUGEN_MODE)"
 
 .PHONY: install-nvim
 install-nvim:
@@ -88,16 +91,9 @@ install-etc:
 	cd "$(DOTFILES)/etc" && find . -type f -exec sh -c 'for file do sudo install -D -o root -g root -m 644 -- "$$file" "/etc/$$file" || exit; done' sh {} +
 
 .PHONY: configure-linux
-configure-linux: configure-oomd
-
-.PHONY: configure-oomd
-configure-oomd: install-etc
+configure-linux: install-etc
 	sudo systemctl daemon-reload
-	sudo systemctl enable --now systemd-oomd.service
+	sudo systemctl enable systemd-oomd.service
 	sudo systemctl restart systemd-oomd.service
 	systemctl --user daemon-reload
 	oomctl
-
-.PHONY: configure-polkit-fingerprint
-configure-polkit-fingerprint:
-	sudo install -Dm644 "$(DOTFILES)/extra/arch/polkit-1" /etc/pam.d/polkit-1
