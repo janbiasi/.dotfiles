@@ -46,9 +46,11 @@ hl.window_rule({
 })
 
 hl.window_rule({
-  name      = "workspace-citrix",
-  match     = { class = "(?i)(citrix.*|selfservice|wfica)" },
-  workspace = "6",
+  name           = "workspace-citrix",
+  match          = { class = "(?i)(citrix.*|selfservice|wfica)" },
+  workspace      = "6",
+  -- Citrix sessions request maximize/fullscreen on connect; ignore both.
+  suppress_event = "maximize fullscreen",
 })
 
 hl.window_rule({
