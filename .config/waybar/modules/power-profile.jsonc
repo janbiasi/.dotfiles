@@ -1,0 +1,13 @@
+{
+  // Built-in module; tuned-ppd serves the power-profiles API it talks to.
+  // Left click cycles forward, right click backward.
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nClick to switch",
+    "format-icons": {
+      "power-saver": "󰾆",
+      "balanced": "󰾅",
+      "performance": "󰓅"
+    }
+  }
+}

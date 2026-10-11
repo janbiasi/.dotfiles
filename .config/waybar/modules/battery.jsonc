@@ -21,9 +21,7 @@
     "menu": "on-click",
     "menu-file": "/home/jan/.config/waybar/menus/battery.xml",
     "menu-actions": {
-      "details": "ghostty --wait-after-command -e sh -c 'upower -i \"$(upower -e | sed -n \"/battery/s/.*/&/p\" | head -n 1)\"'",
-      "balanced": "tuned-adm profile balanced",
-      "save": "tuned-adm profile laptop-battery-powersave"
+      "details": "ghostty --wait-after-command -e sh -c 'upower -i \"$(upower -e | sed -n \"/battery/s/.*/&/p\" | head -n 1)\"'"
     }
   }
 }

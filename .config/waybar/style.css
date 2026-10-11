@@ -34,6 +34,7 @@ window#waybar {
 #custom-vpn,
 #bluetooth,
 #battery,
+#power-profiles-daemon,
 #idle_inhibitor,
 #custom-voxtype,
 #custom-screen-share,
@@ -53,6 +54,7 @@ window#waybar {
 #custom-vpn,
 #bluetooth,
 #battery,
+#power-profiles-daemon,
 #idle_inhibitor,
 #custom-voxtype,
 #custom-screen-share,
@@ -146,6 +148,7 @@ window#waybar {
 #custom-vpn:hover,
 #bluetooth:hover,
 #battery:hover,
+#power-profiles-daemon:hover,
 #idle_inhibitor:hover,
 #custom-voxtype:hover,
 #custom-screen-share:hover,
@@ -193,6 +196,12 @@ window#waybar {
 #custom-screen-share.sharing {
   background: @error_container;
   color: @on_error_container;
+}
+#power-profiles-daemon.power-saver {
+  color: @success;
+}
+#power-profiles-daemon.performance {
+  color: @tertiary;
 }
 #battery.charging {
   color: @success;
