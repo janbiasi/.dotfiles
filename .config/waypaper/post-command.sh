@@ -19,6 +19,7 @@ run_step() {
     'Wallpaper theme update failed' "$label failed (exit $status)" || \
     printf 'Waypaper: could not send failure notification\n' >&2
   failures=$((failures + 1))
+  return "$status"
 }
 
 if (($# != 1)); then
@@ -27,9 +28,18 @@ if (($# != 1)); then
 fi
 
 wallpaper=$1
-run_step 'Matugen palette' matugen image "$wallpaper" -m dark --source-color-index=0 -t scheme-fidelity
-run_step 'BreezeDark color scheme' plasma-apply-colorscheme BreezeDark
-run_step 'Matugen color scheme' plasma-apply-colorscheme Matugen
+mode=${MATUGEN_MODE:-dark}
+case "$mode" in
+  dark) base_scheme=BreezeDark ;;
+  light) base_scheme=BreezeLight ;;
+  *) printf 'Waypaper: unsupported Matugen mode: %s\n' "$mode" >&2; exit 1 ;;
+esac
+
+if run_step 'Matugen palette' matugen image "$wallpaper" -m "$mode" --source-color-index=0 -t scheme-fidelity; then
+  run_step "$base_scheme color scheme" plasma-apply-colorscheme "$base_scheme"
+  run_step 'Matugen color scheme' plasma-apply-colorscheme Matugen
+  run_step 'Icon theme' "$(dirname "$(readlink -f "$0")")/apply-icon-theme.sh" "$mode"
+fi
 run_step 'Hyprland reload' hyprctl reload
 run_step 'Waybar reload' pkill -SIGUSR2 -x waybar
 run_step 'SwayNC CSS reload' swaync-client --reload-css --skip-wait
