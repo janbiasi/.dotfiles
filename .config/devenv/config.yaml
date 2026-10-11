@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=https://devenv.sh/devenv.user.schema.json
+version: 1
+tui:
+  theme:
+    preset: terminal
