@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=WhatsApp
+Exec=brave-origin --profile-directory=Default --app=https://web.whatsapp.com/
+StartupWMClass=brave-web.whatsapp.com__-Default
+Icon=whatsapp
+Type=Application
+Categories=Network;InstantMessaging;
+StartupNotify=true

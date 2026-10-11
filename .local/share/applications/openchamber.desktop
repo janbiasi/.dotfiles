@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=OpenChamber
+Comment=Electron desktop runtime for OpenChamber
+Exec=/home/jan/Apps/OpenChamber.AppImage --no-sandbox %U
+TryExec=/home/jan/Apps/OpenChamber.AppImage
+Icon=openchamber
+Terminal=false
+Categories=Development;
+StartupWMClass=openchamber

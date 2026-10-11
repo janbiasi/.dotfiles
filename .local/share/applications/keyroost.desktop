@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Keyroost
+GenericName=Security Key Manager
+Comment=Manage security keys and program TOTP tokens
+Exec=keyroost
+TryExec=keyroost
+Icon=dialog-password
+Terminal=false
+Categories=System;Security;

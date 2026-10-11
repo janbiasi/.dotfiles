@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Herdr
+Comment=Terminal workspace manager for AI agents
+Exec=herdr
+Icon=herdr
+Terminal=true
+NoDisplay=true
+Categories=Development;
