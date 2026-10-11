@@ -25,7 +25,7 @@ else
 fi
 
 # Use 1Password SSH agent
-export SSH_AUTH_SOCK="$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 # Use Proton Pass SSH agent
 # export SSH_AUTH_SOCK="$HOME/.protonpass/ssh-agent.sock"
 
@@ -80,6 +80,7 @@ export SQLIT_CONFIG_DIR="$XDG_CONFIG_HOME/sqlit"
 
 # pi doesn't follow xdg - https://github.com/earendil-works/pi/issues/2870
 export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi"
+export PI_CODING_AGENT_SESSION_DIR="$XDG_DATA_HOME/pi-sessions"
 
 # paseo doesn't follow xdg - https://github.com/earendil-works/paseo/issues/
 export PASEO_HOME="$XDG_CONFIG_HOME/paseo"
