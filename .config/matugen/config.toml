@@ -50,6 +50,15 @@ output_path = '~/.config/yazi/theme.toml'
 input_path = './templates/zed.json'
 output_path = '~/.config/zed/themes/matugen.json'
 
+[templates.tabularis]
+input_path = './templates/tabularis.json'
+output_path = '~/.config/tabularis/themes/matugen.json'
+
+[templates.t3code]
+input_path = './templates/t3code.json'
+output_path = '~/.t3/userdata/themes/matugen.json.tmp'
+post_hook = 'mv "$HOME/.t3/userdata/themes/matugen.json.tmp" "$HOME/.t3/userdata/themes/matugen.json"'
+
 [templates.nvim]
 input_path = './templates/nvim.lua'
 output_path = '~/.config/nvim/colors/matugen.lua'
@@ -71,6 +80,10 @@ post_hook = 'pkill -SIGUSR2 ghostty'
 input_path = './templates/television.toml'
 output_path = '~/.config/television/themes/matugen.toml'
 
+[templates.wifitui]
+input_path = './templates/wifitui.toml'
+output_path = '~/.config/wifitui/theme.toml'
+
 [templates.tmux]
 input_path = './templates/tmux.conf'
 output_path = '~/.config/tmux/generated.conf'
@@ -88,6 +101,10 @@ output_path = '~/.config/hunk/config.toml'
 [templates.delta]
 input_path = './templates/delta.gitconfig'
 output_path = '~/.config/delta/themes/matugen.gitconfig'
+
+[templates.gh_dash]
+input_path = './templates/gh-dash.yml'
+output_path = '~/.config/gh-dash/theme.yml'
 
 # swaync doesn't recolor symbolic icons, so bake the palette into the icon.
 [templates.herdr_icon]

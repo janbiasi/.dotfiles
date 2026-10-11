@@ -1,0 +1,24 @@
+theme:
+    colors:
+        text:
+            primary: "{{colors.on_surface.default.hex}}"
+            secondary: "{{colors.on_surface_variant.default.hex}}"
+            inverted: "{{colors.surface.default.hex}}"
+            faint: "{{colors.outline.default.hex}}"
+            warning: "{{colors.error.default.hex}}"
+            success: "{{colors.success.default.hex}}"
+            actor: "{{colors.secondary.default.hex}}"
+        background:
+            selected: "{{colors.primary_container.default.hex}}"
+        border:
+            primary: "{{colors.primary.default.hex}}"
+            secondary: "{{colors.outline.default.hex}}"
+            faint: "{{colors.outline_variant.default.hex}}"
+        inline:
+            icons:
+                newcontributor: "{{colors.success.default.hex}}"
+                contributor: "{{colors.primary.default.hex}}"
+                collaborator: "{{colors.tertiary.default.hex}}"
+                member: "{{colors.secondary.default.hex}}"
+                owner: "{{colors.primary.default.hex}}"
+                unknownrole: "{{colors.on_surface_variant.default.hex}}"

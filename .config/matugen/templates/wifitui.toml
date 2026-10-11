@@ -1,0 +1,18 @@
+# Generated with Matugen. Colour pairs are [light, dark].
+Primary = ["{{colors.primary.light.hex}}", "{{colors.primary.dark.hex}}"]
+Subtle = ["{{colors.on_surface_variant.light.hex}}", "{{colors.on_surface_variant.dark.hex}}"]
+Success = ["{{colors.success.light.hex}}", "{{colors.success.dark.hex}}"]
+Error = ["{{colors.error.light.hex}}", "{{colors.error.dark.hex}}"]
+Normal = ["{{colors.on_surface.light.hex}}", "{{colors.on_surface.dark.hex}}"]
+Disabled = ["{{colors.outline.light.hex}}", "{{colors.outline.dark.hex}}"]
+Border = ["{{colors.outline_variant.light.hex}}", "{{colors.outline_variant.dark.hex}}"]
+SignalHigh = ["{{colors.success.light.hex}}", "{{colors.success.dark.hex}}"]
+SignalLow = ["{{colors.error.light.hex}}", "{{colors.error.dark.hex}}"]
+Saved = ["{{colors.secondary.light.hex}}", "{{colors.secondary.dark.hex}}"]
+
+TitleIcon = "🛜 "
+NetworkSecureIcon = "🔒 "
+NetworkOpenIcon = "🔓 "
+NetworkUnknownIcon = "❓ "
+NetworkSavedIcon = "💾 "
+AccessPointIcon = "📡"
