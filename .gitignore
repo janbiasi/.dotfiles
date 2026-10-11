@@ -41,15 +41,19 @@ extra/backups/
 .config/opencode/themes/matugen.json
 .config/yazi/theme.toml
 .config/zed/themes/matugen.json
+.config/tabularis/*
+!.config/tabularis/config.json
 .config/nvim/colors/matugen.lua
 .config/ghostty/themes/Matugen
 .config/ghostty/themes/Matugen Dark
 .config/ghostty/themes/Matugen Light
 .config/television/themes/matugen.toml
+.config/wifitui/theme.toml
 .config/tmux/generated.conf
 .config/btop/themes/matugen.theme
 .config/hunk/config.toml
 .config/delta/themes/matugen.gitconfig
+.config/gh-dash/theme.yml
 .local/share/color-schemes/Matugen.colors
 .local/share/themes/personal/gtk-3.0/
 
@@ -64,8 +68,9 @@ extra/backups/
 
 # PNPM
 .pnpm-store
-
-**/.claude/.cc-writes/
-
-# pnpm workspace (.config/pi/extensions)
 node_modules/
+
+# claude code
+**/.claude/.cc-writes/
+**/.claude/worktrees/
+**/.claude/settings.local.json
