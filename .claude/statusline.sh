@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Claude Code status line:
-#   Opus 5.5 | ████░░░░░░ 42% | $28.85 | in 880k out 4.9M cache 15.0M total 20.8M | 5h 23% 7d 41%
+#   Opus 5.5 | 󰪠 42% | $28.85 | in 880k out 4.9M total 20.8M | cache ● 1h ████░░ 38m left · hit 91% · misses 0
 # Reads the status-line JSON on stdin. Terminal ANSI colours only, so it follows the terminal theme.
 set -uo pipefail
 shopt -s nullglob
@@ -44,21 +44,43 @@ jq -rj --argjson t "$totals" '
     else (. * 100 | round) as $c | "$\($c / 100 | floor).\($c % 100 | tostring | if length < 2 then "0" + . else . end)" end;
   def pct: (. | round) as $p | "\($p)%" | if $p >= warn_at then paint("1;31") else bold end;
 
-  def bar($p):
-    (if $p == null then 0 else ([($p / 10 | floor), 10] | min) end) as $f
-    | ("█" * $f) + ("░" * (10 - $f))
+  # Nerd Font circle: outline under 6.25%, then circle_slice_1..8 in eighths
+  def ring($p):
+    ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"][if $p == null then 0 else ([($p / 12.5 | round), 8] | min) end]
     | paint(if $p != null and $p >= warn_at then "31" else "34" end);
+
+  # Prompt cache (v2.1.251+), absent until the first API response. Status part coloured, stats plain;
+  # green while warm, yellow under 20% of the TTL left, red when cold.
+  def left: if . >= 3600 then "\(. / 3600 | floor)h \(. % 3600 / 60 | floor)m"
+    elif . >= 60 then "\(. / 60 | ceil)m" else "\(. | ceil)s" end;
+  def ttl_secs: {"5m": 300, "1h": 3600}[. // ""];
+  def cbar($frac; $c): ($frac * 6 | ceil) as $f | ("█" * $f | paint($c)) + ("░" * (6 - $f) | dim);
+  def cache:
+    (if .expires_at != null then .expires_at - now else null end) as $rem
+    | if .warm == true and ($rem == null or $rem > 0) then
+        (.ttl | ttl_secs) as $ttl
+        | (if $ttl != null and $rem != null then ([$rem / $ttl, 1] | min) else null end) as $frac
+        | (if $frac != null and $frac < 0.2 then "33" else "32" end) as $c
+        | [ ("cache ● " + (.ttl // "" | if . != "" then . + " " else . end) | paint($c))
+              + (if $frac != null then cbar($frac; $c) + " " else "" end)
+              + (if $rem != null then ($rem | left) + " left" | paint($c) else "" end),
+            (.hit_ratio // empty | "hit \(. * 100 | round)%"),
+            (.misses // empty | "misses \(.)") ]
+      else
+        [ ("cache ○ cold" | paint("31")),
+          (.recache_tokens_if_cold // empty | "next message re-caches \(fmt) tokens"),
+          (.last_miss_cause.causes? // [] | select(length > 0) | "last miss: " + join(", ")) ]
+      end
+    | join(" " + ("·" | dim) + " ");
 
   .context_window.used_percentage as $ctx
   | [
       (.model.display_name // .model.id | paint("35")),
-      bar($ctx) + " " + (if $ctx == null then ("–" | dim) else ($ctx | pct) end),
+      ring($ctx) + " " + (if $ctx == null then ("–" | dim) else ($ctx | pct) end),
       (.cost.total_cost_usd // empty | money | paint("32")),
-      ([["in", $t.input], ["out", $t.output], ["cache", $t.cache], ["total", $t.input + $t.output + $t.cache]]
+      ([["in", $t.input], ["out", $t.output], ["total", $t.input + $t.output + $t.cache]]
         | map((.[0] | dim) + " " + (.[1] | fmt | bold)) | join(" ")),
-      ([["5h", .rate_limits.five_hour], ["7d", .rate_limits.seven_day], ["spend", .rate_limits.spend_limit]]
-        | map(select(.[1] != null) | (.[0] | dim) + " " + (.[1].used_percentage | pct))
-        | select(length > 0) | join(" "))
+      (.prompt_cache // empty | cache)
     ]
   | join(" " + ("|" | dim) + " ")
 ' <<<"$input"

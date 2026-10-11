@@ -1,20 +1,21 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "theme": "auto",
+  "env": {
+    "CLAUDE_CODE_ENABLE_EXPERIMENTAL_ADVISOR_TOOL": "1"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "modelSettings": {
     "claude-opus-5-5": {
       "effortLevel": "medium"
     }
   },
-  "permissions": {
-    "deny": ["Read(./.env)", "Read(./.env.*)"]
-  },
+  "advisorModel": "fable",
+  "theme": "auto",
+  "agentPushNotifEnabled": true,
   "model": "opus",
-  "statusLine": {
-    "type": "command",
-    "command": "~/.claude/statusline.sh",
-    "padding": 0
-  },
   "hooks": {
     "SessionStart": [
       {
@@ -22,32 +23,69 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '~/.claude/hooks/herdr-agent-state.sh' session",
+            "command": "bash \"$HOME/.claude/hooks/herdr-agent-state.sh\" session",
             "timeout": 10
           }
         ]
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 0,
+    "refreshInterval": 30
+  },
   "enabledPlugins": {
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "context7@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
+      }
+    }
+  },
+  "permissions": {
+    "deny": ["Read(./.env)", "Read(./.envrc)"]
   },
   "sandbox": {
+    "excludedCommands": [
+      "podman",
+      "docker",
+      "chromium",
+      "herdr",
+      "devenv *",
+      "prek *",
+      "git commit *",
+      "git cherry-pick *",
+      "git push *",
+      "git fetch *"
+    ],
     "enabled": true,
+    "failIfUnavailable": true,
     "autoAllowBashIfSandboxed": true,
     "allowUnsandboxedCommands": true,
     "network": {
-      "allowLocalBinding": true
+      "allowLocalBinding": true,
+      "allowMachLookup": ["com.apple.coresimulator.*"]
     },
     "filesystem": {
       "denyRead": [
-        "~/.ssh",
+        "~/.ssh/config.d",
         "~/.gnupg",
         "~/.password-store",
-        "~/.config/gh",
         "~/.git-credentials",
         "~/.kube",
         "~/.aws"
+      ],
+      "allowWrite": [
+        "~/.cache/go-build",
+        "~/.cache/golangci-lint",
+        "~/.cache/prek",
+        "~/go/pkg/mod"
       ]
     },
     "credentials": {
@@ -56,8 +94,8 @@
           "name": "GITHUB_TOKEN",
           "mode": "deny"
         }
-      ]
-    },
-    "excludedCommands": ["podman", "docker"]
+      ],
+      "allowPlaintextInject": false
+    }
   }
 }
