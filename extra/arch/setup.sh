@@ -5,9 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_DIR="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 
 echo "==> Installing Arch packages from packages.txt ..."
-if [ -f "${SCRIPT_DIR}/packages.txt" ]; then
-  sudo pacman -S --needed - < "${SCRIPT_DIR}/packages.txt"
-fi
+make -C "${DOTFILES_DIR}" install-arch
 
 echo "==> Checking for yay (AUR helper) ..."
 if ! command -v yay &>/dev/null; then
@@ -16,23 +14,14 @@ if ! command -v yay &>/dev/null; then
 fi
 
 echo "==> Installing AUR packages from aur.txt ..."
-if [ -f "${SCRIPT_DIR}/aur.txt" ]; then
-  yay -S --needed - < "${SCRIPT_DIR}/aur.txt"
-fi
+make -C "${DOTFILES_DIR}" install-aur
 
 echo "==> Installing flatpak apps from flatpak.txt ..."
-if [ -f "${SCRIPT_DIR}/flatpak.txt" ]; then
-  mapfile -t flatpak_apps < <(grep -vE '^\s*(#|$)' "${SCRIPT_DIR}/flatpak.txt")
-  if [ "${#flatpak_apps[@]}" -gt 0 ]; then
-    flatpak install --system --noninteractive --or-update "${flatpak_apps[@]}"
-  fi
-fi
-
-# echo "==> Enabling Docker service ..."
-# sudo systemctl enable --now docker.service || true
+make -C "${DOTFILES_DIR}" install-flatpak
 
 echo "==> Setup complete."
 echo "Next steps:"
-echo "  1. Run 'make install-configs' from ${DOTFILES_DIR}"
-echo "  2. Copy and adapt .gitconfig manually (it's not stowed)"
-echo "  3. Run 'make install-nvim' to clone nvim config"
+echo "  1. Run 'make update-dotfiles' from ${DOTFILES_DIR}"
+echo "  2. Run 'make configure-linux' to install system configuration and enable systemd-oomd"
+echo "  3. Copy and adapt .gitconfig manually (it's not stowed)"
+echo "  4. Run 'make install-nvim' to clone nvim config"
