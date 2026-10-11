@@ -23,18 +23,9 @@ if [[ ${ROFI_RETV:-0} != 1 && $cache_age -le 15 ]]; then
 else
   status=$("$vpn")
 fi
-details=$(jq -r '.tooltip | split("\n") | .[0], .[1]' <<< "$status")
-mapfile -t providers <<< "$details"
-
-if [[ ${providers[1]} == *' · Exit: '* ]]; then
-  state=${providers[1]#Tailscale: }
-  state=${state%% · *}
-  exit_node=${providers[1]##* · Exit: }
-  exit_node=${exit_node%% · *}
-  providers[1]="Tailscale: $state · Exit: $exit_node"
-fi
+mapfile -t rows < <(jq -r '.rows[]' <<< "$status")
 
 printf '\0prompt\x1fVPN\n\0no-custom\x1ftrue\n'
-printf '%s\0icon\x1fnetwork-vpn\x1finfo\x1fnetbird\n' "${providers[0]}"
-printf '%s\0icon\x1fnetwork-vpn\x1finfo\x1ftailscale\n' "${providers[1]}"
+printf '%s\0icon\x1fnetwork-vpn\x1finfo\x1fnetbird\n' "${rows[0]}"
+printf '%s\0icon\x1fnetwork-vpn\x1finfo\x1ftailscale\n' "${rows[1]}"
 printf 'NetBird settings…\0icon\x1fdocument-edit\x1finfo\x1fnetbird-ui\n'

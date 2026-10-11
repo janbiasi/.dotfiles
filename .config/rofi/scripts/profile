@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# power-profiles API (served by tuned-ppd), so on battery "balanced" still maps
+# to tuned's battery-biased profile.
+ppd=(org.freedesktop.UPower.PowerProfiles /org/freedesktop/UPower/PowerProfiles org.freedesktop.UPower.PowerProfiles)
+
+if [[ ${ROFI_RETV:-0} == 1 ]]; then
+  case ${ROFI_INFO:-} in
+    power-saver | balanced | performance)
+      if ! busctl set-property "${ppd[@]}" ActiveProfile s "$ROFI_INFO" >/dev/null 2>&1; then
+        notify-send -a 'Power profile' "Could not switch to $ROFI_INFO"
+      fi
+      exit 0
+      ;;
+  esac
+fi
+
+active=$(busctl get-property "${ppd[@]}" ActiveProfile 2>/dev/null) || active=
+active=${active#s \"}
+active=${active%\"}
+
+profiles=(power-saver balanced performance)
+labels=('Power saver' 'Balanced' 'Performance')
+icons=(battery-profile-powersave battery-profile-balanced battery-profile-performance)
+
+printf '\0prompt\x1fProfile\n\0no-custom\x1ftrue\n'
+if [[ -z $active ]]; then
+  printf '\0message\x1fPower profiles unavailable\n'
+fi
+for i in "${!profiles[@]}"; do
+  label=${labels[i]}
+  [[ ${profiles[i]} == "$active" ]] && label+=' · Active'
+  printf '%s\0icon\x1f%s\x1finfo\x1f%s\n' "$label" "${icons[i]}" "${profiles[i]}"
+done
