@@ -91,20 +91,31 @@ make install-arch
 
 # Install AUR packages
 make install-aur
+
+# Install Flatpak apps
+make install-flatpak
+
+# Link user configuration
+make update-dotfiles
+
+# Install system configuration and enable systemd-oomd
+make configure-linux
 ```
 
 ## Available tasks
 
 | Task                    | Description                                                                                                |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `install`               | Init configuration files to the local file system via [stow](https://www.gnu.org/software/stow/)           |
 | `update`                | Convenience method; calls `update-dotfiles` and `update-nvim`                                              |
 | `update-nvim`           | Pull latest changes from nvim.config repository                                                            |
 | `update-dotfiles`       | Re-stows all configuration files                                                                           |
+| `theme`                 | Generates the dark Matugen theme from `WALLPAPER=/path/to/image`                                           |
 | `install-nvim`          | Installs the nvim configuration from the [nvim.config](https://github.com/janbiasi/nvim.config) repository |
 | `install-brew`          | Installs all required software packages via [homebrew](https://brew.sh/)                                   |
 | `configure-credentials` | Expands environment secrets from 1Password, see [.env.tpl](./.env.tpl)                                     |
 | `configure-macos`       | Applies various macOS configurations, see [.macos](./extra/.macos)                                         |
 | `install-arch`          | Installs required pacman packages on Arch Linux                                                            |
 | `install-aur`           | Installs AUR packages on Arch Linux (requires yay)                                                         |
-| `configure-linux`       | Applies Linux-specific configurations (placeholder)                                                        |
+| `install-flatpak`       | Installs Flatpak apps from `extra/arch/flatpak.txt`                                                        |
+| `install-etc`           | Copies tracked system configuration to `/etc` with root ownership                                          |
+| `configure-linux`       | Installs system configuration and activates systemd-oomd                                                   |
