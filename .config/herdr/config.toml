@@ -109,7 +109,7 @@ enabled = true
 row_gap = 0
 rows = [
   ["state_icon", "machine", { token = "workspace", bold = true }, "tab"],
-  [{ token = "agent", dim = true }],
+  [{ token = "agent", dim = true }, { token = "$project", dim = true }],
 ]
 
 [ui.sidebar.spaces]
