@@ -3,6 +3,20 @@ set -euo pipefail
 
 if [[ ${ROFI_RETV:-0} == 1 ]]; then
   case ${ROFI_INFO:-} in
+    enable-caffeinate | disable-caffeinate)
+      action=start
+      message='Caffeinate enabled · automatic dimming, locking and sleep paused'
+      if [[ $ROFI_INFO == disable-caffeinate ]]; then
+        action=stop
+        message='Caffeinate disabled · normal idle behavior restored'
+      fi
+      if ! systemctl --user "$action" caffeinate.service; then
+        notify-send -a Caffeinate "Could not ${action} caffeinate.service" 'Check journalctl --user -u caffeinate.service'
+        exit 1
+      fi
+      notify-send -a Caffeinate "$message"
+      exit 0
+      ;;
     suspend-then-hibernate | hibernate)
       systemctl "${ROFI_INFO}"
       exit 0
@@ -24,6 +38,11 @@ if [[ ${ROFI_RETV:-0} == 1 ]]; then
 fi
 
 printf '\0prompt\x1fPower\n\0no-custom\x1ftrue\n'
+if systemctl --user is-active --quiet caffeinate.service; then
+  printf 'Disable caffeinate\0icon\x1fkteatime-symbolic\x1finfo\x1fdisable-caffeinate\n'
+else
+  printf 'Enable caffeinate\0icon\x1fkteatime-symbolic\x1finfo\x1fenable-caffeinate\n'
+fi
 printf 'Sleep\0icon\x1fsystem-suspend\x1finfo\x1fsuspend-then-hibernate\n'
 printf 'Hibernate\0icon\x1fsystem-suspend-hibernate\x1finfo\x1fhibernate\n'
 printf 'Restart\0icon\x1fview-refresh\x1finfo\x1freboot\n'

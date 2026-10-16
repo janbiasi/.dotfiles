@@ -11,9 +11,9 @@ configuration {
     kb-row-up: "Up,Control+k";
     kb-row-down: "Down,Control+j";
 
-    hover-select: true;
-    me-select-entry: "";
-    me-accept-entry: "MousePrimary";
+    hover-select: false;
+    me-select-entry: "MousePrimary";
+    me-accept-entry: "MouseDPrimary";
 }
 
 @theme "theme"
@@ -22,6 +22,10 @@ window {
     location: north;
     anchor: north;
     y-offset: 20%;
+}
+
+listview {
+    dynamic: false;
 }
 
 mainbox {

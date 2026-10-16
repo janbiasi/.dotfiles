@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+export LC_ALL=C
+
+if [[ ${ROFI_RETV:-0} == 1 ]]; then
+  action=${ROFI_INFO%%:*}
+  device=${ROFI_INFO#*:}
+  case $action in
+    connect | disconnect)
+      if ! error=$(nmcli device "$action" "$device" 2>&1); then
+        notify-send -a Ethernet "Could not $action $device" "$error"
+        exit 1
+      fi
+      ;;
+  esac
+fi
+
+printf '\0prompt\x1fEthernet\n\0no-custom\x1ftrue\n'
+if ! devices=$(nmcli -t -e no -f DEVICE,TYPE,STATE device status 2>/dev/null); then
+  printf '\0message\x1fNetworkManager unavailable\n'
+  exit 0
+fi
+
+found=false
+while IFS=: read -r device type state; do
+  [[ $type == ethernet ]] || continue
+  found=true
+  case $state in
+    disconnected)
+      printf 'Enable Ethernet · %s\0icon\x1fnetwork-wired\x1finfo\x1fconnect:%s\n' "$device" "$device"
+      ;;
+    unavailable | unmanaged)
+      printf '%s · %s\0icon\x1fnetwork-wired-disconnected\x1fnonselectable\x1ftrue\n' "$device" "$state"
+      ;;
+    *)
+      printf 'Disable Ethernet · %s · %s\0icon\x1fnetwork-wired-disconnected\x1finfo\x1fdisconnect:%s\n' "$device" "$state" "$device"
+      ;;
+  esac
+done <<< "$devices"
+
+if [[ $found == false ]]; then
+  printf '\0message\x1fNo Ethernet adapters found\n'
+fi
