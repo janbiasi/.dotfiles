@@ -103,6 +103,12 @@ hl.window_rule({
 -- overlayLayerRule:set_enabled(false)
 
 hl.layer_rule({
+  name    = "no-anim-rofi",
+  match   = { namespace = "^rofi$" },
+  no_anim = true,
+})
+
+hl.layer_rule({
   name            = "hide-screen-share-border-from-capture",
   match           = { namespace = "^screen-share-border$" },
   no_screen_share = true,
