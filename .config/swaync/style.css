@@ -186,7 +186,7 @@
   .text-box
   .body {
   color: @on_surface_variant;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 .notification-row

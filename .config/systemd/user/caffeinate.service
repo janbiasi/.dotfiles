@@ -1,0 +1,7 @@
+[Unit]
+Description=Prevent automatic idle actions
+PartOf=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/systemd-inhibit --what=idle --mode=block --who=Caffeinate "--why=Keep the desktop awake" /usr/bin/sleep infinity
