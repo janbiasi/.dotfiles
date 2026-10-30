@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+usage() {
+  cat <<'EOF'
+Usage: container-run [-p HOST:CONTAINER] [-f DOCKERFILE] [--engine podman|docker] [CONTEXT] [-- COMMAND [ARG...]]
+
+Build and run in the foreground, then remove the container and temporary image tag.
+Defaults: context '.', the engine's default Dockerfile/Containerfile, Podman if installed.
+Repeat -p to publish multiple ports; full engine port syntax is supported.
+An interactive terminal is allocated when stdin and stdout are terminals.
+
+Examples:
+  container-run -p 8080:80
+  container-run -f Dockerfile.dev -p 3000:3000 -p 9229:9229 .
+  container-run --engine docker ./app -- sh
+EOF
+}
+
+engine=
+context=.
+context_set=false
+build_args=()
+run_args=(--rm -i)
+
+while (($#)); do
+  case "$1" in
+    -h|--help) usage; exit 0 ;;
+    -f|--file|-p|--publish|--engine)
+      if (($# < 2)) || [[ -z $2 ]]; then
+        printf 'container-run: %s requires a value\n' "$1" >&2
+        exit 2
+      fi
+      case "$1" in
+        -f|--file) build_args+=(--file "$2") ;;
+        -p|--publish) run_args+=(--publish "$2") ;;
+        --engine) engine=$2 ;;
+      esac
+      shift 2
+      ;;
+    --) shift; break ;;
+    -*) printf 'container-run: unknown option: %s\n' "$1" >&2; exit 2 ;;
+    *)
+      if "$context_set"; then
+        printf 'container-run: unexpected argument: %s (put commands after --)\n' "$1" >&2
+        exit 2
+      fi
+      context=$1
+      context_set=true
+      shift
+      ;;
+  esac
+done
+
+if [[ -z $engine ]]; then
+  if command -v podman >/dev/null 2>&1; then
+    engine=podman
+  else
+    engine=docker
+  fi
+fi
+case "$engine" in
+  podman|docker) ;;
+  *) printf 'container-run: engine must be podman or docker\n' >&2; exit 2 ;;
+esac
+if ! command -v "$engine" >/dev/null 2>&1; then
+  printf 'container-run: %s is not installed\n' "$engine" >&2
+  exit 127
+fi
+
+temp_dir=$(mktemp -d "${TMPDIR:-/tmp}/container-run.XXXXXXXX")
+name=${temp_dir##*/}
+image="localhost/container-run:${name##*.}"
+
+cleanup() {
+  local result=$?
+  trap - EXIT
+  if "$engine" container inspect "$name" >/dev/null 2>&1; then
+    "$engine" rm --force "$name" >/dev/null || { ((result != 0)) || result=1; }
+  fi
+  if "$engine" image inspect "$image" >/dev/null 2>&1; then
+    "$engine" image rm "$image" >/dev/null || { ((result != 0)) || result=1; }
+  fi
+  rmdir "$temp_dir" || { ((result != 0)) || result=1; }
+  exit "$result"
+}
+trap cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+if [[ -t 0 && -t 1 ]]; then
+  run_args+=(-t)
+fi
+
+"$engine" build "${build_args[@]}" --tag "$image" "$context"
+"$engine" run "${run_args[@]}" --name "$name" "$image" "$@"
