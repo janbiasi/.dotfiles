@@ -95,7 +95,7 @@
         "light": "Matugen Light",
         "dark": "Matugen Dark",
     },
-    "ui_font_size": 13.0,
+    "ui_font_size": 14.0,
     "ui_font_weight": 250.0,
     "ui_font_family": "JetBrainsMono Nerd Font Propo",
     "project_panel": {
@@ -178,7 +178,7 @@
     "wrap_guides": [120],
     "show_wrap_guides": true,
     "show_whitespaces": "all",
-    "buffer_font_size": 12.0,
+    "buffer_font_size": 13.0,
     "redact_private_values": false,
     "private_files": ["**/*.env*"],
     "use_autoclose": true,
@@ -270,6 +270,9 @@
     "agent_ui_font_size": 14.0,
     "agent_buffer_font_size": 13.0,
     "agent_servers": {
+        "opencode-v2": {
+            "type": "registry"
+        },
         "codex-acp": {
             "type": "registry",
         },
@@ -283,12 +286,6 @@
             "type": "registry",
         },
         "glm-acp-agent": {
-            "type": "registry",
-        },
-        "opencode": {
-            "default_config_options": {
-                "model": "opencode-go/kimi-k3",
-            },
             "type": "registry",
         },
     },
@@ -327,6 +324,14 @@
     // AI Language Models
     // ---------------------------------------------------------------
     "agent": {
+        "sandbox_permissions": {
+            "network_hosts": [
+                "github.com",
+                "npmjs.org",
+                "npmx.dev"
+            ],
+            "allow_all_hosts": false
+        },
         "dock": "left",
         "default_profile": "ask",
         "default_model": {
