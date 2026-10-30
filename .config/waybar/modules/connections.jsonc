@@ -14,10 +14,11 @@
     ],
     "max-length": 22,
     "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}% · {frequency} GHz\n{ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
-    "tooltip-format-ethernet": "{ifname} · {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
-    "tooltip-format-disconnected": "No network connection\nClick to manage Wi-Fi",
+    "tooltip-format-ethernet": "{ifname} · {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}\nRight-click to manage Ethernet",
+    "tooltip-format-disconnected": "No network connection\nClick to manage Wi-Fi · Right-click to manage Ethernet",
     "on-update": "$HOME/.config/rofi/scripts/wifi --cache",
-    "on-click": "$HOME/.config/hypr/scripts/rofi-toggle Wi-Fi"
+    "on-click": "$HOME/.config/hypr/scripts/rofi-toggle Wi-Fi",
+    "on-click-right": "$HOME/.config/hypr/scripts/rofi-toggle Ethernet"
   },
   "bluetooth": {
     "format": "󰂯",

@@ -36,10 +36,9 @@
     "network",
     "custom/vpn",
     "bluetooth",
-    "battery",
     "power-profiles-daemon",
-    "idle_inhibitor",
     "custom/power",
     "custom/notifications",
+    "battery",
   ],
 }

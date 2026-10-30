@@ -17,8 +17,9 @@
       "󰂀",
       "󰁹"
     ],
-    "tooltip-format": "{capacity}% · {timeTo}\nDraw: {power:0.1f} W\nHealth: {health}% · {cycles} cycles",
-    "menu": "on-click",
+    "tooltip-format": "{capacity}% · {timeTo}\nDraw: {power:0.1f} W\nHealth: {health}% · {cycles} cycles\nLeft click: Power · Right click: Battery details",
+    "on-click": "$HOME/.config/hypr/scripts/rofi-toggle Power",
+    "menu": "on-click-right",
     "menu-file": "/home/jan/.config/waybar/menus/battery.xml",
     "menu-actions": {
       "details": "ghostty --wait-after-command -e sh -c 'upower -i \"$(upower -e | sed -n \"/battery/s/.*/&/p\" | head -n 1)\"'"

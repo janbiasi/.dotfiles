@@ -66,7 +66,7 @@ class Border:
             GtkLayerShell.set_layer(window, GtkLayerShell.Layer.OVERLAY)
             GtkLayerShell.set_monitor(window, monitor)
             GtkLayerShell.set_keyboard_mode(window, GtkLayerShell.KeyboardMode.NONE)
-            GtkLayerShell.set_exclusive_zone(window, 0)
+            GtkLayerShell.set_exclusive_zone(window, -1)
             GtkLayerShell.set_anchor(window, GtkLayerShell.Edge.TOP, True)
             GtkLayerShell.set_anchor(window, GtkLayerShell.Edge.LEFT, True)
             GtkLayerShell.set_margin(window, GtkLayerShell.Edge.TOP, top)
@@ -221,7 +221,7 @@ class Indicator:
     def publish(self, active):
         tooltip = "\n".join(f"Sharing: {name}" for _owner, name in active)
         output = json.dumps({
-            "text": "󰍹" if active else "󰶐",
+            "text": "󰍹" if active else "",
             "class": "sharing" if active else "idle",
             "tooltip": tooltip or "Nothing is being shared",
         }, ensure_ascii=False)

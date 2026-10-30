@@ -33,11 +33,5 @@
     "warning-threshold": 80,
     "critical-threshold": 95,
     "tooltip-format": "CPU package: {temperatureC}°C"
-  },
-  "idle_inhibitor": {
-    "format": "",
-    "start-activated": false,
-    "tooltip-format-activated": "Sleep prevention active\nClick to allow sleep",
-    "tooltip-format-deactivated": "Sleep prevention inactive\nClick to prevent sleep"
   }
 }
