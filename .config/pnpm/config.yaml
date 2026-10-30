@@ -1,0 +1,4 @@
+strictDepBuilds: true
+minimumReleaseAge: 2880
+# TODO: not supported by all registries atm.
+# trustPolicy: no-downgrade
