@@ -9,7 +9,7 @@ hl.config({
     follow_mouse  = 1,
 
     sensitivity   = 0.15,
-    accel_profile = "linear",
+    accel_profile = "flat",
 
     repeat_delay  = 250, -- default is 600
     repeat_rate   = 40,  -- default is 50

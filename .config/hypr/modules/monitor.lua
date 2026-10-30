@@ -3,8 +3,8 @@
 -- above the laptop right away instead of Hyprland's default of beside it at
 -- scale 1. Declared first so the named rules below still win for their outputs.
 hl.monitor({ output = "", mode = "preferred", position = "auto-center-up", scale = "auto" })
-hl.monitor({ output = "eDP-1", mode = "preferred", position = "0x0", scale = 2 })
-hl.monitor({ output = "DP-1", mode = "preferred", position = "auto-center-up", scale = 1.25 })
+hl.monitor({ output = "eDP-1", mode = "preferred", position = "0x0", scale = 1.67 })
+hl.monitor({ output = "DP-1", mode = "preferred", position = "auto-center-up", scale = 1.07 })
 
 -- Smooth X11 text when fractional scaling enlarges it.
 hl.config({
