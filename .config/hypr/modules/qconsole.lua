@@ -18,7 +18,13 @@ local SCRATCHPAD = "special:scratchpad"
 -- the workspace itself: Hyprland only tags a spawn with the workspace it came
 -- from while misc.initial_workspace_tracking is on, and looknfeel turns it off.
 -- Use a distinct app class so the regular Ghostty rule does not send it to 1.
-local seed = "[workspace special:scratchpad silent] ghostty --class=com.mitchellh.ghostty.scratchpad"
+hl.on("workspace.created", function(ws)
+  if ws.name ~= SCRATCHPAD or not ws.is_empty then return end
+
+  hl.exec_cmd("ghostty --class=com.mitchellh.ghostty.scratchpad", {
+    workspace = ws.name .. " silent",
+  })
+end)
 
 -- Dimming only applies while a special workspace is open, so the console gets
 -- its separation from the workspace underneath without costing anything the
@@ -53,8 +59,6 @@ local function cover(side, bottom)
     -- open, and the active border reads as a stray frame around a panel that
     -- is already set apart by the dimming behind it.
     no_border = true,
-
-    on_created_empty = seed,
   })
 
   return true
