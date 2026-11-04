@@ -8,4 +8,4 @@ Categories=Network;
 MimeType=application/x-ica;
 Icon=/opt/Citrix/ICAClient/icons/manager.png
 TryExec=/opt/Citrix/ICAClient/wfica.sh
-Exec=/opt/Citrix/ICAClient/wfica.sh %f
+Exec=systemd-run --user --collect /opt/Citrix/ICAClient/wfica.sh %f
