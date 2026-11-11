@@ -24,8 +24,8 @@ go
 rust
 python
 python-uv
-docker
-docker-compose
+podman
+podman-docker
 
 # Hyprland and Wayland
 hyprland
