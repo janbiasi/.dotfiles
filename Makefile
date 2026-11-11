@@ -88,7 +88,7 @@ install-flatpak:
 .PHONY: install-etc
 install-etc:
 	@test "$(SYSTEM)" = Linux || { echo "install-etc requires Linux." >&2; exit 1; }
-	cd "$(DOTFILES)/etc" && find . -type f -exec sh -c 'for file do sudo install -D -o root -g root -m 644 -- "$$file" "/etc/$$file" || exit; done' sh {} +
+	cd "$(DOTFILES)/etc" && find . -type f -exec sh -c 'for file do mode=644; test -x "$$file" && mode=755; sudo install -D -o root -g root -m "$$mode" -- "$$file" "/etc/$$file" || exit; done' sh {} +
 
 .PHONY: configure-linux
 configure-linux: install-etc
