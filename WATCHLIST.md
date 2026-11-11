@@ -4,7 +4,20 @@
 
 ### Lid close: Bluetooth blocks suspend and hibernation
 
-Last checked: 2026-10-30. Status: working after reboot; recurrence and hibernation remain unverified.
+Last checked: 2026-11-11. Status: recurring known upstream bug; workaround installed via `etc/systemd/system-sleep/60-btintel-pcie.sh` (unloads `btintel_pcie` before sleep and reloads it after waking). Remove the hook once the upstream fix is in the running kernel.
+
+#### Recurrences
+
+- Boot ending 2026-11-04: 1 failed hibernation, then 1,092 failed suspends.
+- 2026-11-09 20:35 lid close: hibernation at 22:36 failed with `btintel_pcie_hibernate` `-16`; 1,059 failed suspends until the lid opened at 07:30. The laptop was hot in the morning.
+- 2026-11-11 17:52 lid close: hibernation at 19:54 failed the same way, with Bluetooth powered off. The controller reset, timed out on D3/D2, and then logged `Intel Soft Reset failed (-62)` and `Controller in error state`. It looped until the lid opened at 20:17.
+- Kernel 7.2.11 (October) and 7.2.14 (November) are both affected, so the 2026-11-02 kernel/firmware update did not cause it. Turning Bluetooth off does not help because the driver's PM callbacks still run.
+
+#### Upstream
+
+- Reports: [EBUSY from PM callbacks aborts hibernate/suspend](https://ratatoskr.run/linux-bluetooth/2026/08/17480301) and [root-cause thread](https://ratatoskr.run/linux-bluetooth/2026/09/17532967/t). Possibly kernel bugzilla 221481.
+- Fix: Kondratyev's "fix stale cache in set_dxstate fallback check" plus Ravindra's "fix PM flow for S0ix, S3 and S4", latest as the "fix D-state transitions and PM flows" series ([CI run](https://github.com/bluez/bluetooth-next/pull/834)). It was not applied to bluetooth-next as of 2026-11-11. Check lore.kernel.org/linux-bluetooth for an "Applied" reply.
+- Upstream reports cover Lunar Lake (BE201 `8086:a876`); this laptop has the Panther Lake CNVi `8086:e476`.
 
 #### Incident
 
