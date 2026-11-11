@@ -1,0 +1,3 @@
+# Marker file for podman-docker: its /usr/bin/docker wrapper prints
+# "Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg."
+# on every call unless this file exists. Only its presence matters; content is ignored.
